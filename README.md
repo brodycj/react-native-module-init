@@ -6,3 +6,9 @@ Interactive utility to create native React Native modules and views, with help f
 - [`terkelg/prompts`](https://github.com/terkelg/prompts)
 
 less opinionated than [`react-native-community/bob`](https://github.com/react-native-community/bob)
+
+## demo
+
+**demo svg** made with help from [`nbedos/termtosvg`](https://github.com/nbedos/termtosvg) (reformatted by [`prettier/plugin-xml`](https://github.com/prettier/plugin-xml)):
+
+![Demo](./demo.svg)
