@@ -20,6 +20,12 @@
     "cli.js",
     "main.js"
   ],
+  "scripts": {
+    "lint": "prettier-standard --check && npm run lint-svg",
+    "lint-svg": "npx prettier --parser=xml --check *.svg",
+    "lint-fix": "prettier-standard && npm run lint-fix-svg",
+    "lint-fix-svg": "npx prettier --parser=xml --write *.svg && sed -i.orig 's/  *$//g' *.svg"
+  },
   "dependencies": {
     "ansi-escapes": "^4.3.0",
     "create-react-native-module": "^0.14.0",
@@ -32,5 +38,10 @@
     "pascal-case": "^3.1.1",
     "prompts": "^2.3.1",
     "update-notifier": "^4.1.0"
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "^0.7.2",
+    "prettier": "^1.19.1",
+    "prettier-standard": "^16.1.0"
   }
 }
