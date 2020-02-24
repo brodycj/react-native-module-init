@@ -853,7 +853,7 @@
           textLength="48"
           font-weight="bold"
           class="foreground"
-        > demo </text><text
+        > demo-</text><text
           x="392"
           textLength="8"
           class="background"
@@ -888,7 +888,7 @@
           textLength="56"
           font-weight="bold"
           class="foreground"
-        > demo M</text><text
+        > demo-M</text><text
           x="400"
           textLength="8"
           class="background"
@@ -923,7 +923,7 @@
           textLength="64"
           font-weight="bold"
           class="foreground"
-        > demo Mo</text><text
+        > demo-Mo</text><text
           x="408"
           textLength="8"
           class="background"
@@ -958,7 +958,7 @@
           textLength="72"
           font-weight="bold"
           class="foreground"
-        > demo Mod</text><text
+        > demo-Mod</text><text
           x="416"
           textLength="8"
           class="background"
@@ -993,7 +993,7 @@
           textLength="80"
           font-weight="bold"
           class="foreground"
-        > demo Modu</text><text
+        > demo-Modu</text><text
           x="424"
           textLength="8"
           class="background"
@@ -1028,7 +1028,7 @@
           textLength="88"
           font-weight="bold"
           class="foreground"
-        > demo Modul</text><text
+        > demo-Modul</text><text
           x="432"
           textLength="8"
           class="background"
@@ -1063,7 +1063,7 @@
           textLength="96"
           font-weight="bold"
           class="foreground"
-        > demo Module</text><text
+        > demo-Module</text><text
           x="440"
           textLength="8"
           class="background"
@@ -1098,7 +1098,7 @@
           textLength="904"
           font-weight="bold"
           class="foreground"
-        > demo Module                                                                                                     </text></g><g
+        > demo-Module                                                                                                     </text></g><g
         id="g44"
       ><text
           x="0"
@@ -2259,7 +2259,7 @@
           textLength="152"
           font-weight="bold"
           class="foreground"
-        >  name: demo Module</text></g><g id="g94"><text
+        >  name: demo-Module</text></g><g id="g94"><text
           x="0"
           textLength="120"
           font-weight="bold"
