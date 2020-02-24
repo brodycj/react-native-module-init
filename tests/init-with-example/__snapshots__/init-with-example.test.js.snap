@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate native React Native module with example 1`] = `
+Array [
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "message": "What is the desired native module name?",
+          "name": "nativeModuleNameInput",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "active": "yes",
+          "inactive": "no",
+          "initial": false,
+          "message": "Should it be a view?",
+          "name": "isView",
+          "onState": [Function],
+          "type": "toggle",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "react-native-test-module",
+          "message": "What is the full module package name?",
+          "name": "modulePackageName",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Initial package version is 1.0.0 - continue?",
+          "name": "confirmation",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "",
+          "message": "What is the desired native object class name prefix (can be blank)?",
+          "name": "nativeObjectClassNamePrefixInput",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Native class name is NATIVETestModule. Continue?",
+          "name": "confirmation",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "choices": Array [
+            Object {
+              "selected": true,
+              "title": "Android",
+              "value": "android",
+            },
+            Object {
+              "selected": true,
+              "title": "iOS",
+              "value": "ios",
+            },
+            Object {
+              "disabled": true,
+              "title": "Windows",
+              "value": "windows",
+            },
+          ],
+          "message": "Which native platforms?",
+          "min": 1,
+          "name": "platforms",
+          "onState": [Function],
+          "type": "multiselect",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Object {
+        "initial": "com.demo",
+        "message": "What is the desired Android package id?",
+        "name": "androidPackageId",
+        "onState": [Function],
+        "type": "text",
+        "validate": [Function],
+      },
+    },
+  },
+  Object {
+    "execa": Array [
+      "git",
+      Array [
+        "config",
+        "user.name",
+      ],
+    ],
+  },
+  Object {
+    "execa": Array [
+      "git",
+      Array [
+        "config",
+        "user.email",
+      ],
+    ],
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "Alice",
+          "message": "What is the author name?",
+          "name": "authorName",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "alice@example.com",
+          "message": "What is the author email?",
+          "name": "authorEmail",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "MIT",
+          "message": "What license?",
+          "name": "license",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Generate the example app (with React Native 0.60)?",
+          "name": "generateExampleApp",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Show the output of React Native CLI (recommended)?",
+          "name": "showReactNativeOutput",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "execa": Array [
+      "react-native",
+      Array [
+        "--version",
+      ],
+    ],
+  },
+  Object {
+    "execa": Array [
+      "yarn",
+      Array [
+        "--version",
+      ],
+    ],
+  },
+  Object {
+    "create": Object {
+      "authorEmail": "ada@lovelace.name",
+      "authorName": "Ada",
+      "moduleName": "react-native-test-module",
+      "name": "test Module",
+      "packageIdentifier": "com.test",
+      "platforms": Array [
+        "android",
+        "ios",
+      ],
+      "prefix": "NATIVE",
+      "view": false,
+    },
+  },
+  Object {
+    "execa": Array [
+      "react-native",
+      Array [
+        "init",
+        "example",
+        "--version",
+        "react-native@0.60",
+      ],
+    ],
+  },
+  Object {
+    "outputFile": Object {
+      "filePath": "$CWD/react-native-test-module/example/App.js",
+      "outputContents": "/**
+ * Sample React Native App
+ *
+ * adapted from App.js generated by the following command:
+ *
+ * react-native init example
+ *
+ * https://github.com/facebook/react-native
+ */
+
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import test Module from 'react-native-test-module';
+
+export default class App extends Component<{}> {
+  state = {
+    status: 'starting',
+    message: '--'
+  };
+  componentDidMount() {
+    test Module.sampleMethod('Testing', 123, (message) => {
+      this.setState({
+        status: 'native callback received',
+        message
+      });
+    });
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>☆test Module example☆</Text>
+        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
+        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
+        <Text style={styles.instructions}>{this.state.message}</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+",
+    },
+  },
+  Object {
+    "outputFile": Object {
+      "filePath": "$CWD/react-native-test-module/example/metro.config.js",
+      "outputContents": "// metro.config.js
+// quick workaround solution for symlinked modules ref:
+// https://github.com/brodybits/create-react-native-module/issues/232
+module.exports = {
+  watchFolders: ['.', '..']
+}",
+    },
+  },
+  Object {
+    "execa": Array [
+      "yarn",
+      Array [
+        "add",
+        "link:../",
+      ],
+    ],
+  },
+  Object {
+    "execa": Array [
+      "pod",
+      Array [
+        "--version",
+      ],
+    ],
+  },
+  Object {
+    "execa": Array [
+      "pod",
+      Array [
+        "install",
+      ],
+    ],
+  },
+]
+`;
