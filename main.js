@@ -218,6 +218,15 @@ Promise.resolve().then(async () => {
     initial: true
   })
 
+  const { showReactNativeOutput } = generateExampleApp
+    ? await prompt({
+        type: 'confirm',
+        name: 'showReactNativeOutput',
+        message: 'Show the output of React Native CLI (recommended)?',
+        initial: true
+      })
+    : null
+
   if (generateExampleApp) {
     console.log(INFO, 'checking that react-native CLI can show its version')
     try {
@@ -270,8 +279,8 @@ Promise.resolve().then(async () => {
       ['init', exampleAppName].concat(generateExampleAppOptions),
       {
         cwd: path.join(process.cwd(), modulePackageName),
-        stdout: 'inherit',
-        stderr: 'inherit'
+        stdout: showReactNativeOutput ? 'inherit' : null,
+        stderr: showReactNativeOutput ? 'inherit' : null
       }
     )
 
@@ -314,8 +323,8 @@ Promise.resolve().then(async () => {
 
     await execa('yarn', ['add', 'link:../'], {
       cwd: path.join(process.cwd(), modulePackageName, exampleAppName),
-      stdout: 'inherit',
-      stderr: 'inherit'
+      stdout: showReactNativeOutput ? 'inherit' : null,
+      stderr: showReactNativeOutput ? 'inherit' : null
     })
 
     console.log(
