@@ -17,6 +17,7 @@
   "files": [
     "LICENSE.md",
     "README.md",
+    "demo.svg",
     "cli.js",
     "main.js"
   ],
