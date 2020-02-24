@@ -1,6 +1,6 @@
 {
   "name": "react-native-module-init",
-  "version": "0.1.0",
+  "version": "0.1.1-dev",
   "description": "Interactive CLI utility to create native React Native modules and views",
   "main": "main.js",
   "bin": {
