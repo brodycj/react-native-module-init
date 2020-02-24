@@ -3,3 +3,4 @@ yarn-error.log
 
 # stryker temp files
 .stryker-tmp
+stryker.log
