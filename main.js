@@ -212,10 +212,7 @@ Promise.resolve().then(async () => {
     initial: 'MIT'
   })
 
-  console.log(
-    INFO,
-    'It is possible to generate an example test app, using React Native 0.61,'
-  )
+  console.log(INFO, 'It is possible to generate an example test app,')
   console.log(
     INFO,
     'with workarounds in metro.config.js overwrite for metro linking issues'
@@ -228,9 +225,19 @@ Promise.resolve().then(async () => {
   const { generateExampleApp } = await prompt({
     type: 'confirm',
     name: 'generateExampleApp',
-    message: 'Generate the example app (with React Native 0.61)?',
+    message: 'Generate the example app?',
     initial: true
   })
+
+  const { reactNativeVersion } = generateExampleApp
+    ? await prompt({
+        type: 'text',
+        name: 'reactNativeVersion',
+        message:
+          'What react-native version to use for the example app (should be at least 0.60)?',
+        initial: 'react-native@latest'
+      })
+    : null
 
   const { showReactNativeOutput } = generateExampleApp
     ? await prompt({
@@ -285,8 +292,7 @@ Promise.resolve().then(async () => {
 
     const exampleAppName = 'example'
 
-    // example app with React Native 0.61 (for now)
-    const generateExampleAppOptions = ['--version', 'react-native@0.61']
+    const generateExampleAppOptions = ['--version', reactNativeVersion]
 
     await execa(
       'react-native',

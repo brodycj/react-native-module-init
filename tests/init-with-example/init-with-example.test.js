@@ -14,6 +14,7 @@ mockPromptResponses = {
   authorEmail: { authorEmail: 'ada@lovelace.name' },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
+  reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
   showReactNativeOutput: { showReactNativeOutput: true }
 }
 
