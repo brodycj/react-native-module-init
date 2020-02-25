@@ -42,6 +42,9 @@ const EXAMPLE_APP_JS_FILENAME = 'App.js'
 const EXAMPLE_METRO_CONFIG_FILENAME = 'metro.config.js'
 const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
 // with workarounds
+
+const path = require('path')
+
 module.exports = {
   // ugly kludge as workaround for an issue encountered starting with
   // metro 0.55 / React Native 0.61
@@ -51,7 +54,7 @@ module.exports = {
       return Object.assign(
         {},
         ...Object.keys(require('./package.json').dependencies).map(name => ({
-          [name]: ['.', 'node_modules', name].join('/'),
+          [name]: path.join('.', 'node_modules', name)
         }))
       )
     }
