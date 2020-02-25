@@ -317,8 +317,7 @@ const styles = StyleSheet.create({
     "outputFile": Object {
       "filePath": "$CWD/react-native-test-module/example/metro.config.js",
       "outputContents": "// metro.config.js
-// quick workaround solution for symlinked modules ref:
-// https://github.com/brodybits/create-react-native-module/issues/232
+// with workarounds
 module.exports = {
   // ugly kludge as workaround for an issue encountered starting with
   // metro 0.55 / React Native 0.61
@@ -334,6 +333,8 @@ module.exports = {
     }
   },
 
+  // quick workaround solution for symlinked modules ref:
+  // https://github.com/brodybits/create-react-native-module/issues/232
   watchFolders: ['.', '..']
 }",
     },
