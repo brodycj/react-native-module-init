@@ -45,6 +45,20 @@ const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
 // quick workaround solution for symlinked modules ref:
 // https://github.com/brodybits/create-react-native-module/issues/232
 module.exports = {
+  // ugly kludge as workaround for an issue encountered starting with
+  // metro 0.55 / React Native 0.61
+  // (was not needed with React Native 0.60 / metro 0.54)
+  resolver: {
+    get extraNodeModules () {
+      return Object.assign(
+        {},
+        ...Object.keys(require('./package.json').dependencies).map(name => ({
+          [name]: ['.', 'node_modules', name].join('/'),
+        }))
+      )
+    }
+  },
+
   watchFolders: ['.', '..']
 }`
 
