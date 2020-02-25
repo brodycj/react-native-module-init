@@ -215,7 +215,7 @@ Promise.resolve().then(async () => {
   console.log(INFO, 'It is possible to generate an example test app,')
   console.log(
     INFO,
-    'with workarounds in metro.config.js overwrite for metro linking issues'
+    'with workarounds in metro.config.js for metro linking issues'
   )
   console.log(
     INFO,
@@ -225,7 +225,7 @@ Promise.resolve().then(async () => {
   const { generateExampleApp } = await prompt({
     type: 'confirm',
     name: 'generateExampleApp',
-    message: 'Generate the example app?',
+    message: 'Generate the example app (with workarounds in metro.config.js)?',
     initial: true
   })
 
@@ -234,7 +234,7 @@ Promise.resolve().then(async () => {
         type: 'text',
         name: 'reactNativeVersion',
         message:
-          'What react-native version to use for the example app (should be at least 0.60)?',
+          'What react-native version to use for the example app (should be at least react-native@0.60)?',
         initial: 'react-native@latest'
       })
     : null
