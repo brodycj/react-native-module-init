@@ -187,7 +187,7 @@ Array [
       "args": Array [
         Object {
           "initial": true,
-          "message": "Generate the example app (with React Native 0.60)?",
+          "message": "Generate the example app (with React Native 0.61)?",
           "name": "generateExampleApp",
           "onState": [Function],
           "type": "confirm",
@@ -246,7 +246,7 @@ Array [
         "init",
         "example",
         "--version",
-        "react-native@0.60",
+        "react-native@0.61",
       ],
     ],
   },

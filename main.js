@@ -200,11 +200,7 @@ Promise.resolve().then(async () => {
 
   console.log(
     INFO,
-    'It is possible to generate an example test app, using React Native 0.60.'
-  )
-  console.log(
-    INFO,
-    '(There is currently a problem with linking on React Native 0.61.)'
+    'It is possible to generate an example test app, using React Native 0.61.'
   )
   console.log(
     INFO,
@@ -214,7 +210,7 @@ Promise.resolve().then(async () => {
   const { generateExampleApp } = await prompt({
     type: 'confirm',
     name: 'generateExampleApp',
-    message: 'Generate the example app (with React Native 0.60)?',
+    message: 'Generate the example app (with React Native 0.61)?',
     initial: true
   })
 
@@ -271,8 +267,8 @@ Promise.resolve().then(async () => {
 
     const exampleAppName = 'example'
 
-    // example app with React Native 0.60 for now
-    const generateExampleAppOptions = ['--version', 'react-native@0.60']
+    // example app with React Native 0.61 (for now)
+    const generateExampleAppOptions = ['--version', 'react-native@0.61']
 
     await execa(
       'react-native',
