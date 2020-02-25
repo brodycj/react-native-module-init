@@ -187,10 +187,23 @@ Array [
       "args": Array [
         Object {
           "initial": true,
-          "message": "Generate the example app (with React Native 0.61)?",
+          "message": "Generate the example app (with workarounds in metro.config.js)?",
           "name": "generateExampleApp",
           "onState": [Function],
           "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "react-native@latest",
+          "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
+          "name": "reactNativeVersion",
+          "onState": [Function],
+          "type": "text",
         },
       ],
     },
@@ -246,7 +259,7 @@ Array [
         "init",
         "example",
         "--version",
-        "react-native@0.61",
+        "react-native@latest",
       ],
     ],
   },
