@@ -340,11 +340,12 @@ module.exports = {
   // (was not needed with React Native 0.60 / metro 0.54)
   resolver: {
     get extraNodeModules () {
-      return Object.assign(
-        {},
-        ...Object.keys(require('./package.json').dependencies).map(name => ({
-          [name]: path.join('.', 'node_modules', name)
-        }))
+      const { dependencies } = require('./package.json')
+      return Object.fromEntries(
+        Object.keys(dependencies).map(name => [
+          name,
+          path.join('.', 'node_modules', name)
+        ])
       )
     }
   },
