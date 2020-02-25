@@ -187,7 +187,7 @@ Array [
       "args": Array [
         Object {
           "initial": true,
-          "message": "Generate the example app (with React Native 0.60)?",
+          "message": "Generate the example app (with React Native 0.61)?",
           "name": "generateExampleApp",
           "onState": [Function],
           "type": "confirm",
@@ -246,7 +246,7 @@ Array [
         "init",
         "example",
         "--version",
-        "react-native@0.60",
+        "react-native@0.61",
       ],
     ],
   },
@@ -317,9 +317,24 @@ const styles = StyleSheet.create({
     "outputFile": Object {
       "filePath": "$CWD/react-native-test-module/example/metro.config.js",
       "outputContents": "// metro.config.js
-// quick workaround solution for symlinked modules ref:
-// https://github.com/brodybits/create-react-native-module/issues/232
+// with workarounds
 module.exports = {
+  // ugly kludge as workaround for an issue encountered starting with
+  // metro 0.55 / React Native 0.61
+  // (was not needed with React Native 0.60 / metro 0.54)
+  resolver: {
+    get extraNodeModules () {
+      return Object.assign(
+        {},
+        ...Object.keys(require('./package.json').dependencies).map(name => ({
+          [name]: ['.', 'node_modules', name].join('/'),
+        }))
+      )
+    }
+  },
+
+  // quick workaround solution for symlinked modules ref:
+  // https://github.com/brodybits/create-react-native-module/issues/232
   watchFolders: ['.', '..']
 }",
     },

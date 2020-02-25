@@ -38,13 +38,27 @@ const REACT_NATIVE_PREFIX = 'react-native-'
 
 const EXAMPLE_APP_JS_FILENAME = 'App.js'
 
-// quick workaround solution for symlinked modules ref:
-// https://github.com/brodybits/create-react-native-module/issues/232
+// metro.config.js overwrite with workarounds
 const EXAMPLE_METRO_CONFIG_FILENAME = 'metro.config.js'
 const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
-// quick workaround solution for symlinked modules ref:
-// https://github.com/brodybits/create-react-native-module/issues/232
+// with workarounds
 module.exports = {
+  // ugly kludge as workaround for an issue encountered starting with
+  // metro 0.55 / React Native 0.61
+  // (was not needed with React Native 0.60 / metro 0.54)
+  resolver: {
+    get extraNodeModules () {
+      return Object.assign(
+        {},
+        ...Object.keys(require('./package.json').dependencies).map(name => ({
+          [name]: ['.', 'node_modules', name].join('/'),
+        }))
+      )
+    }
+  },
+
+  // quick workaround solution for symlinked modules ref:
+  // https://github.com/brodybits/create-react-native-module/issues/232
   watchFolders: ['.', '..']
 }`
 
@@ -200,11 +214,11 @@ Promise.resolve().then(async () => {
 
   console.log(
     INFO,
-    'It is possible to generate an example test app, using React Native 0.60.'
+    'It is possible to generate an example test app, using React Native 0.61,'
   )
   console.log(
     INFO,
-    '(There is currently a problem with linking on React Native 0.61.)'
+    'with workarounds in metro.config.js overwrite for metro linking issues'
   )
   console.log(
     INFO,
@@ -214,7 +228,7 @@ Promise.resolve().then(async () => {
   const { generateExampleApp } = await prompt({
     type: 'confirm',
     name: 'generateExampleApp',
-    message: 'Generate the example app (with React Native 0.60)?',
+    message: 'Generate the example app (with React Native 0.61)?',
     initial: true
   })
 
@@ -271,8 +285,8 @@ Promise.resolve().then(async () => {
 
     const exampleAppName = 'example'
 
-    // example app with React Native 0.60 for now
-    const generateExampleAppOptions = ['--version', 'react-native@0.60']
+    // example app with React Native 0.61 (for now)
+    const generateExampleAppOptions = ['--version', 'react-native@0.61']
 
     await execa(
       'react-native',
@@ -296,13 +310,10 @@ Promise.resolve().then(async () => {
       exampleAppTemplate.content(createOptions)
     )
 
-    // quick workaround solution for symlinked modules ref:
-    // https://github.com/brodybits/create-react-native-module/issues/232
-    console.log(INFO, `overwrite ${EXAMPLE_METRO_CONFIG_FILENAME}`)
-    console.log(INFO, 'quick workaround solution for symlinked modules')
+    // metro.config.js overwrite with workarounds
     console.log(
       INFO,
-      'ref: https://github.com/brodybits/create-react-native-module/issues/232'
+      `overwrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workarounds`
     )
     await fs.outputFile(
       path.join(
