@@ -38,17 +38,17 @@ const REACT_NATIVE_PREFIX = 'react-native-'
 
 const EXAMPLE_APP_JS_FILENAME = 'App.js'
 
-// metro.config.js overwrite with workarounds
+// metro.config.js overwrite with workaround solutions
 const EXAMPLE_METRO_CONFIG_FILENAME = 'metro.config.js'
 const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
-// with workarounds
+// with workaround solutions
 
 const path = require('path')
 
 module.exports = {
-  // workaround for an issue encountered starting with
-  // metro 0.55 / React Native 0.61
-  // (was not needed with React Native 0.60 / metro 0.54)
+  // workaround for issue with symlinks encountered starting with
+  // metro@0.55 / React Native 0.61
+  // (not needed with React Native 0.60 / metro@0.54)
   resolver: {
     extraNodeModules: new Proxy(
       {},
@@ -56,7 +56,7 @@ module.exports = {
     )
   },
 
-  // quick workaround solution for symlinked modules ref:
+  // quick workaround solution for issue with symlinked modules ref:
   // https://github.com/brodybits/create-react-native-module/issues/232
   watchFolders: ['.', '..']
 }`
@@ -315,10 +315,10 @@ Promise.resolve().then(async () => {
       exampleAppTemplate.content(createOptions)
     )
 
-    // metro.config.js overwrite with workarounds
+    // rewrite metro.config.js overwrite with workaround solutions
     console.log(
       INFO,
-      `overwrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workarounds`
+      `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
       path.join(
