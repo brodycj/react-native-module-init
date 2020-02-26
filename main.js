@@ -38,7 +38,7 @@ const REACT_NATIVE_PREFIX = 'react-native-'
 
 const EXAMPLE_APP_JS_FILENAME = 'App.js'
 
-// metro.config.js overwrite with workaround solutions
+// rewrite metro.config.js with workaround solutions
 const EXAMPLE_METRO_CONFIG_FILENAME = 'metro.config.js'
 const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
 // with workaround solutions
@@ -315,7 +315,7 @@ Promise.resolve().then(async () => {
       exampleAppTemplate.content(createOptions)
     )
 
-    // rewrite metro.config.js overwrite with workaround solutions
+    // rewrite metro.config.js with workaround solutions
     console.log(
       INFO,
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
