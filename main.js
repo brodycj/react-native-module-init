@@ -46,18 +46,14 @@ const EXAMPLE_METRO_CONFIG_WORKAROUND = `// metro.config.js
 const path = require('path')
 
 module.exports = {
-  // ugly kludge as workaround for an issue encountered starting with
+  // workaround for an issue encountered starting with
   // metro 0.55 / React Native 0.61
   // (was not needed with React Native 0.60 / metro 0.54)
   resolver: {
-    get extraNodeModules () {
-      return Object.assign(
-        {},
-        ...Object.keys(require('./package.json').dependencies).map(name => ({
-          [name]: path.join('.', 'node_modules', name)
-        }))
-      )
-    }
+    extraNodeModules: new Proxy(
+      {},
+      { get: (_, name) => path.join('.', 'node_modules', name) }
+    )
   },
 
   // quick workaround solution for symlinked modules ref:
