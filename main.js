@@ -59,7 +59,8 @@ module.exports = {
   // quick workaround solution for issue with symlinked modules ref:
   // https://github.com/brodybits/create-react-native-module/issues/232
   watchFolders: ['.', '..']
-}`
+}
+`
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
