@@ -14,4 +14,4 @@ less opinionated than [`react-native-community/bob`](https://github.com/react-na
 
 **demo svg** made with help from [`nbedos/termtosvg`](https://github.com/nbedos/termtosvg) (reformatted by [`prettier/plugin-xml`](https://github.com/prettier/plugin-xml) and updated to speed up the animation):
 
-![Demo](./demo.svg)
+![Demo](./term-demo.svg)
