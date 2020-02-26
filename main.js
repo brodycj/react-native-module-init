@@ -385,8 +385,14 @@ Promise.resolve().then(async () => {
       console.log(OK, 'additional pod install ok')
     }
 
-    console.log(BULB, 'try out the example app')
-    console.log(INFO, `cd ${modulePackageName}/${exampleAppName}`)
+    // to show the subdirectory path of the example app:
+    const exampleAppSubdirectory = path.join(modulePackageName, exampleAppName)
+    // show the example app info:
+    console.log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
+    console.log(BULB, 'recommended: run Metro Bundler in a new shell')
+    console.log(INFO, `(cd ${exampleAppSubdirectory} && yarn start)`)
+    console.log(BULB, 'enter the following commands to run the example app:')
+    console.log(INFO, `cd ${exampleAppSubdirectory}`)
     platforms.forEach(platform => {
       console.log(INFO, `react-native run-${platform}`)
     })
