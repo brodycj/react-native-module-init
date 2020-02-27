@@ -6,6 +6,8 @@ const path = require('path')
 // https://github.com/terkelg/prompts/issues/252
 const ansiEscapes = require('ansi-escapes')
 
+const { log } = require('console')
+
 const bulb = require('emoji-bulb')
 
 const createReactNativeLibraryModule = require('create-react-native-module')
@@ -23,8 +25,6 @@ const { pascalCase } = require('pascal-case')
 const updateNotifier = require('update-notifier')
 
 const pkg = require('./package.json')
-
-const { log } = require('console')
 
 const BULB = bulb
 const INFO = logSymbols.info
