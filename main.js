@@ -24,7 +24,7 @@ const updateNotifier = require('update-notifier')
 
 const pkg = require('./package.json')
 
-const log = console.log
+const { log } = require('console')
 
 const BULB = bulb
 const INFO = logSymbols.info
