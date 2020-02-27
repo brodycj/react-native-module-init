@@ -6,6 +6,8 @@ const path = require('path')
 // https://github.com/terkelg/prompts/issues/252
 const ansiEscapes = require('ansi-escapes')
 
+const { log } = require('console')
+
 const bulb = require('emoji-bulb')
 
 const createReactNativeLibraryModule = require('create-react-native-module')
@@ -95,7 +97,7 @@ notifier.notify()
 // IIFE directly after expression with no semicolon
 Promise.resolve().then(async () => {
   // Show the tool info:
-  console.log(INFO, pkg.name, pkg.version)
+  log(INFO, pkg.name, pkg.version)
 
   const { nativeModuleNameInput } = await prompt({
     type: 'text',
@@ -212,15 +214,9 @@ Promise.resolve().then(async () => {
     initial: 'MIT'
   })
 
-  console.log(INFO, 'It is possible to generate an example test app,')
-  console.log(
-    INFO,
-    'with workarounds in metro.config.js for metro linking issues'
-  )
-  console.log(
-    INFO,
-    'Requirements: react-native-cli and Yarn; pod is needed for iOS'
-  )
+  log(INFO, 'It is possible to generate an example test app,')
+  log(INFO, 'with workarounds in metro.config.js for metro linking issues')
+  log(INFO, 'Requirements: react-native-cli and Yarn; pod is needed for iOS')
 
   const { generateExampleApp } = await prompt({
     type: 'confirm',
@@ -264,26 +260,26 @@ Promise.resolve().then(async () => {
     : false
 
   if (generateExampleApp) {
-    console.log(INFO, 'checking that react-native CLI can show its version')
+    log(INFO, 'checking that react-native CLI can show its version')
     try {
       await execa('react-native', ['--version'])
     } catch (e) {
-      console.log(ERROR, 'react-native CLI not installed correctly')
+      log(ERROR, 'react-native CLI not installed correctly')
       process.exit(1)
     }
-    console.log(OK, 'react-native CLI ok')
+    log(OK, 'react-native CLI ok')
 
-    console.log(INFO, 'checking that Yarn CLI can show its version')
+    log(INFO, 'checking that Yarn CLI can show its version')
     try {
       await execa('yarn', ['--version'])
     } catch (e) {
-      console.log(ERROR, 'Yarn CLI not installed correctly')
+      log(ERROR, 'Yarn CLI not installed correctly')
       process.exit(1)
     }
-    console.log(OK, 'Yarn CLI ok')
+    log(OK, 'Yarn CLI ok')
   }
 
-  console.log(INFO, 'generating the native library module as a package')
+  log(INFO, 'generating the native library module as a package')
 
   const createOptions = {
     name: nativeModuleName,
@@ -298,10 +294,10 @@ Promise.resolve().then(async () => {
 
   createReactNativeLibraryModule(createOptions)
 
-  console.log(OK, 'native library module generated ok')
+  log(OK, 'native library module generated ok')
 
   if (generateExampleApp) {
-    console.log(INFO, 'generating the example app')
+    log(INFO, 'generating the example app')
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
@@ -317,7 +313,7 @@ Promise.resolve().then(async () => {
       }
     )
 
-    console.log(INFO, 'generating App.js in the example app')
+    log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
       path.join(
@@ -330,7 +326,7 @@ Promise.resolve().then(async () => {
     )
 
     // rewrite metro.config.js with workaround solutions
-    console.log(
+    log(
       INFO,
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
@@ -344,9 +340,9 @@ Promise.resolve().then(async () => {
       EXAMPLE_METRO_CONFIG_WORKAROUND
     )
 
-    console.log(OK, 'example app generated ok')
+    log(OK, 'example app generated ok')
 
-    console.log(
+    log(
       INFO,
       'adding the native library module into the example app as a dependency link'
     )
@@ -357,7 +353,7 @@ Promise.resolve().then(async () => {
       stderr: showReactNativeOutput ? 'inherit' : null
     })
 
-    console.log(
+    log(
       OK,
       'added the native library module into the example app as a dependency link - ok'
     )
@@ -365,18 +361,18 @@ Promise.resolve().then(async () => {
     if (platforms.indexOf('ios') !== -1) {
       // NOTE that the React Native CLI would offer to install the pod tool,
       // if needed (on macOS)
-      console.log(INFO, 'checking that the pod tool can show its version')
+      log(INFO, 'checking that the pod tool can show its version')
 
       try {
         await execa('pod', ['--version'])
       } catch (e) {
-        console.log(ERROR, 'pod tool not installed correctly')
+        log(ERROR, 'pod tool not installed correctly')
         process.exit(1)
       }
 
-      console.log(OK, 'pod tool ok')
+      log(OK, 'pod tool ok')
 
-      console.log(
+      log(
         INFO,
         'starting additional pod install in ios subdirectory of example app'
       )
@@ -396,19 +392,19 @@ Promise.resolve().then(async () => {
         process.exit(1)
       }
 
-      console.log(OK, 'additional pod install ok')
+      log(OK, 'additional pod install ok')
     }
 
     // to show the subdirectory path of the example app:
     const exampleAppSubdirectory = path.join(modulePackageName, exampleAppName)
     // show the example app info:
-    console.log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
-    console.log(BULB, 'recommended: run Metro Bundler in a new shell')
-    console.log(INFO, `(cd ${exampleAppSubdirectory} && yarn start)`)
-    console.log(BULB, 'enter the following commands to run the example app:')
-    console.log(INFO, `cd ${exampleAppSubdirectory}`)
+    log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
+    log(BULB, 'recommended: run Metro Bundler in a new shell')
+    log(INFO, `(cd ${exampleAppSubdirectory} && yarn start)`)
+    log(BULB, 'enter the following commands to run the example app:')
+    log(INFO, `cd ${exampleAppSubdirectory}`)
     platforms.forEach(platform => {
-      console.log(INFO, `react-native run-${platform}`)
+      log(INFO, `react-native run-${platform}`)
     })
   }
 })

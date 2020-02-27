@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native module with no example 1`] = `
+exports[`generate native React Native module with no example, with log 1`] = `
 Array [
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "react-native-module-init",
+      "0.2.2-dev",
+    ],
+  },
   Object {
     "prompts": Object {
       "args": Array [
@@ -183,6 +190,24 @@ Array [
     },
   },
   Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "It is possible to generate an example test app,",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "with workarounds in metro.config.js for metro linking issues",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+    ],
+  },
+  Object {
     "prompts": Object {
       "args": Array [
         Object {
@@ -194,6 +219,12 @@ Array [
         },
       ],
     },
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "generating the native library module as a package",
+    ],
   },
   Object {
     "create": Object {
@@ -209,6 +240,12 @@ Array [
       "prefix": "NATIVE",
       "view": false,
     },
+  },
+  Object {
+    "log": Array [
+      "[32m✔[39m",
+      "native library module generated ok",
+    ],
   },
 ]
 `;

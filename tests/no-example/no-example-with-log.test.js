@@ -16,6 +16,12 @@ mockPromptResponses = {
   generateExampleApp: { generateExampleApp: false }
 }
 
+jest.mock('console', () => ({
+  log: (...args) => {
+    mockCallSnapshot.push({ log: args })
+  }
+}))
+
 jest.mock('prompts', () => args => {
   mockCallSnapshot.push({ prompts: { args } })
   const optionsArray = [].concat(args)
@@ -54,7 +60,7 @@ jest.mock('path', () => ({
   join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
 }))
 
-it('generate native React Native module with no example', async () => {
+it('generate native React Native module with no example, with log', async () => {
   require('../../main')
 
   await new Promise(resolve => setTimeout(resolve, 0.001))

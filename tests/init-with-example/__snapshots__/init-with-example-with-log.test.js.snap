@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native module with example 1`] = `
+exports[`generate native React Native module with example, with log 1`] = `
 Array [
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "react-native-module-init",
+      "0.2.2-dev",
+    ],
+  },
   Object {
     "prompts": Object {
       "args": Array [
@@ -183,6 +190,24 @@ Array [
     },
   },
   Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "It is possible to generate an example test app,",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "with workarounds in metro.config.js for metro linking issues",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+    ],
+  },
+  Object {
     "prompts": Object {
       "args": Array [
         Object {
@@ -235,6 +260,12 @@ Array [
     },
   },
   Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "checking that react-native CLI can show its version",
+    ],
+  },
+  Object {
     "execa": Array [
       "react-native",
       Array [
@@ -243,11 +274,35 @@ Array [
     ],
   },
   Object {
+    "log": Array [
+      "[32m✔[39m",
+      "react-native CLI ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "checking that Yarn CLI can show its version",
+    ],
+  },
+  Object {
     "execa": Array [
       "yarn",
       Array [
         "--version",
       ],
+    ],
+  },
+  Object {
+    "log": Array [
+      "[32m✔[39m",
+      "Yarn CLI ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "generating the native library module as a package",
     ],
   },
   Object {
@@ -266,6 +321,18 @@ Array [
     },
   },
   Object {
+    "log": Array [
+      "[32m✔[39m",
+      "native library module generated ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "generating the example app",
+    ],
+  },
+  Object {
     "execa": Array [
       "react-native",
       Array [
@@ -274,6 +341,12 @@ Array [
         "--version",
         "react-native@latest",
       ],
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "generating App.js in the example app",
     ],
   },
   Object {
@@ -340,6 +413,12 @@ const styles = StyleSheet.create({
     },
   },
   Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "rewrite metro.config.js with workaround solutions",
+    ],
+  },
+  Object {
     "outputFile": Object {
       "filePath": "$CWD/react-native-test-module/example/metro.config.js",
       "outputContents": "// metro.config.js
@@ -366,12 +445,36 @@ module.exports = {
     },
   },
   Object {
+    "log": Array [
+      "[32m✔[39m",
+      "example app generated ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "adding the native library module into the example app as a dependency link",
+    ],
+  },
+  Object {
     "execa": Array [
       "yarn",
       Array [
         "add",
         "link:../",
       ],
+    ],
+  },
+  Object {
+    "log": Array [
+      "[32m✔[39m",
+      "added the native library module into the example app as a dependency link - ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "checking that the pod tool can show its version",
     ],
   },
   Object {
@@ -383,11 +486,71 @@ module.exports = {
     ],
   },
   Object {
+    "log": Array [
+      "[32m✔[39m",
+      "pod tool ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "starting additional pod install in ios subdirectory of example app",
+    ],
+  },
+  Object {
     "execa": Array [
       "pod",
       Array [
         "install",
       ],
+    ],
+  },
+  Object {
+    "log": Array [
+      "[32m✔[39m",
+      "additional pod install ok",
+    ],
+  },
+  Object {
+    "log": Array [
+      "💡",
+      "check out the example app in $CWD/example",
+    ],
+  },
+  Object {
+    "log": Array [
+      "💡",
+      "recommended: run Metro Bundler in a new shell",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "(cd $CWD/example && yarn start)",
+    ],
+  },
+  Object {
+    "log": Array [
+      "💡",
+      "enter the following commands to run the example app:",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "cd $CWD/example",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "react-native run-android",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "react-native run-ios",
     ],
   },
 ]
