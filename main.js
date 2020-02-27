@@ -230,22 +230,26 @@ Promise.resolve().then(async () => {
   })
 
   const reactNativeVersion = generateExampleApp
-    ? (await prompt({
-        type: 'text',
-        name: 'reactNativeVersion',
-        message:
-          'What react-native version to use for the example app (should be at least react-native@0.60)?',
-        initial: 'react-native@latest'
-      })).reactNativeVersion
+    ? (
+        await prompt({
+          type: 'text',
+          name: 'reactNativeVersion',
+          message:
+            'What react-native version to use for the example app (should be at least react-native@0.60)?',
+          initial: 'react-native@latest'
+        })
+      ).reactNativeVersion
     : null
 
   const showReactNativeOutput = generateExampleApp
-    ? (await prompt({
-        type: 'confirm',
-        name: 'showReactNativeOutput',
-        message: 'Show the output of React Native CLI (recommended)?',
-        initial: true
-      })).showReactNativeOutput
+    ? (
+        await prompt({
+          type: 'confirm',
+          name: 'showReactNativeOutput',
+          message: 'Show the output of React Native CLI (recommended)?',
+          initial: true
+        })
+      ).showReactNativeOutput
     : false
 
   if (generateExampleApp) {
