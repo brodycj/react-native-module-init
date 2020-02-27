@@ -4,7 +4,7 @@
   "description": "Interactive CLI utility to create native React Native modules and views",
   "main": "main.js",
   "bin": {
-    "react-native-module-init": "cli.js"
+    "react-native-module-init": "bin.js"
   },
   "author": "Christopher J. Brody",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "LICENSE.md",
     "README.md",
     "term-demo.svg",
-    "cli.js",
+    "bin.js",
     "main.js"
   ],
   "scripts": {
