@@ -21,7 +21,7 @@ mockPromptResponses = {
 
 jest.mock('console', () => ({
   log: (...args) => {
-    mockCallSnapshot.push({ log: { args: args } })
+    mockCallSnapshot.push({ log: args })
   }
 }))
 
