@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native module with example 1`] = `
+exports[`generate native React Native module with example, with log 1`] = `
 Array [
   Object {
     "log": Array [

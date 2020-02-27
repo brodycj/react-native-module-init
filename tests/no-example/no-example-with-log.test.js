@@ -60,7 +60,7 @@ jest.mock('path', () => ({
   join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
 }))
 
-it('generate native React Native module with no example', async () => {
+it('generate native React Native module with no example, with log', async () => {
   require('../../main')
 
   await new Promise(resolve => setTimeout(resolve, 0.001))
