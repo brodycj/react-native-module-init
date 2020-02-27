@@ -13,7 +13,7 @@ mockPromptResponses = {
   authorName: { authorName: 'Ada' },
   authorEmail: { authorEmail: 'ada@lovelace.name' },
   license: { license: 'BSD-4-CLAUSE' },
-  generateExampleApp: { generateExampleApp: false },
+  generateExampleApp: { generateExampleApp: false }
 }
 
 jest.mock('console', () => ({
