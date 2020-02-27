@@ -229,6 +229,17 @@ Promise.resolve().then(async () => {
     initial: true
   })
 
+  const exampleAppName = generateExampleApp
+    ? (
+        await prompt({
+          type: 'text',
+          name: 'exampleAppName',
+          message: 'Example app name?',
+          initial: 'example'
+        })
+      ).exampleAppName
+    : null
+
   const reactNativeVersion = generateExampleApp
     ? (
         await prompt({
@@ -293,8 +304,6 @@ Promise.resolve().then(async () => {
     console.log(INFO, 'generating the example app')
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
-
-    const exampleAppName = 'example'
 
     const generateExampleAppOptions = ['--version', reactNativeVersion]
 
