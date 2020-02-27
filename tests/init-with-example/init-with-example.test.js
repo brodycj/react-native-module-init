@@ -15,6 +15,7 @@ mockPromptResponses = {
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
   reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
+  exampleAppName: { exampleAppName: 'example' },
   showReactNativeOutput: { showReactNativeOutput: true }
 }
 

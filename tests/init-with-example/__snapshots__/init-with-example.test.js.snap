@@ -199,6 +199,19 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
+          "initial": "example",
+          "message": "Example app name?",
+          "name": "exampleAppName",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
           "initial": "react-native@latest",
           "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
           "name": "reactNativeVersion",
