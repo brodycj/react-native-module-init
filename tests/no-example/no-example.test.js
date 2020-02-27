@@ -16,6 +16,12 @@ mockPromptResponses = {
   generateExampleApp: { generateExampleApp: false }
 }
 
+jest.mock('console', () => ({
+  log: (...args) => {
+    mockCallSnapshot.push({ log: { args: args } })
+  }
+}))
+
 jest.mock('prompts', () => args => {
   mockCallSnapshot.push({ prompts: { args } })
   const optionsArray = [].concat(args)

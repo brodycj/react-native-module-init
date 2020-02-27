@@ -3,6 +3,15 @@
 exports[`generate native React Native module with no example 1`] = `
 Array [
   Object {
+    "log": Object {
+      "args": Array [
+        "[34mℹ[39m",
+        "react-native-module-init",
+        "0.2.2-dev",
+      ],
+    },
+  },
+  Object {
     "prompts": Object {
       "args": Array [
         Object {
@@ -183,6 +192,30 @@ Array [
     },
   },
   Object {
+    "log": Object {
+      "args": Array [
+        "[34mℹ[39m",
+        "It is possible to generate an example test app,",
+      ],
+    },
+  },
+  Object {
+    "log": Object {
+      "args": Array [
+        "[34mℹ[39m",
+        "with workarounds in metro.config.js for metro linking issues",
+      ],
+    },
+  },
+  Object {
+    "log": Object {
+      "args": Array [
+        "[34mℹ[39m",
+        "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+      ],
+    },
+  },
+  Object {
     "prompts": Object {
       "args": Array [
         Object {
@@ -192,6 +225,14 @@ Array [
           "onState": [Function],
           "type": "confirm",
         },
+      ],
+    },
+  },
+  Object {
+    "log": Object {
+      "args": Array [
+        "[34mℹ[39m",
+        "generating the native library module as a package",
       ],
     },
   },
@@ -208,6 +249,14 @@ Array [
       ],
       "prefix": "NATIVE",
       "view": false,
+    },
+  },
+  Object {
+    "log": Object {
+      "args": Array [
+        "[32m✔[39m",
+        "native library module generated ok",
+      ],
     },
   },
 ]
