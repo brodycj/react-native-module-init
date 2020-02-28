@@ -67,9 +67,8 @@ module.exports = {
 // path helpers abstracted out:
 const resolveSubpath = (...paths) => path.resolve('.', ...paths)
 const joinPath = path.join
-// abstract out reamining use of `process.cwd()` & `path.join()`
-const composeSubdirectoryPath = (...args) => path.join(...args)
-const COMPOSE_SUBDIRECTORY_PATH_BASE = process.cwd()
+const composeSubdirectoryPath = path.resolve
+const COMPOSE_SUBDIRECTORY_PATH_BASE = '.'
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
