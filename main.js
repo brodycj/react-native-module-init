@@ -64,11 +64,9 @@ module.exports = {
 }
 `
 
-// path helpers abstracted out:
+// path helpers:
 const resolveSubpath = (...paths) => path.resolve('.', ...paths)
 const joinPath = path.join
-const composeSubdirectoryPath = path.resolve
-const COMPOSE_SUBDIRECTORY_PATH_BASE = '.'
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
@@ -313,10 +311,7 @@ Promise.resolve().then(async () => {
       'react-native',
       ['init', exampleAppName].concat(generateExampleAppOptions),
       {
-        cwd: composeSubdirectoryPath(
-          COMPOSE_SUBDIRECTORY_PATH_BASE,
-          modulePackageName
-        ),
+        cwd: resolveSubpath(modulePackageName),
         stdout: showReactNativeOutput ? 'inherit' : null,
         stderr: showReactNativeOutput ? 'inherit' : null
       }
@@ -325,8 +320,7 @@ Promise.resolve().then(async () => {
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      composeSubdirectoryPath(
-        COMPOSE_SUBDIRECTORY_PATH_BASE,
+      resolveSubpath(
         modulePackageName,
         exampleAppName,
         EXAMPLE_APP_JS_FILENAME
@@ -340,8 +334,7 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      composeSubdirectoryPath(
-        COMPOSE_SUBDIRECTORY_PATH_BASE,
+      resolveSubpath(
         modulePackageName,
         exampleAppName,
         EXAMPLE_METRO_CONFIG_FILENAME
@@ -357,11 +350,7 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: composeSubdirectoryPath(
-        COMPOSE_SUBDIRECTORY_PATH_BASE,
-        modulePackageName,
-        exampleAppName
-      ),
+      cwd: resolveSubpath(modulePackageName, exampleAppName),
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
     })
@@ -392,12 +381,7 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: composeSubdirectoryPath(
-            COMPOSE_SUBDIRECTORY_PATH_BASE,
-            modulePackageName,
-            exampleAppName,
-            'ios'
-          ),
+          cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
         })
