@@ -534,7 +534,7 @@ module.exports = {
   Object {
     "log": Array [
       "💡",
-      "check out the example app in $CWD/example",
+      "check out the example app in react-native-test-module/example",
     ],
   },
   Object {
@@ -552,7 +552,7 @@ module.exports = {
   Object {
     "log": Array [
       "[34mℹ[39m",
-      "(cd $CWD/example && yarn start)",
+      "(cd react-native-test-module/example && yarn start)",
     ],
   },
   Object {
@@ -564,7 +564,7 @@ module.exports = {
   Object {
     "log": Array [
       "[34mℹ[39m",
-      "cd $CWD/example",
+      "cd react-native-test-module/example",
     ],
   },
   Object {

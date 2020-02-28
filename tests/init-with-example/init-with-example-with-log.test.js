@@ -61,10 +61,8 @@ jest.mock('path', () => ({
   // with none of the arguments ignored
   resolve: (...paths) =>
     `/home/ada.lovelace/path_resolved_from_${paths.join('/')}`,
-  // quick solution to ignore first argument which is host-dependent
-  // value of process.cwd()
-  // better solution would be to use path.resolve() instead
-  join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
+  // support functionality of *real* path join operation
+  join: (...paths) => [].concat(paths).join('/')
 }))
 
 it('generate native React Native module with example, with log', async () => {
