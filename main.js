@@ -54,7 +54,7 @@ module.exports = {
   resolver: {
     extraNodeModules: new Proxy(
       {},
-      { get: (_, name) => path.join('.', 'node_modules', name) }
+      { get: (_, name) => path.resolve('.', 'node_modules', name) }
     )
   },
 
