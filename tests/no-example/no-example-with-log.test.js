@@ -47,12 +47,6 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-jest.mock('fs-extra', () => ({
-  outputFile: (filePath, outputContents) => {
-    mockCallSnapshot.push({ outputFile: { filePath, outputContents } })
-  }
-}))
-
 jest.mock('path', () => ({
   // quick solution to ignore first argument which is host-dependent
   // value of process.cwd()
