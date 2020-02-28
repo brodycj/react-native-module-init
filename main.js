@@ -29,6 +29,7 @@ const pkg = require('./package.json')
 const BULB = bulb
 const INFO = logSymbols.info
 const OK = logSymbols.success
+const WARN = logSymbols.warning
 const ERROR = logSymbols.error
 
 // used in quick workaround for
@@ -406,5 +407,12 @@ Promise.resolve().then(async () => {
     platforms.forEach(platform => {
       log(INFO, `react-native run-${platform}`)
     })
+    // show first steps in case of a clean checkout:
+    const iosSubdirectory = joinPath(exampleAppSubdirectory, 'ios')
+    log(WARN, 'first steps in case of a clean checkout')
+    log(INFO, `run Yarn in ${exampleAppSubdirectory}`)
+    log(INFO, `(cd ${exampleAppSubdirectory} && yarn)`)
+    log(INFO, `do \`pod install\` for iOS in ${iosSubdirectory}`)
+    log(INFO, `(cd ${iosSubdirectory} && pod install)`)
   }
 })
