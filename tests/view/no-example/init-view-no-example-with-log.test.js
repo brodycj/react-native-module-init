@@ -29,8 +29,8 @@ jest.mock('prompts', () => args => {
   return Promise.resolve(mockPromptResponses[optionsArray[0].name])
 })
 
-jest.mock('execa', () => (cmd, args) => {
-  mockCallSnapshot.push({ execa: [cmd, args] })
+jest.mock('execa', () => (cmd, args, opts) => {
+  mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
     if (args[1] == 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
@@ -46,13 +46,6 @@ jest.mock('execa', () => (cmd, args) => {
 jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
-
-jest.mock('path', () => ({
-  // quick solution to ignore first argument which is host-dependent
-  // value of process.cwd()
-  // better solution would be to use path.resolve() instead
-  join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
-}))
 
 it('generate native React Native view with no example, with log', async () => {
   require('../../../main')

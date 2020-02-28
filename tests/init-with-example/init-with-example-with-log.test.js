@@ -32,8 +32,8 @@ jest.mock('prompts', () => args => {
   return Promise.resolve(mockPromptResponses[optionsArray[0].name])
 })
 
-jest.mock('execa', () => (cmd, args) => {
-  mockCallSnapshot.push({ execa: [cmd, args] })
+jest.mock('execa', () => (cmd, args, opts) => {
+  mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
     if (args[1] == 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
@@ -57,10 +57,12 @@ jest.mock('fs-extra', () => ({
 }))
 
 jest.mock('path', () => ({
-  // quick solution to ignore first argument which is host-dependent
-  // value of process.cwd()
-  // better solution would be to use path.resolve() instead
-  join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
+  // quick solution to use & log system-independent paths in the snapshots,
+  // with none of the arguments ignored
+  resolve: (...paths) =>
+    `/home/ada.lovelace/path_resolved_from_${paths.join('/')}`,
+  // support functionality of *real* path join operation
+  join: (...paths) => [].concat(paths).join('/')
 }))
 
 it('generate native React Native module with example, with log', async () => {

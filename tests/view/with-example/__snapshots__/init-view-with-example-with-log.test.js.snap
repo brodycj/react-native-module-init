@@ -152,6 +152,7 @@ Array [
         "config",
         "user.name",
       ],
+      undefined,
     ],
   },
   Object {
@@ -161,6 +162,7 @@ Array [
         "config",
         "user.email",
       ],
+      undefined,
     ],
   },
   Object {
@@ -284,6 +286,7 @@ Array [
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -304,6 +307,7 @@ Array [
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -354,6 +358,11 @@ Array [
         "--version",
         "react-native@latest",
       ],
+      Object {
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
@@ -364,7 +373,7 @@ Array [
   },
   Object {
     "outputFile": Object {
-      "filePath": "$CWD/react-native-test-view/example/App.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
       "outputContents": "/**
  * Sample React Native App
  *
@@ -421,7 +430,7 @@ const styles = StyleSheet.create({
   },
   Object {
     "outputFile": Object {
-      "filePath": "$CWD/react-native-test-view/example/metro.config.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
       "outputContents": "// metro.config.js
 // with workaround solutions
 
@@ -434,7 +443,7 @@ module.exports = {
   resolver: {
     extraNodeModules: new Proxy(
       {},
-      { get: (_, name) => path.join('.', 'node_modules', name) }
+      { get: (_, name) => path.resolve('.', 'node_modules', name) }
     )
   },
 
@@ -464,6 +473,11 @@ module.exports = {
         "add",
         "link:../",
       ],
+      Object {
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
@@ -484,6 +498,7 @@ module.exports = {
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -504,6 +519,11 @@ module.exports = {
       Array [
         "install",
       ],
+      Object {
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
@@ -515,7 +535,13 @@ module.exports = {
   Object {
     "log": Array [
       "💡",
-      "check out the example app in $CWD/example",
+      "check out the example app in react-native-test-view/example",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "(/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
     ],
   },
   Object {
@@ -527,7 +553,7 @@ module.exports = {
   Object {
     "log": Array [
       "[34mℹ[39m",
-      "(cd $CWD/example && yarn start)",
+      "(cd react-native-test-view/example && yarn start)",
     ],
   },
   Object {
@@ -539,7 +565,7 @@ module.exports = {
   Object {
     "log": Array [
       "[34mℹ[39m",
-      "cd $CWD/example",
+      "cd react-native-test-view/example",
     ],
   },
   Object {
