@@ -64,8 +64,9 @@ module.exports = {
 }
 `
 
-// path helper abstracted out:
+// path helpers abstracted out:
 const resolveSubpath = (...paths) => path.resolve('.', ...paths)
+const joinPath = path.join
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
@@ -400,7 +401,7 @@ Promise.resolve().then(async () => {
 
     // to show the subdirectory path of the example app
     // (both relative & absolute):
-    const exampleAppSubdirectory = path.join(modulePackageName, exampleAppName)
+    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
     const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
     // show the example app info:
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
