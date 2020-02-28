@@ -67,6 +67,9 @@ module.exports = {
 // path helpers abstracted out:
 const resolveSubpath = (...paths) => path.resolve('.', ...paths)
 const joinPath = path.join
+// abstract out reamining use of `process.cwd()` & `path.join()`
+const composeSubdirectoryPath = (...args) => path.join(...args)
+const COMPOSE_SUBDIRECTORY_PATH_BASE = process.cwd()
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
@@ -311,7 +314,10 @@ Promise.resolve().then(async () => {
       'react-native',
       ['init', exampleAppName].concat(generateExampleAppOptions),
       {
-        cwd: path.join(process.cwd(), modulePackageName),
+        cwd: composeSubdirectoryPath(
+          COMPOSE_SUBDIRECTORY_PATH_BASE,
+          modulePackageName
+        ),
         stdout: showReactNativeOutput ? 'inherit' : null,
         stderr: showReactNativeOutput ? 'inherit' : null
       }
@@ -320,8 +326,8 @@ Promise.resolve().then(async () => {
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      path.join(
-        process.cwd(),
+      composeSubdirectoryPath(
+        COMPOSE_SUBDIRECTORY_PATH_BASE,
         modulePackageName,
         exampleAppName,
         EXAMPLE_APP_JS_FILENAME
@@ -335,8 +341,8 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      path.join(
-        process.cwd(),
+      composeSubdirectoryPath(
+        COMPOSE_SUBDIRECTORY_PATH_BASE,
         modulePackageName,
         exampleAppName,
         EXAMPLE_METRO_CONFIG_FILENAME
@@ -352,7 +358,11 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: path.join(process.cwd(), modulePackageName, exampleAppName),
+      cwd: composeSubdirectoryPath(
+        COMPOSE_SUBDIRECTORY_PATH_BASE,
+        modulePackageName,
+        exampleAppName
+      ),
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
     })
@@ -383,8 +393,8 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: path.join(
-            process.cwd(),
+          cwd: composeSubdirectoryPath(
+            COMPOSE_SUBDIRECTORY_PATH_BASE,
             modulePackageName,
             exampleAppName,
             'ios'
