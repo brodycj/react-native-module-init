@@ -539,6 +539,12 @@ module.exports = {
   },
   Object {
     "log": Array [
+      "[34mℹ[39m",
+      "(/home/ada.lovelace/path_resolved_from_./react-native-test-module/example)",
+    ],
+  },
+  Object {
+    "log": Array [
       "💡",
       "recommended: run Metro Bundler in a new shell",
     ],
