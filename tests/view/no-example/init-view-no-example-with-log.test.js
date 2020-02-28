@@ -47,13 +47,6 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-jest.mock('path', () => ({
-  // quick solution to ignore first argument which is host-dependent
-  // value of process.cwd()
-  // better solution would be to use path.resolve() instead
-  join: (...parts) => ['$CWD'].concat(parts.slice(1)).join('/')
-}))
-
 it('generate native React Native view with no example, with log', async () => {
   require('../../../main')
 
