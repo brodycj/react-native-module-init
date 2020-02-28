@@ -579,5 +579,35 @@ module.exports = {
       "react-native run-ios",
     ],
   },
+  Object {
+    "log": Array [
+      "[33m⚠[39m",
+      "first steps in case of a clean checkout",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "run Yarn in react-native-test-module/example",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "(cd react-native-test-module/example && yarn)",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "do \`pod install\` for iOS in react-native-test-module/example/ios",
+    ],
+  },
+  Object {
+    "log": Array [
+      "[34mℹ[39m",
+      "(cd react-native-test-module/example/ios && pod install)",
+    ],
+  },
 ]
 `;
