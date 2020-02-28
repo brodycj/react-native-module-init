@@ -152,6 +152,7 @@ Array [
         "config",
         "user.name",
       ],
+      undefined,
     ],
   },
   Object {
@@ -161,6 +162,7 @@ Array [
         "config",
         "user.email",
       ],
+      undefined,
     ],
   },
   Object {

@@ -139,6 +139,7 @@ Array [
         "config",
         "user.name",
       ],
+      undefined,
     ],
   },
   Object {
@@ -148,6 +149,7 @@ Array [
         "config",
         "user.email",
       ],
+      undefined,
     ],
   },
   Object {
@@ -271,6 +273,7 @@ Array [
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -291,6 +294,7 @@ Array [
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -341,6 +345,11 @@ Array [
         "--version",
         "react-native@latest",
       ],
+      Object {
+        "cwd": "$CWD/react-native-test-module",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
@@ -463,6 +472,11 @@ module.exports = {
         "add",
         "link:../",
       ],
+      Object {
+        "cwd": "$CWD/react-native-test-module/example",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
@@ -483,6 +497,7 @@ module.exports = {
       Array [
         "--version",
       ],
+      undefined,
     ],
   },
   Object {
@@ -503,6 +518,11 @@ module.exports = {
       Array [
         "install",
       ],
+      Object {
+        "cwd": "$CWD/react-native-test-module/example/ios",
+        "stderr": "inherit",
+        "stdout": "inherit",
+      },
     ],
   },
   Object {
