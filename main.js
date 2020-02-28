@@ -64,6 +64,10 @@ module.exports = {
 }
 `
 
+// path helpers:
+const resolveSubpath = (...paths) => path.resolve('.', ...paths)
+const joinPath = path.join
+
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
 const onState = ({ aborted }) => {
@@ -307,7 +311,7 @@ Promise.resolve().then(async () => {
       'react-native',
       ['init', exampleAppName].concat(generateExampleAppOptions),
       {
-        cwd: path.join(process.cwd(), modulePackageName),
+        cwd: resolveSubpath(modulePackageName),
         stdout: showReactNativeOutput ? 'inherit' : null,
         stderr: showReactNativeOutput ? 'inherit' : null
       }
@@ -316,8 +320,7 @@ Promise.resolve().then(async () => {
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      path.join(
-        process.cwd(),
+      resolveSubpath(
         modulePackageName,
         exampleAppName,
         EXAMPLE_APP_JS_FILENAME
@@ -331,8 +334,7 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      path.join(
-        process.cwd(),
+      resolveSubpath(
         modulePackageName,
         exampleAppName,
         EXAMPLE_METRO_CONFIG_FILENAME
@@ -348,7 +350,7 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: path.join(process.cwd(), modulePackageName, exampleAppName),
+      cwd: resolveSubpath(modulePackageName, exampleAppName),
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
     })
@@ -379,12 +381,7 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: path.join(
-            process.cwd(),
-            modulePackageName,
-            exampleAppName,
-            'ios'
-          ),
+          cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
         })
@@ -395,10 +392,13 @@ Promise.resolve().then(async () => {
       log(OK, 'additional pod install ok')
     }
 
-    // to show the subdirectory path of the example app:
-    const exampleAppSubdirectory = path.join(modulePackageName, exampleAppName)
+    // to show the subdirectory path of the example app
+    // (both relative & absolute):
+    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
+    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
     // show the example app info:
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
+    log(INFO, `(${exampleAppPath})`)
     log(BULB, 'recommended: run Metro Bundler in a new shell')
     log(INFO, `(cd ${exampleAppSubdirectory} && yarn start)`)
     log(BULB, 'enter the following commands to run the example app:')
