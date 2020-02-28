@@ -47,12 +47,6 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-jest.mock('fs-extra', () => ({
-  outputFile: (filePath, outputContents) => {
-    mockCallSnapshot.push({ outputFile: { filePath, outputContents } })
-  }
-}))
-
 it('generate native React Native module with no example, with log', async () => {
   require('../../main')
 
