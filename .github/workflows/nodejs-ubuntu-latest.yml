@@ -1,10 +1,11 @@
-name: Node.js CI - ubuntu-latest
+name: Node.js CI - macos-latest
 
-on: [push]
+on:
+  - push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     strategy:
       matrix:

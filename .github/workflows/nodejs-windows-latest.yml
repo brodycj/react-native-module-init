@@ -1,6 +1,7 @@
 name: Node.js CI - windows-latest
 
-on: [push]
+on:
+  - push
 
 jobs:
   build:
