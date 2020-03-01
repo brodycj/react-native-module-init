@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native view with example, with log 1`] = `
+exports[`generate native React Native module for tvOS with example 1`] = `
 Array [
-  Object {
-    "log": Array [
-      "ℹ",
-      "react-native-module-init",
-      "0.2.2-dev",
-    ],
-  },
   Object {
     "prompts": Object {
       "args": Array [
@@ -41,20 +34,7 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": true,
-          "message": "View name is is TestView. Continue?",
-          "name": "confirmation",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
-  },
-  Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "react-native-test-view",
+          "initial": "react-native-test-module-for-tv-os",
           "message": "What is the full module package name?",
           "name": "modulePackageName",
           "onState": [Function],
@@ -95,7 +75,7 @@ Array [
       "args": Array [
         Object {
           "initial": true,
-          "message": "Native class name is NATIVETestView. Continue?",
+          "message": "Native class name is NATIVETestModuleForTvOs. Continue?",
           "name": "confirmation",
           "onState": [Function],
           "type": "confirm",
@@ -220,24 +200,6 @@ Array [
     },
   },
   Object {
-    "log": Array [
-      "ℹ",
-      "It is possible to generate an example test app,",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "with workarounds in metro.config.js for metro linking issues",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
-    ],
-  },
-  Object {
     "prompts": Object {
       "args": Array [
         Object {
@@ -267,8 +229,8 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": "react-native@latest",
-          "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
+          "initial": "react-native@npm:react-native-tvos",
+          "message": "What react-native version to use for the example app (should be at least react-native@npm:react-native-tvos@0.60)?",
           "name": "reactNativeVersion",
           "onState": [Function],
           "type": "text",
@@ -290,30 +252,12 @@ Array [
     },
   },
   Object {
-    "log": Array [
-      "ℹ",
-      "checking that react-native CLI can show its version",
-    ],
-  },
-  Object {
     "execa": Array [
       "react-native",
       Array [
         "--version",
       ],
       undefined,
-    ],
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "react-native CLI ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "checking that Yarn CLI can show its version",
     ],
   },
   Object {
@@ -326,44 +270,20 @@ Array [
     ],
   },
   Object {
-    "log": Array [
-      "✔",
-      "Yarn CLI ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "generating the native library module as a package",
-    ],
-  },
-  Object {
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
-      "moduleName": "react-native-test-view",
-      "name": "TestView",
+      "moduleName": "react-native-tvos-test-module",
+      "name": "test module for tvOS",
       "packageIdentifier": "com.test",
       "platforms": Array [
         "android",
         "ios",
       ],
       "prefix": "NATIVE",
-      "tvosEnabled": false,
-      "view": true,
+      "tvosEnabled": true,
+      "view": false,
     },
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "native library module generated ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "generating the example app",
-    ],
   },
   Object {
     "execa": Array [
@@ -372,24 +292,18 @@ Array [
         "init",
         "example",
         "--version",
-        "react-native@latest",
+        "react-native-tvos@latest",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view",
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module",
         "stderr": "inherit",
         "stdout": "inherit",
       },
     ],
   },
   Object {
-    "log": Array [
-      "ℹ",
-      "generating App.js in the example app",
-    ],
-  },
-  Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/App.js",
       "outputContents": "/**
  * Sample React Native App
  *
@@ -402,16 +316,28 @@ Array [
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import TestView from 'react-native-test-view';
+import test module for tvOS from 'react-native-tvos-test-module';
 
 export default class App extends Component<{}> {
+  state = {
+    status: 'starting',
+    message: '--'
+  };
+  componentDidMount() {
+    test module for tvOS.sampleMethod('Testing', 123, (message) => {
+      this.setState({
+        status: 'native callback received',
+        message
+      });
+    });
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆TestView example☆</Text>
-        <Text style={styles.instructions}>STATUS: loaded</Text>
-        <Text style={styles.welcome}>☆☆☆</Text>
-        <TestView />
+        <Text style={styles.welcome}>☆test module for tvOS example☆</Text>
+        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
+        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
+        <Text style={styles.instructions}>{this.state.message}</Text>
       </View>
     );
   }
@@ -439,14 +365,8 @@ const styles = StyleSheet.create({
     },
   },
   Object {
-    "log": Array [
-      "ℹ",
-      "rewrite metro.config.js with workaround solutions",
-    ],
-  },
-  Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/metro.config.js",
       "outputContents": "// metro.config.js
 // with workaround solutions
 
@@ -471,18 +391,6 @@ module.exports = {
     },
   },
   Object {
-    "log": Array [
-      "✔",
-      "example app generated ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "adding the native library module into the example app as a dependency link",
-    ],
-  },
-  Object {
     "execa": Array [
       "yarn",
       Array [
@@ -490,22 +398,10 @@ module.exports = {
         "link:../",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example",
         "stderr": "inherit",
         "stdout": "inherit",
       },
-    ],
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "added the native library module into the example app as a dependency link - ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "checking that the pod tool can show its version",
     ],
   },
   Object {
@@ -518,112 +414,16 @@ module.exports = {
     ],
   },
   Object {
-    "log": Array [
-      "✔",
-      "pod tool ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "starting additional pod install in ios subdirectory of example app",
-    ],
-  },
-  Object {
     "execa": Array [
       "pod",
       Array [
         "install",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
+        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/ios",
         "stderr": "inherit",
         "stdout": "inherit",
       },
-    ],
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "additional pod install ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "💡",
-      "check out the example app in react-native-test-view/example",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "(/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
-    ],
-  },
-  Object {
-    "log": Array [
-      "💡",
-      "recommended: run Metro Bundler in a new shell",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "(cd react-native-test-view/example && yarn start)",
-    ],
-  },
-  Object {
-    "log": Array [
-      "💡",
-      "enter the following commands to run the example app:",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "cd react-native-test-view/example",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "react-native run-android",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "react-native run-ios",
-    ],
-  },
-  Object {
-    "log": Array [
-      "⚠",
-      "first steps in case of a clean checkout",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "run Yarn in react-native-test-view/example",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "(cd react-native-test-view/example && yarn)",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "do \`pod install\` for iOS in react-native-test-view/example/ios",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "(cd react-native-test-view/example/ios && pod install)",
     ],
   },
 ]

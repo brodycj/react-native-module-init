@@ -192,6 +192,16 @@ Promise.resolve().then(async () => {
         })
       : { androidPackageId: null }
 
+  const { tvosEnabled } =
+    platforms.indexOf('ios') !== -1
+      ? await prompt({
+          type: 'confirm',
+          name: 'tvosEnabled',
+          message: 'Support Apple tvOS (requires react-native-tvos fork)?',
+          initial: false
+        })
+      : { tvosEnabled: null }
+
   // THANKS to @react-native-community/bob for the idea
   // to get user name & email from git
   const gitUserName = (await execa('git', ['config', 'user.name'])).stdout
@@ -245,9 +255,14 @@ Promise.resolve().then(async () => {
         await prompt({
           type: 'text',
           name: 'reactNativeVersion',
-          message:
-            'What react-native version to use for the example app (should be at least react-native@0.60)?',
-          initial: 'react-native@latest'
+          message: `What react-native version to use for the example app (should be at least ${
+            tvosEnabled
+              ? 'react-native@npm:react-native-tvos@0.60'
+              : 'react-native@0.60'
+          })?`,
+          initial: tvosEnabled
+            ? 'react-native@npm:react-native-tvos'
+            : 'react-native@latest'
         })
       ).reactNativeVersion
     : null
@@ -291,6 +306,7 @@ Promise.resolve().then(async () => {
     moduleName: modulePackageName,
     packageIdentifier: androidPackageId,
     platforms,
+    tvosEnabled,
     authorName,
     authorEmail,
     view: isView
