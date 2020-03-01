@@ -16,6 +16,7 @@ mockPromptResponses = {
   githubUserAccountName: { githubUserAccountName: 'ada-lovelace' },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
+  useAppleNetworking: { useAppleNetworking: false },
   reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
   exampleAppName: { exampleAppName: 'example' },
   showReactNativeOutput: { showReactNativeOutput: true }

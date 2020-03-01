@@ -1,29 +1,26 @@
 const mockCallSnapshot = []
 
 mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test view for tvOS' },
-  isView: { isView: true },
+  nativeModuleNameInput: { nativeModuleNameInput: 'test Module' },
+  isView: { isView: false },
   confirmation: { confirmation: true },
-  modulePackageName: { modulePackageName: 'react-native-tvos-test-view' },
+  modulePackageName: { modulePackageName: 'react-native-test-module' },
   nativeObjectClassNamePrefixInput: {
     nativeObjectClassNamePrefixInput: 'native'
   },
   platforms: { platforms: ['android', 'ios'] },
   androidPackageId: { androidPackageId: 'com.test' },
-  tvosEnabled: { tvosEnabled: true },
+  tvosEnabled: { tvosEnabled: false },
   authorName: { authorName: 'Ada' },
   authorEmail: { authorEmail: 'ada@lovelace.name' },
+  useAppleNetworking: { useAppleNetworking: true },
   githubUserAccountName: { githubUserAccountName: 'ada-lovelace' },
-  useAppleNetworking: { useAppleNetworking: false },
   license: { license: 'BSD-4-CLAUSE' },
-  generateExampleApp: { generateExampleApp: true },
-  reactNativeVersion: { reactNativeVersion: 'react-native-tvos@latest' },
-  exampleAppName: { exampleAppName: 'example' },
-  showReactNativeOutput: { showReactNativeOutput: true }
+  generateExampleApp: { generateExampleApp: false }
 }
 
 jest.mock('console', () => ({
-  log: (..._) => {
+  log: (...args) => {
     /* do nothing */
   }
 }))
@@ -54,23 +51,8 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-jest.mock('fs-extra', () => ({
-  outputFile: (filePath, outputContents) => {
-    mockCallSnapshot.push({ outputFile: { filePath, outputContents } })
-  }
-}))
-
-jest.mock('path', () => ({
-  // quick solution to use & log system-independent paths in the snapshots,
-  // with none of the arguments ignored
-  resolve: (...paths) =>
-    `/home/ada.lovelace/path_resolved_from_${paths.join('/')}`,
-  // support functionality of *real* path join operation
-  join: (...paths) => [].concat(paths).join('/')
-}))
-
-it('generate native React Native view for tvOS, with example', async () => {
-  require('../../../main')
+it('generate native React Native module with no example, with log', async () => {
+  require('../../main')
 
   await new Promise(resolve => setTimeout(resolve, 0.001))
 

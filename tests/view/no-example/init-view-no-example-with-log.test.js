@@ -14,6 +14,7 @@ mockPromptResponses = {
   authorName: { authorName: 'Ada' },
   authorEmail: { authorEmail: 'ada@lovelace.name' },
   githubUserAccountName: { githubUserAccountName: 'ada-lovelace' },
+  useAppleNetworking: { useAppleNetworking: false },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: false }
 }
