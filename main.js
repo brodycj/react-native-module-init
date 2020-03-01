@@ -235,6 +235,16 @@ Promise.resolve().then(async () => {
     initial: 'MIT'
   })
 
+  const { useAppleNetworking } =
+    platforms.indexOf('ios') !== -1 && !isView
+      ? await prompt({
+          type: 'confirm',
+          name: 'useAppleNetworking',
+          message: 'Generate with sample use of Apple Networking?',
+          initial: false
+        })
+      : { useAppleNetworking: false }
+
   log(INFO, 'It is possible to generate an example test app,')
   log(INFO, 'with workarounds in metro.config.js for metro linking issues')
   log(INFO, 'Requirements: react-native-cli and Yarn; pod is needed for iOS')
@@ -317,7 +327,8 @@ Promise.resolve().then(async () => {
     authorName,
     authorEmail,
     githubAccount: githubUserAccountName,
-    view: isView
+    view: isView,
+    useAppleNetworking
   }
 
   createReactNativeLibraryModule(createOptions)
