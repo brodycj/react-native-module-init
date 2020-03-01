@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate native React Native module with no example, with log 1`] = `
+Array [
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "message": "What is the desired native module name?",
+          "name": "nativeModuleNameInput",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "active": "yes",
+          "inactive": "no",
+          "initial": false,
+          "message": "Should it be a view?",
+          "name": "isView",
+          "onState": [Function],
+          "type": "toggle",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "react-native-test-module",
+          "message": "What is the full module package name?",
+          "name": "modulePackageName",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Initial package version is 1.0.0 - continue?",
+          "name": "confirmation",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "",
+          "message": "What is the desired native object class name prefix (can be blank)?",
+          "name": "nativeObjectClassNamePrefixInput",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Native class name is NATIVETestModule. Continue?",
+          "name": "confirmation",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "choices": Array [
+            Object {
+              "selected": true,
+              "title": "Android",
+              "value": "android",
+            },
+            Object {
+              "selected": true,
+              "title": "iOS",
+              "value": "ios",
+            },
+            Object {
+              "disabled": true,
+              "title": "Windows",
+              "value": "windows",
+            },
+          ],
+          "message": "Which native platforms?",
+          "min": 1,
+          "name": "platforms",
+          "onState": [Function],
+          "type": "multiselect",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "com.demo",
+          "message": "What is the desired Android package id?",
+          "name": "androidPackageId",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": false,
+          "message": "Support Apple tvOS (requires react-native-tvos fork)?",
+          "name": "tvosEnabled",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "execa": Array [
+      "git",
+      Array [
+        "config",
+        "user.name",
+      ],
+      undefined,
+    ],
+  },
+  Object {
+    "execa": Array [
+      "git",
+      Array [
+        "config",
+        "user.email",
+      ],
+      undefined,
+    ],
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "Alice",
+          "message": "What is the author name?",
+          "name": "authorName",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "alice@example.com",
+          "message": "What is the author email?",
+          "name": "authorEmail",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "ada",
+          "message": "What is the GitHub user account name?",
+          "name": "githubUserAccountName",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "MIT",
+          "message": "What license?",
+          "name": "license",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": false,
+          "message": "Generate with sample use of Apple Networking?",
+          "name": "useAppleNetworking",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": true,
+          "message": "Generate the example app (with workarounds in metro.config.js)?",
+          "name": "generateExampleApp",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "create": Object {
+      "authorEmail": "ada@lovelace.name",
+      "authorName": "Ada",
+      "githubAccount": "ada-lovelace",
+      "moduleName": "react-native-test-module",
+      "name": "test Module",
+      "packageIdentifier": "com.test",
+      "platforms": Array [
+        "android",
+        "ios",
+      ],
+      "prefix": "NATIVE",
+      "tvosEnabled": false,
+      "useAppleNetworking": true,
+      "view": false,
+    },
+  },
+]
+`;
