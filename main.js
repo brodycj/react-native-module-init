@@ -197,7 +197,7 @@ Promise.resolve().then(async () => {
       ? await prompt({
           type: 'confirm',
           name: 'tvosEnabled',
-          message: 'Support Apple tvOS?',
+          message: 'Support Apple tvOS (requires react-native-tvos fork)?',
           initial: false
         })
       : { tvosEnabled: null }

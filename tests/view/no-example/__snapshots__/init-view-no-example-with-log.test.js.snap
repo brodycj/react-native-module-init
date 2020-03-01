@@ -152,7 +152,7 @@ Array [
       "args": Array [
         Object {
           "initial": false,
-          "message": "Support Apple tvOS?",
+          "message": "Support Apple tvOS (requires react-native-tvos fork)?",
           "name": "tvosEnabled",
           "onState": [Function],
           "type": "confirm",
