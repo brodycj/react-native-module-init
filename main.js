@@ -183,11 +183,10 @@ Promise.resolve().then(async () => {
 
   const { androidPackageId } =
     platforms.indexOf('android') !== -1
-      ? await prompts({
+      ? await prompt({
           type: 'text',
           name: 'androidPackageId',
           message: 'What is the desired Android package id?',
-          onState,
           initial: 'com.demo',
           validate: androidPackageId => androidPackageId.length > 0
         })

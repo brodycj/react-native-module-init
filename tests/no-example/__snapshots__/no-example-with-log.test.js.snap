@@ -122,14 +122,16 @@ Array [
   },
   Object {
     "prompts": Object {
-      "args": Object {
-        "initial": "com.demo",
-        "message": "What is the desired Android package id?",
-        "name": "androidPackageId",
-        "onState": [Function],
-        "type": "text",
-        "validate": [Function],
-      },
+      "args": Array [
+        Object {
+          "initial": "com.demo",
+          "message": "What is the desired Android package id?",
+          "name": "androidPackageId",
+          "onState": [Function],
+          "type": "text",
+          "validate": [Function],
+        },
+      ],
     },
   },
   Object {
