@@ -5,8 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on:
-      - ubuntu-latest
       - macos-latest
+        # FUTURE TBD:
+        # - ubuntu-latest
 
     strategy:
       matrix:
