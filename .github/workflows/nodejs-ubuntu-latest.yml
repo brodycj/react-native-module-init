@@ -2,6 +2,7 @@ name: Node.js CI - macos-latest
 
 on:
   - push
+  - pull_request
 
 jobs:
   build:
