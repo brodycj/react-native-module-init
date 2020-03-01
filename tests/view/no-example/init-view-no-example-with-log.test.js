@@ -23,6 +23,7 @@ jest.mock('console', () => ({
 }))
 
 jest.mock('prompts', () => args => {
+  expect(Array.isArray(args)).toBe(true)
   mockCallSnapshot.push({ prompts: { args } })
   const optionsArray = [].concat(args)
   expect(optionsArray.length).toBe(1)
