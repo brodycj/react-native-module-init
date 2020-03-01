@@ -229,8 +229,8 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": "react-native@latest",
-          "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
+          "initial": "react-native@npm:react-native-tvos",
+          "message": "What react-native version to use for the example app (should be at least react-native@npm:react-native-tvos@0.60)?",
           "name": "reactNativeVersion",
           "onState": [Function],
           "type": "text",
