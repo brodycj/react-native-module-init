@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^0.7.2",
+    "cross-env": "^7.0.0",
     "jest": "24",
     "prettier": "^1.19.1",
     "prettier-standard": "^16.1.0"
