@@ -1,6 +1,8 @@
 name: Node.js CI - ubuntu-latest
 
-on: [push]
+on:
+  - push
+  - pull_request
 
 jobs:
   build:
