@@ -30,10 +30,7 @@ jest.mock('console', () => ({
 jest.mock('prompts', () => prompts => {
   expect(Array.isArray(prompts)).toBe(true)
   expect(prompts.length).toBe(1)
-  // TBD SIMPLIFY snapshots
-  mockCallSnapshot.push({ prompts: { args: prompts } })
-  // like this:
-  // mockCallSnapshot.push({ prompts })
+  mockCallSnapshot.push({ prompts })
   return Promise.resolve(mockPromptResponses[prompts[0].name])
 })
 
