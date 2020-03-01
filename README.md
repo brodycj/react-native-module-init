@@ -89,20 +89,20 @@ Pod installation complete! There are 29 dependencies from the Podfile and 27 tot
 ℹ (cd react-native-awesome-module/example && yarn)
 ℹ do `pod install` for iOS in react-native-awesome-module/example/ios
 ℹ (cd react-native-awesome-module/example/ios && pod install)
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-module      
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-module
 README.md				index.js				react-native-awesome-module.podspec
 android					ios
 example					package.json
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % cat react-native-awesome-module/index.js 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % cat react-native-awesome-module/index.js
 import { NativeModules } from 'react-native';
 
 const { SUPERAwesomeModule } = NativeModules;
 
 export default SUPERAwesomeModule;
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-module/android    
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-module/android
 react-native-awesome-module/android
 ├── README.md
 ├── build.gradle
@@ -116,8 +116,8 @@ react-native-awesome-module/android
                     └── SUPERAwesomeModulePackage.java
 
 5 directories, 5 files
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-module/ios 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-module/ios
 react-native-awesome-module/ios
 ├── SUPERAwesomeModule.h
 ├── SUPERAwesomeModule.m
@@ -127,14 +127,13 @@ react-native-awesome-module/ios
     └── contents.xcworkspacedata
 
 2 directories, 4 files
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-module/example 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-module/example
 App.js		android		babel.config.js	ios		node_modules	yarn.lock
 __tests__	app.json	index.js	metro.config.js	package.json
 ```
 
 ## view module sample
-
 
 ```
 ℹ react-native-module-init 0.3.0
@@ -212,21 +211,21 @@ Pod installation complete! There are 29 dependencies from the Podfile and 27 tot
 ℹ (cd react-native-awesome-view/example && yarn)
 ℹ do `pod install` for iOS in react-native-awesome-view/example/ios
 ℹ (cd react-native-awesome-view/example/ios && pod install)
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-view 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-view
 README.md				index.js				react-native-awesome-view.podspec
 android					ios
 example					package.json
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % cat react-native-awesome-view/index.js 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % cat react-native-awesome-view/index.js
 import { requireNativeComponent } from 'react-native';
 
 const SUPERAwesomeView = requireNativeComponent('SUPERAwesomeView', null);
 
 export default SUPERAwesomeView;
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-view/android 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-view/android
 react-native-awesome-view/android
 ├── README.md
 ├── build.gradle
@@ -240,8 +239,8 @@ react-native-awesome-view/android
                     └── SUPERAwesomeViewPackage.java
 
 5 directories, 5 files
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-view/ios 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % tree react-native-awesome-view/ios
 react-native-awesome-view/ios
 ├── SUPERAwesomeView.h
 ├── SUPERAwesomeView.m
@@ -251,8 +250,8 @@ react-native-awesome-view/ios
     └── contents.xcworkspacedata
 
 2 directories, 4 files
-brodybits@Christophers-MacBook-Air demo % 
-brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-view/example 
+brodybits@Christophers-MacBook-Air demo %
+brodybits@Christophers-MacBook-Air demo % ls react-native-awesome-view/example
 App.js		android		babel.config.js	ios		node_modules	yarn.lock
 __tests__	app.json	index.js	metro.config.js	package.json
 ```
