@@ -221,6 +221,13 @@ Promise.resolve().then(async () => {
     initial: gitUserEmail
   })
 
+  const { githubUserAccountName } = await prompt({
+    type: 'text',
+    name: 'githubUserAccountName',
+    message: 'What is the GitHub user account name?',
+    initial: authorEmail.split('@')[0]
+  })
+
   const { license } = await prompt({
     type: 'text',
     name: 'license',
@@ -309,6 +316,7 @@ Promise.resolve().then(async () => {
     tvosEnabled,
     authorName,
     authorEmail,
+    githubAccount: githubUserAccountName,
     view: isView
   }
 

@@ -190,6 +190,19 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
+          "initial": "ada",
+          "message": "What is the GitHub user account name?",
+          "name": "githubUserAccountName",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
           "initial": "MIT",
           "message": "What license?",
           "name": "license",
@@ -273,6 +286,7 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
+      "githubAccount": "ada-lovelace",
       "moduleName": "react-native-tvos-test-module",
       "name": "test module for tvOS",
       "packageIdentifier": "com.test",

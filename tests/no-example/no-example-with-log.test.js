@@ -13,6 +13,7 @@ mockPromptResponses = {
   tvosEnabled: { tvosEnabled: false },
   authorName: { authorName: 'Ada' },
   authorEmail: { authorEmail: 'ada@lovelace.name' },
+  githubUserAccountName: { githubUserAccountName: 'ada-lovelace' },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: false }
 }
