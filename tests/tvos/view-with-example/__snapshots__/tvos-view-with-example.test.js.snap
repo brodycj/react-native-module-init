@@ -309,6 +309,7 @@ Array [
       ],
       "prefix": "NATIVE",
       "tvosEnabled": true,
+      "useAppleNetworking": false,
       "view": true,
     },
   },
