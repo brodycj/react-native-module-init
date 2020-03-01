@@ -3,142 +3,124 @@
 exports[`generate native React Native module for tvOS with example 1`] = `
 Array [
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "message": "What is the desired native module name?",
-          "name": "nativeModuleNameInput",
-          "onState": [Function],
-          "type": "text",
-          "validate": [Function],
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "message": "What is the desired native module name?",
+        "name": "nativeModuleNameInput",
+        "onState": [Function],
+        "type": "text",
+        "validate": [Function],
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "active": "yes",
-          "inactive": "no",
-          "initial": false,
-          "message": "Should it be a view?",
-          "name": "isView",
-          "onState": [Function],
-          "type": "toggle",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "active": "yes",
+        "inactive": "no",
+        "initial": false,
+        "message": "Should it be a view?",
+        "name": "isView",
+        "onState": [Function],
+        "type": "toggle",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "react-native-test-module-for-tv-os",
-          "message": "What is the full module package name?",
-          "name": "modulePackageName",
-          "onState": [Function],
-          "type": "text",
-          "validate": [Function],
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "react-native-test-module-for-tv-os",
+        "message": "What is the full module package name?",
+        "name": "modulePackageName",
+        "onState": [Function],
+        "type": "text",
+        "validate": [Function],
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Initial package version is 1.0.0 - continue?",
-          "name": "confirmation",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": true,
+        "message": "Initial package version is 1.0.0 - continue?",
+        "name": "confirmation",
+        "onState": [Function],
+        "type": "confirm",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "",
-          "message": "What is the desired native object class name prefix (can be blank)?",
-          "name": "nativeObjectClassNamePrefixInput",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "",
+        "message": "What is the desired native object class name prefix (can be blank)?",
+        "name": "nativeObjectClassNamePrefixInput",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Native class name is NATIVETestModuleForTvOs. Continue?",
-          "name": "confirmation",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": true,
+        "message": "Native class name is NATIVETestModuleForTvOs. Continue?",
+        "name": "confirmation",
+        "onState": [Function],
+        "type": "confirm",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "choices": Array [
-            Object {
-              "selected": true,
-              "title": "Android",
-              "value": "android",
-            },
-            Object {
-              "selected": true,
-              "title": "iOS",
-              "value": "ios",
-            },
-            Object {
-              "disabled": true,
-              "title": "Windows",
-              "value": "windows",
-            },
-          ],
-          "message": "Which native platforms?",
-          "min": 1,
-          "name": "platforms",
-          "onState": [Function],
-          "type": "multiselect",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "choices": Array [
+          Object {
+            "selected": true,
+            "title": "Android",
+            "value": "android",
+          },
+          Object {
+            "selected": true,
+            "title": "iOS",
+            "value": "ios",
+          },
+          Object {
+            "disabled": true,
+            "title": "Windows",
+            "value": "windows",
+          },
+        ],
+        "message": "Which native platforms?",
+        "min": 1,
+        "name": "platforms",
+        "onState": [Function],
+        "type": "multiselect",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "com.demo",
-          "message": "What is the desired Android package id?",
-          "name": "androidPackageId",
-          "onState": [Function],
-          "type": "text",
-          "validate": [Function],
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "com.demo",
+        "message": "What is the desired Android package id?",
+        "name": "androidPackageId",
+        "onState": [Function],
+        "type": "text",
+        "validate": [Function],
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": false,
-          "message": "Support Apple tvOS (requires react-native-tvos fork)?",
-          "name": "tvosEnabled",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": false,
+        "message": "Support Apple tvOS (requires react-native-tvos fork)?",
+        "name": "tvosEnabled",
+        "onState": [Function],
+        "type": "confirm",
+      },
+    ],
   },
   Object {
     "execa": Array [
@@ -161,108 +143,92 @@ Array [
     ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "Alice",
-          "message": "What is the author name?",
-          "name": "authorName",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "Alice",
+        "message": "What is the author name?",
+        "name": "authorName",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "alice@example.com",
-          "message": "What is the author email?",
-          "name": "authorEmail",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "alice@example.com",
+        "message": "What is the author email?",
+        "name": "authorEmail",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "ada",
-          "message": "What is the GitHub user account name?",
-          "name": "githubUserAccountName",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "ada",
+        "message": "What is the GitHub user account name?",
+        "name": "githubUserAccountName",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "MIT",
-          "message": "What license?",
-          "name": "license",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "MIT",
+        "message": "What license?",
+        "name": "license",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Generate the example app (with workarounds in metro.config.js)?",
-          "name": "generateExampleApp",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": true,
+        "message": "Generate the example app (with workarounds in metro.config.js)?",
+        "name": "generateExampleApp",
+        "onState": [Function],
+        "type": "confirm",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "example",
-          "message": "Example app name?",
-          "name": "exampleAppName",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "example",
+        "message": "Example app name?",
+        "name": "exampleAppName",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": "react-native@npm:react-native-tvos",
-          "message": "What react-native version to use for the example app (should be at least react-native@npm:react-native-tvos@0.60)?",
-          "name": "reactNativeVersion",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": "react-native@npm:react-native-tvos",
+        "message": "What react-native version to use for the example app (should be at least react-native@npm:react-native-tvos@0.60)?",
+        "name": "reactNativeVersion",
+        "onState": [Function],
+        "type": "text",
+      },
+    ],
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Show the output of React Native CLI (recommended)?",
-          "name": "showReactNativeOutput",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
+    "prompts": Array [
+      Object {
+        "initial": true,
+        "message": "Show the output of React Native CLI (recommended)?",
+        "name": "showReactNativeOutput",
+        "onState": [Function],
+        "type": "confirm",
+      },
+    ],
   },
   Object {
     "execa": Array [
