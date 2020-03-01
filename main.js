@@ -192,6 +192,16 @@ Promise.resolve().then(async () => {
         })
       : { androidPackageId: null }
 
+  const { tvosEnabled } =
+    platforms.indexOf('ios') !== -1
+      ? await prompt({
+          type: 'confirm',
+          name: 'tvosEnabled',
+          message: 'Support Apple tvOS?',
+          initial: false
+        })
+      : { tvosEnabled: null }
+
   // THANKS to @react-native-community/bob for the idea
   // to get user name & email from git
   const gitUserName = (await execa('git', ['config', 'user.name'])).stdout
@@ -291,6 +301,7 @@ Promise.resolve().then(async () => {
     moduleName: modulePackageName,
     packageIdentifier: androidPackageId,
     platforms,
+    tvosEnabled,
     authorName,
     authorEmail,
     view: isView
