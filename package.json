@@ -26,7 +26,11 @@
     "lint-svg": "npx prettier --parser=xml --check *.svg",
     "lint-fix": "prettier-standard && npm run lint-fix-svg",
     "lint-fix-svg": "npx prettier --parser=xml --write *.svg && sed -i.orig 's/  *$//g' *.svg",
-    "test": "npm run lint && jest"
+    "// testing notes": [
+      "cross-env CI=true seems to be needed to get the same results with",
+      "some emoji symbols on both macOS workstation and GitHub Workflow"
+    ],
+    "test": "npm run lint && cross-env CI=true jest"
   },
   "dependencies": {
     "ansi-escapes": "^4.3.0",
@@ -43,6 +47,7 @@
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^0.7.2",
+    "cross-env": "^7.0.0",
     "jest": "24",
     "prettier": "^1.19.1",
     "prettier-standard": "^16.1.0"

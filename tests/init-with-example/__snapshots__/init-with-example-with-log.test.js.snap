@@ -4,7 +4,7 @@ exports[`generate native React Native module with example, with log 1`] = `
 Array [
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "react-native-module-init",
       "0.2.2-dev",
     ],
@@ -193,19 +193,19 @@ Array [
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "It is possible to generate an example test app,",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "with workarounds in metro.config.js for metro linking issues",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "Requirements: react-native-cli and Yarn; pod is needed for iOS",
     ],
   },
@@ -263,7 +263,7 @@ Array [
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "checking that react-native CLI can show its version",
     ],
   },
@@ -278,13 +278,13 @@ Array [
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "react-native CLI ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "checking that Yarn CLI can show its version",
     ],
   },
@@ -299,13 +299,13 @@ Array [
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "Yarn CLI ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "generating the native library module as a package",
     ],
   },
@@ -326,13 +326,13 @@ Array [
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "native library module generated ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "generating the example app",
     ],
   },
@@ -354,7 +354,7 @@ Array [
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "generating App.js in the example app",
     ],
   },
@@ -423,7 +423,7 @@ const styles = StyleSheet.create({
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "rewrite metro.config.js with workaround solutions",
     ],
   },
@@ -455,13 +455,13 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "example app generated ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "adding the native library module into the example app as a dependency link",
     ],
   },
@@ -481,13 +481,13 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "added the native library module into the example app as a dependency link - ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "checking that the pod tool can show its version",
     ],
   },
@@ -502,13 +502,13 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "pod tool ok",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "starting additional pod install in ios subdirectory of example app",
     ],
   },
@@ -527,7 +527,7 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[32m✔[39m",
+      "✔",
       "additional pod install ok",
     ],
   },
@@ -539,7 +539,7 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "(/home/ada.lovelace/path_resolved_from_./react-native-test-module/example)",
     ],
   },
@@ -551,7 +551,7 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "(cd react-native-test-module/example && yarn start)",
     ],
   },
@@ -563,49 +563,49 @@ module.exports = {
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "cd react-native-test-module/example",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "react-native run-android",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "react-native run-ios",
     ],
   },
   Object {
     "log": Array [
-      "[33m⚠[39m",
+      "⚠",
       "first steps in case of a clean checkout",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "run Yarn in react-native-test-module/example",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "(cd react-native-test-module/example && yarn)",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "do \`pod install\` for iOS in react-native-test-module/example/ios",
     ],
   },
   Object {
     "log": Array [
-      "[34mℹ[39m",
+      "ℹ",
       "(cd react-native-test-module/example/ios && pod install)",
     ],
   },
