@@ -10,6 +10,7 @@ mockPromptResponses = {
   },
   platforms: { platforms: ['android', 'ios'] },
   androidPackageId: { androidPackageId: 'com.test' },
+  tvosEnabled: { tvosEnabled: false },
   authorName: { authorName: 'Ada' },
   authorEmail: { authorEmail: 'ada@lovelace.name' },
   license: { license: 'BSD-4-CLAUSE' },
