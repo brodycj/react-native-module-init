@@ -220,6 +220,19 @@ Array [
     },
   },
   Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": false,
+          "message": "Generate with sample use of Apple Networking?",
+          "name": "useAppleNetworking",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
     "log": Array [
       "ℹ",
       "It is possible to generate an example test app,",
@@ -351,6 +364,7 @@ Array [
       ],
       "prefix": "NATIVE",
       "tvosEnabled": false,
+      "useAppleNetworking": false,
       "view": false,
     },
   },

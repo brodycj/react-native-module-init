@@ -216,6 +216,19 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
+          "initial": false,
+          "message": "Generate with sample use of Apple Networking?",
+          "name": "useAppleNetworking",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
           "initial": true,
           "message": "Generate the example app (with workarounds in metro.config.js)?",
           "name": "generateExampleApp",
@@ -296,6 +309,7 @@ Array [
       ],
       "prefix": "NATIVE",
       "tvosEnabled": true,
+      "useAppleNetworking": false,
       "view": false,
     },
   },
