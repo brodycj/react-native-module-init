@@ -135,6 +135,19 @@ Array [
     },
   },
   Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": false,
+          "message": "Support Apple tvOS?",
+          "name": "tvosEnabled",
+          "onState": [Function],
+          "type": "confirm",
+        },
+      ],
+    },
+  },
+  Object {
     "execa": Array [
       "git",
       Array [
@@ -323,6 +336,7 @@ Array [
         "ios",
       ],
       "prefix": "NATIVE",
+      "tvosEnabled": false,
       "view": false,
     },
   },
