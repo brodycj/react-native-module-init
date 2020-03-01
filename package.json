@@ -22,10 +22,8 @@
     "main.js"
   ],
   "scripts": {
-    "lint": "prettier-standard --check && npm run lint-svg",
-    "lint-svg": "npx prettier --parser=xml --check *.svg",
-    "lint-fix": "prettier-standard && npm run lint-fix-svg",
-    "lint-fix-svg": "npx prettier --parser=xml --write *.svg && sed -i.orig 's/  *$//g' *.svg",
+    "lint": "prettier-standard --check",
+    "lint-fix": "prettier-standard",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
