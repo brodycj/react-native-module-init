@@ -27,12 +27,14 @@ jest.mock('console', () => ({
   }
 }))
 
-jest.mock('prompts', () => args => {
-  expect(Array.isArray(args)).toBe(true)
-  mockCallSnapshot.push({ prompts: { args } })
-  const optionsArray = [].concat(args)
-  expect(optionsArray.length).toBe(1)
-  return Promise.resolve(mockPromptResponses[optionsArray[0].name])
+jest.mock('prompts', () => prompts => {
+  expect(Array.isArray(prompts)).toBe(true)
+  expect(prompts.length).toBe(1)
+  // TBD SIMPLIFY snapshots
+  mockCallSnapshot.push({ prompts: { args: prompts } })
+  // like this:
+  // mockCallSnapshot.push({ prompts })
+  return Promise.resolve(mockPromptResponses[prompts[0].name])
 })
 
 jest.mock('execa', () => (cmd, args, opts) => {
