@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "jest": "24",
+    "jest": "^25.2.6",
     "prettier-standard": "^16.2.1"
   }
 }
