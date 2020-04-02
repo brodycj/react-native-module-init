@@ -21,6 +21,7 @@
     "main.js"
   ],
   "scripts": {
+    "jest": "cross-env CI=true jest",
     "lint": "prettier-standard --check",
     "lint-fix": "prettier-standard",
     "// testing notes": [
