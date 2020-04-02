@@ -1324,7 +1324,7 @@ create-react-native-module@^0.15.0:
     update-notifier "^4.1.0"
     uuid "^3.4.0"
 
-cross-env@^7.0.2:
+cross-env@7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.2.tgz#bd5ed31339a93a3418ac4f3ca9ca3403082ae5f9"
   integrity sha512-KZP/bMEOJEDCkDQAyRhu3RL2ZO/SUVrxQVI0G3YEQ+OLbRA3c6zgixe8Mq8a/z7+HKlNEjo8oiLUs8iRijY2Rw==
@@ -3144,7 +3144,7 @@ jest-worker@^25.2.6:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jest@^25.2.6:
+jest@25.2.6:
   version "25.2.6"
   resolved "https://registry.yarnpkg.com/jest/-/jest-25.2.6.tgz#da597f3563dceba12913965ea398fe7f8804fb12"
   integrity sha512-AA9U1qmYViBTfoKWzQBbBmck53Tsw8av7zRYdE4EUBU6r04mddPQaflpPBy/KC308HF7u8fLLxEJFt/LiFzYFQ==
@@ -4184,7 +4184,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier-standard@^16.2.1:
+prettier-standard@16.2.1:
   version "16.2.1"
   resolved "https://registry.yarnpkg.com/prettier-standard/-/prettier-standard-16.2.1.tgz#751a45e16df18bd94ae2da617641c98aec9c8a06"
   integrity sha512-7momYIJ5dqEVT7inRhcTVBdmI7UqhNVv/ZdPnkpOKzs8nAEXYBNqVwyMH/6305rWpxglkdX8/IkGpqcQy1Pocw==
