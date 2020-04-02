@@ -1309,15 +1309,16 @@ cosmiconfig@5.2.1, cosmiconfig@^5.2.1:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-native-module@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/create-react-native-module/-/create-react-native-module-0.15.0.tgz#7a00c41f038a4b8e077f42df8f6b11639db2ecdc"
-  integrity sha512-58NMl+moZLSXc0YHehYKd/nlhxo3cFkNMO8J5RltNd3VQN6u2/KOt7PFZmOSSWQzSesxYTp0vvg+IMLAJ2+/rg==
+create-react-native-module@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/create-react-native-module/-/create-react-native-module-0.16.0.tgz#6b53e387fea29b29abfb3a36097864af4d83c5e5"
+  integrity sha512-8b0Qg6/jLBEjeYX1t/0281nh8qFriEejCnM0A4ueIvXUmJ0nYpDuO58Y25Nn9ZhS/ItUKZFL/zUnO6KSiCUTeg==
   dependencies:
     commander "^3.0.1"
     execa "^3.3.0"
     fs-extra "^8.1.0"
     jsonfile "^6.0.0"
+    log-symbols "^3.0.0"
     node-emoji "^1.10.0"
     param-case "^2.1.1"
     pascal-case "^2.0.1"
