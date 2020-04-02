@@ -39,7 +39,7 @@
     "log-symbols": "^3.0.0",
     "param-case": "^3.0.3",
     "pascal-case": "^3.1.1",
-    "prompts": "^2.3.1",
+    "prompts": "^2.3.2",
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
