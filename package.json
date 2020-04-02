@@ -43,7 +43,7 @@
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.2",
     "jest": "24",
     "prettier-standard": "^16.2.1"
   }
