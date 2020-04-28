@@ -1,6 +1,7 @@
 {
   "extends": ["config:base"],
-  "commitMessage": "{{depName}}@{{newValue}} update",
-  "prTitle": "{{depName}}@{{newValue}} update",
+  "commitMessageExtra": "-> {{#if isMajor}}{{{newMajor}}}{{else}}{{#if isSingleVersion}}{{{toVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}",
+  "commitMessageTopic": "{{depName}}",
+  "prHourlyLimit": 0,
   "rangeStrategy": "bump"
 }
