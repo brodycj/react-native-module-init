@@ -94,11 +94,11 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": true,
-          "message": "Native class name is NATIVETestView. Continue?",
-          "name": "confirmation",
+          "initial": "NATIVETestView",
+          "message": "Desired object class name to use between JavaScript & native code?",
+          "name": "nativeObjectClassName",
           "onState": [Function],
-          "type": "confirm",
+          "type": "text",
         },
       ],
     },
@@ -354,6 +354,7 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
+      "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
       "moduleName": "react-native-test-view",
       "name": "TestView",
@@ -362,7 +363,6 @@ Array [
         "android",
         "ios",
       ],
-      "prefix": "NATIVE",
       "tvosEnabled": false,
       "useAppleNetworking": false,
       "view": true,
@@ -417,16 +417,16 @@ Array [
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import TestView from 'react-native-test-view';
+import SUPERTestView from 'react-native-test-view';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆TestView example☆</Text>
+        <Text style={styles.welcome}>☆SUPERTestView example☆</Text>
         <Text style={styles.instructions}>STATUS: loaded</Text>
         <Text style={styles.welcome}>☆☆☆</Text>
-        <TestView />
+        <SUPERTestView />
       </View>
     );
   }
