@@ -87,11 +87,11 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": true,
-          "message": "Native class name is NATIVETestViewForTvOs. Continue?",
-          "name": "confirmation",
+          "initial": "NATIVETestViewForTvOs",
+          "message": "Desired object class name to use between JavaScript & native code?",
+          "name": "nativeObjectClassName",
           "onState": [Function],
-          "type": "confirm",
+          "type": "text",
         },
       ],
     },
@@ -299,6 +299,7 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
+      "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
       "moduleName": "react-native-tvos-test-view",
       "name": "TestViewForTvOs",
@@ -307,7 +308,6 @@ Array [
         "android",
         "ios",
       ],
-      "prefix": "NATIVE",
       "tvosEnabled": true,
       "useAppleNetworking": false,
       "view": true,
@@ -344,16 +344,16 @@ Array [
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import TestViewForTvOs from 'react-native-tvos-test-view';
+import SUPERTestView from 'react-native-tvos-test-view';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆TestViewForTvOs example☆</Text>
+        <Text style={styles.welcome}>☆SUPERTestView example☆</Text>
         <Text style={styles.instructions}>STATUS: loaded</Text>
         <Text style={styles.welcome}>☆☆☆</Text>
-        <TestViewForTvOs />
+        <SUPERTestView />
       </View>
     );
   }
