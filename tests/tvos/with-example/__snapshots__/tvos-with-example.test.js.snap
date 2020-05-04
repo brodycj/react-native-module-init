@@ -74,11 +74,11 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": true,
-          "message": "Native class name is NATIVETestModuleForTvOs. Continue?",
-          "name": "confirmation",
+          "initial": "NATIVETestModuleForTvOs",
+          "message": "Desired object class name to use between JavaScript & native code?",
+          "name": "nativeObjectClassName",
           "onState": [Function],
-          "type": "confirm",
+          "type": "text",
         },
       ],
     },
@@ -299,6 +299,7 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
+      "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
       "moduleName": "react-native-tvos-test-module",
       "name": "test module for tvOS",
@@ -307,7 +308,6 @@ Array [
         "android",
         "ios",
       ],
-      "prefix": "NATIVE",
       "tvosEnabled": true,
       "useAppleNetworking": false,
       "view": false,
@@ -344,7 +344,7 @@ Array [
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import test module for tvOS from 'react-native-tvos-test-module';
+import SUPERTestModule from 'react-native-tvos-test-module';
 
 export default class App extends Component<{}> {
   state = {
@@ -352,7 +352,7 @@ export default class App extends Component<{}> {
     message: '--'
   };
   componentDidMount() {
-    test module for tvOS.sampleMethod('Testing', 123, (message) => {
+    SUPERTestModule.sampleMethod('Testing', 123, (message) => {
       this.setState({
         status: 'native callback received',
         message
@@ -362,7 +362,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆test module for tvOS example☆</Text>
+        <Text style={styles.welcome}>☆SUPERTestModule example☆</Text>
         <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
         <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
         <Text style={styles.instructions}>{this.state.message}</Text>
