@@ -8,6 +8,7 @@ mockPromptResponses = {
   nativeObjectClassNamePrefixInput: {
     nativeObjectClassNamePrefixInput: 'native'
   },
+  nativeObjectClassName: { nativeObjectClassName: 'SUPERTestModule' },
   platforms: { platforms: ['android', 'ios'] },
   androidPackageId: { androidPackageId: 'com.test' },
   tvosEnabled: { tvosEnabled: true },

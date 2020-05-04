@@ -163,11 +163,13 @@ Promise.resolve().then(async () => {
     nativeObjectClassNamePrefixInput
   ).toUpperCase()
 
-  await promptForConfirmation(
-    `Native class name is ${nativeObjectClassNamePrefix.concat(
-      namePascalCase
-    )}. Continue?`
-  )
+  const { nativeObjectClassName } = await prompt({
+    type: 'text',
+    name: 'nativeObjectClassName',
+    message:
+      'Desired object class name to use between JavaScript & native code?',
+    initial: nativeObjectClassNamePrefix.concat(namePascalCase)
+  })
 
   const { platforms } = await prompt({
     type: 'multiselect',
@@ -319,8 +321,8 @@ Promise.resolve().then(async () => {
 
   const createOptions = {
     name: nativeModuleName,
-    prefix: nativeObjectClassNamePrefix,
     moduleName: modulePackageName,
+    className: nativeObjectClassName,
     packageIdentifier: androidPackageId,
     platforms,
     tvosEnabled,
@@ -360,7 +362,10 @@ Promise.resolve().then(async () => {
         exampleAppName,
         EXAMPLE_APP_JS_FILENAME
       ),
-      exampleAppTemplate.content(createOptions)
+      exampleAppTemplate.content({
+        ...createOptions,
+        name: nativeObjectClassName
+      })
     )
 
     // rewrite metro.config.js with workaround solutions

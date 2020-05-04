@@ -74,11 +74,11 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": true,
-          "message": "Native class name is NATIVETestModule. Continue?",
-          "name": "confirmation",
+          "initial": "NATIVETestModule",
+          "message": "Desired object class name to use between JavaScript & native code?",
+          "name": "nativeObjectClassName",
           "onState": [Function],
-          "type": "confirm",
+          "type": "text",
         },
       ],
     },
@@ -242,6 +242,7 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
+      "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
       "moduleName": "react-native-test-module",
       "name": "test Module",
@@ -250,7 +251,6 @@ Array [
         "android",
         "ios",
       ],
-      "prefix": "NATIVE",
       "tvosEnabled": false,
       "useAppleNetworking": true,
       "view": false,
