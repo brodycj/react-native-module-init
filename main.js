@@ -1,3 +1,9 @@
+// package info:
+const pkg = require('./package.json')
+
+// require this before any other modules:
+require('please-upgrade-node')(pkg)
+
 const prompts = require('prompts')
 
 const path = require('path')
@@ -23,8 +29,6 @@ const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
 const updateNotifier = require('update-notifier')
-
-const pkg = require('./package.json')
 
 const BULB = bulb
 const INFO = logSymbols.info
