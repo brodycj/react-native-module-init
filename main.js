@@ -362,7 +362,10 @@ Promise.resolve().then(async () => {
         exampleAppName,
         EXAMPLE_APP_JS_FILENAME
       ),
-      exampleAppTemplate.content(createOptions)
+      exampleAppTemplate.content({
+        ...createOptions,
+        name: nativeObjectClassName
+      })
     )
 
     // rewrite metro.config.js with workaround solutions
