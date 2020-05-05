@@ -2,6 +2,8 @@ const prompts = require('prompts')
 
 const path = require('path')
 
+const exit = require('exit')
+
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
 const ansiEscapes = require('ansi-escapes')
@@ -75,7 +77,7 @@ const onState = ({ aborted }) => {
   if (aborted) {
     process.stdout.write(ansiEscapes.cursorShow)
     process.stdout.write(NEWLINE)
-    process.exit(1)
+    exit(1)
   }
 }
 
