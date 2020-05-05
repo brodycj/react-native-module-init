@@ -1,8 +1,14 @@
+const hexy = require('hexyjs')
+
 const mockCallSnapshot = []
+
+const mockHexy = hexy
 
 jest.mock('console', () => ({
   log: (...args) => {
-    mockCallSnapshot.push({ log: args })
+    mockCallSnapshot.push({
+      log: args.map(arg => [arg, mockHexy.strToHex(arg)])
+    })
   }
 }))
 

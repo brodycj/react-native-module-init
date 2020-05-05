@@ -4,9 +4,18 @@ exports[`outputs cleanup line to the console & and exits if aborted 1`] = `
 Array [
   Object {
     "log": Array [
-      "ℹ",
-      "react-native-module-init",
-      "0.3.2-dev",
+      Array [
+        "ℹ",
+        "2139",
+      ],
+      Array [
+        "react-native-module-init",
+        "72656163742d6e61746976652d6d6f64756c652d696e6974",
+      ],
+      Array [
+        "0.3.2-dev",
+        "302e332e322d646576",
+      ],
     ],
   },
   Object {
@@ -14,7 +23,10 @@ Array [
   },
   Object {
     "log": Array [
-      "[?25h",
+      Array [
+        "[?25h",
+        "1b5b3f323568",
+      ],
     ],
   },
   Object {
