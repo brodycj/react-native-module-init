@@ -3,6 +3,14 @@
 exports[`generate native React Native module with no example, with log 1`] = `
 Array [
   Object {
+    "please-upgrade-node": Object {
+      "engines": Object {
+        "node": ">=8",
+      },
+      "name": "react-native-module-init",
+    },
+  },
+  Object {
     "log": Array [
       "ℹ",
       "react-native-module-init",

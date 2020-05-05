@@ -20,6 +20,10 @@ mockPromptResponses = {
   generateExampleApp: { generateExampleApp: false }
 }
 
+jest.mock('please-upgrade-node', () => ({ name, engines }) => {
+  mockCallSnapshot.push({ 'please-upgrade-node':  { name, engines }})
+})
+
 jest.mock('console', () => ({
   log: (...args) => {
     mockCallSnapshot.push({ log: args })
