@@ -75,7 +75,7 @@ const joinPath = path.join
 // https://github.com/terkelg/prompts/issues/252
 const onState = ({ aborted }) => {
   if (aborted) {
-    process.stdout.write(ansiEscapes.cursorShow)
+    process.stdout.write(SHOW_CURSOR)
     process.stdout.write(NEWLINE)
     exit(1)
   }
