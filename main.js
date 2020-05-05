@@ -93,7 +93,7 @@ const promptForConfirmation = async message => {
     initial: true
   })
 
-  if (!confirmation) process.exit(1)
+  if (!confirmation) exit(1)
 }
 
 // notify the user (...)
