@@ -22,7 +22,12 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
-const { init } = require('@react-native-community/cli')
+// const { init } = require('@react-native-community/cli')
+
+// const init = require('@react-native-community/cli/build/commands/init').func
+const init = require('@react-native-community/cli/build/commands/init/init').default
+
+console.log(init)
 
 const updateNotifier = require('update-notifier')
 
@@ -335,7 +340,7 @@ Promise.resolve().then(async () => {
     useAppleNetworking
   }
 
-  createReactNativeLibraryModule(createOptions)
+  await createReactNativeLibraryModule(createOptions)
 
   log(OK, 'native library module generated ok')
 
@@ -344,7 +349,12 @@ Promise.resolve().then(async () => {
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
-    const generateExampleAppOptions = ['--version', reactNativeVersion]
+    // to resolve, determine, & show the subdirectory path of the example app
+    // (both relative & absolute):
+    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
+    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
+
+    // const generateExampleAppOptions = ['--version', reactNativeVersion]
 
     // await execa(
     //   'react-native',
@@ -358,20 +368,20 @@ Promise.resolve().then(async () => {
 
     // init(resolveSubpath(modulePackageName), [exampleAppName])
 
-    init(
-      resolveSubpath(
-        modulePackageName,
-        exampleAppName
-      ),
-      [exampleAppName]
-    )
+    await init([exampleAppName], {
+      directory: exampleAppSubdirectory,
+      // TODO (NEEDS FIX):
+      // template: reactNativeVersion
+      template: 'react-native-tvos@latest'
+    })
 
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
       resolveSubpath(
-        modulePackageName,
-        exampleAppName,
+        // modulePackageName,
+        // exampleAppName,
+        exampleAppPath,
         EXAMPLE_APP_JS_FILENAME
       ),
       exampleAppTemplate.content({
@@ -387,8 +397,9 @@ Promise.resolve().then(async () => {
     )
     await fs.outputFile(
       resolveSubpath(
-        modulePackageName,
-        exampleAppName,
+        // modulePackageName,
+        // exampleAppName,
+        exampleAppPath,
         EXAMPLE_METRO_CONFIG_FILENAME
       ),
       EXAMPLE_METRO_CONFIG_WORKAROUND
@@ -402,7 +413,8 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: resolveSubpath(modulePackageName, exampleAppName),
+      // cwd: resolveSubpath(modulePackageName, exampleAppName),
+      cwd: exampleAppPath,
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
     })
@@ -433,7 +445,8 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
+          // cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
+          cwd: resolveSubpath(exampleAppPath, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
         })
@@ -444,11 +457,7 @@ Promise.resolve().then(async () => {
       log(OK, 'additional pod install ok')
     }
 
-    // to show the subdirectory path of the example app
-    // (both relative & absolute):
-    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
-    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
-    // show the example app info:
+    // show the example app info (with subdirectory path as determined above):
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
     log(INFO, `(${exampleAppPath})`)
     log(BULB, 'recommended: run Metro Bundler in a new shell')
