@@ -27,8 +27,6 @@ const { pascalCase } = require('pascal-case')
 // const init = require('@react-native-community/cli/build/commands/init').func
 const init = require('@react-native-community/cli/build/commands/init/init').default
 
-console.log(init)
-
 const updateNotifier = require('update-notifier')
 
 const pkg = require('./package.json')
