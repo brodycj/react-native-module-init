@@ -22,6 +22,8 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
+const { init } = require('@react-native-community/cli')
+
 const updateNotifier = require('update-notifier')
 
 const pkg = require('./package.json')
@@ -298,14 +300,14 @@ Promise.resolve().then(async () => {
     : false
 
   if (generateExampleApp) {
-    log(INFO, 'checking that react-native CLI can show its version')
-    try {
-      await execa('react-native', ['--version'])
-    } catch (e) {
-      log(ERROR, 'react-native CLI not installed correctly')
-      process.exit(1)
-    }
-    log(OK, 'react-native CLI ok')
+    // log(INFO, 'checking that react-native CLI can show its version')
+    // try {
+    //   await execa('react-native', ['--version'])
+    // } catch (e) {
+    //   log(ERROR, 'react-native CLI not installed correctly')
+    //   process.exit(1)
+    // }
+    // log(OK, 'react-native CLI ok')
 
     log(INFO, 'checking that Yarn CLI can show its version')
     try {
@@ -344,14 +346,24 @@ Promise.resolve().then(async () => {
 
     const generateExampleAppOptions = ['--version', reactNativeVersion]
 
-    await execa(
-      'react-native',
-      ['init', exampleAppName].concat(generateExampleAppOptions),
-      {
-        cwd: resolveSubpath(modulePackageName),
-        stdout: showReactNativeOutput ? 'inherit' : null,
-        stderr: showReactNativeOutput ? 'inherit' : null
-      }
+    // await execa(
+    //   'react-native',
+    //   ['init', exampleAppName].concat(generateExampleAppOptions),
+    //   {
+    //     cwd: resolveSubpath(modulePackageName),
+    //     stdout: showReactNativeOutput ? 'inherit' : null,
+    //     stderr: showReactNativeOutput ? 'inherit' : null
+    //   }
+    // )
+
+    // init(resolveSubpath(modulePackageName), [exampleAppName])
+
+    init(
+      resolveSubpath(
+        modulePackageName,
+        exampleAppName
+      ),
+      [exampleAppName]
     )
 
     log(INFO, 'generating App.js in the example app')
