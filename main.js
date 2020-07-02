@@ -22,10 +22,8 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
-// const { init } = require('@react-native-community/cli')
-
-// const init = require('@react-native-community/cli/build/commands/init').func
-const init = require('@react-native-community/cli/build/commands/init/init').default
+const init = require('@react-native-community/cli/build/commands/init/init')
+  .default
 
 const updateNotifier = require('update-notifier')
 
@@ -303,15 +301,6 @@ Promise.resolve().then(async () => {
     : false
 
   if (generateExampleApp) {
-    // log(INFO, 'checking that react-native CLI can show its version')
-    // try {
-    //   await execa('react-native', ['--version'])
-    // } catch (e) {
-    //   log(ERROR, 'react-native CLI not installed correctly')
-    //   process.exit(1)
-    // }
-    // log(OK, 'react-native CLI ok')
-
     log(INFO, 'checking that Yarn CLI can show its version')
     try {
       await execa('yarn', ['--version'])
@@ -352,20 +341,6 @@ Promise.resolve().then(async () => {
     const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
     const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
 
-    // const generateExampleAppOptions = ['--version', reactNativeVersion]
-
-    // await execa(
-    //   'react-native',
-    //   ['init', exampleAppName].concat(generateExampleAppOptions),
-    //   {
-    //     cwd: resolveSubpath(modulePackageName),
-    //     stdout: showReactNativeOutput ? 'inherit' : null,
-    //     stderr: showReactNativeOutput ? 'inherit' : null
-    //   }
-    // )
-
-    // init(resolveSubpath(modulePackageName), [exampleAppName])
-
     await init([exampleAppName], {
       directory: exampleAppSubdirectory,
       // TODO (NEEDS FIX):
@@ -376,12 +351,7 @@ Promise.resolve().then(async () => {
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      resolveSubpath(
-        // modulePackageName,
-        // exampleAppName,
-        exampleAppPath,
-        EXAMPLE_APP_JS_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_APP_JS_FILENAME),
       exampleAppTemplate.content({
         ...createOptions,
         name: nativeObjectClassName
@@ -394,12 +364,7 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      resolveSubpath(
-        // modulePackageName,
-        // exampleAppName,
-        exampleAppPath,
-        EXAMPLE_METRO_CONFIG_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_METRO_CONFIG_FILENAME),
       EXAMPLE_METRO_CONFIG_WORKAROUND
     )
 
@@ -411,7 +376,6 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      // cwd: resolveSubpath(modulePackageName, exampleAppName),
       cwd: exampleAppPath,
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
@@ -443,7 +407,6 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          // cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
           cwd: resolveSubpath(exampleAppPath, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
