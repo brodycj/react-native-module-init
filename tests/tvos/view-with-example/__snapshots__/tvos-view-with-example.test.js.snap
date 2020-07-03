@@ -301,6 +301,7 @@ Array [
       "authorName": "Ada",
       "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-tvos-test-view",
       "name": "TestViewForTvOs",
       "packageIdentifier": "com.test",
