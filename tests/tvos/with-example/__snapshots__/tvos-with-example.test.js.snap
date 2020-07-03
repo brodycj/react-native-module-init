@@ -301,6 +301,7 @@ Array [
       "authorName": "Ada",
       "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-tvos-test-module",
       "name": "test module for tvOS",
       "packageIdentifier": "com.test",

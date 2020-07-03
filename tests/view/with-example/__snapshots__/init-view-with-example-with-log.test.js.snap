@@ -356,6 +356,7 @@ Array [
       "authorName": "Ada",
       "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-view",
       "name": "TestView",
       "packageIdentifier": "com.test",
