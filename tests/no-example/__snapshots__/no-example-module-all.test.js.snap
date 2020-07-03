@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native module with no example, with log 1`] = `
+exports[`require \`please-upgrade-node\`, generate module with no example, with correct logging 1`] = `
 Array [
   Object {
     "please-upgrade-node": Object {
