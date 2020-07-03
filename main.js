@@ -337,7 +337,7 @@ Promise.resolve().then(async () => {
     useAppleNetworking
   }
 
-  createReactNativeLibraryModule(createOptions)
+  await createReactNativeLibraryModule(createOptions)
 
   log(OK, 'native library module generated ok')
 
