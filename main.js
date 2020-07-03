@@ -1,4 +1,4 @@
-// package info:
+// get the package info:
 const pkg = require('./package.json')
 
 // require this before any other modules:
