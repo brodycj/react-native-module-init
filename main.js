@@ -38,7 +38,6 @@ const ERROR = logSymbols.error
 
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
-const SHOW_CURSOR = ansiEscapes.cursorShow
 const NEWLINE = '\n'
 
 const REACT_NATIVE_PREFIX = 'react-native-'
@@ -163,7 +162,7 @@ Promise.resolve().then(async () => {
 
   // quick solution to get the prefix in upper case, in a way that can
   // be part of a native class name (with no symbols, etc.)
-  nativeObjectClassNamePrefix = pascalCase(
+  const nativeObjectClassNamePrefix = pascalCase(
     nativeObjectClassNamePrefixInput
   ).toUpperCase()
 
