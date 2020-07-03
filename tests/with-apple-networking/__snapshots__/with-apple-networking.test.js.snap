@@ -244,6 +244,7 @@ Array [
       "authorName": "Ada",
       "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-module",
       "name": "test Module",
       "packageIdentifier": "com.test",
