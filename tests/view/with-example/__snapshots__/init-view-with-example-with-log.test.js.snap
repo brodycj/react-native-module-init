@@ -355,6 +355,7 @@ Array [
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-view",
       "name": "TestView",
       "packageIdentifier": "com.test",

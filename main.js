@@ -327,6 +327,7 @@ Promise.resolve().then(async () => {
     authorName,
     authorEmail,
     githubAccount: githubUserAccountName,
+    license,
     view: isView,
     useAppleNetworking
   }
