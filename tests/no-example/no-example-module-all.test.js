@@ -56,7 +56,7 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-it('generate native React Native module with no example, with log', async () => {
+it('require `please-upgrade-node`, generate module with no example, with correct logging', async () => {
   require('../../main')
 
   await new Promise(resolve => setTimeout(resolve, 0.001))
