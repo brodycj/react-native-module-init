@@ -21,6 +21,8 @@ mockPromptResponses = {
 }
 
 jest.mock('please-upgrade-node', () => ({ name, engines }) => {
+  // capture & check limited info as retrieved from package.json,
+  // no need to check other items such as version or dependencies
   mockCallSnapshot.push({ 'please-upgrade-node': { name, engines } })
 })
 
