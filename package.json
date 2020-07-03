@@ -25,8 +25,8 @@
   ],
   "scripts": {
     "jest": "cross-env CI=true jest",
-    "lint": "prettier-standard --check",
-    "lint-fix": "prettier-standard",
+    "lint": "prettier-standard --check --lint",
+    "lint-fix": "prettier-standard --lint",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
