@@ -21,7 +21,7 @@ mockPromptResponses = {
 }
 
 jest.mock('please-upgrade-node', () => ({ name, engines }) => {
-  mockCallSnapshot.push({ 'please-upgrade-node':  { name, engines }})
+  mockCallSnapshot.push({ 'please-upgrade-node': { name, engines } })
 })
 
 jest.mock('console', () => ({
