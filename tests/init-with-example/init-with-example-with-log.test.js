@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
 const mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test Module' },
+  nativeModuleName: { nativeModuleName: 'test Module' },
   isView: { isView: false },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-test-module' },

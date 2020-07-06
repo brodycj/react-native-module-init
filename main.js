@@ -113,18 +113,17 @@ Promise.resolve().then(async () => {
   // Show the tool info:
   log(INFO, pkg.name, pkg.version)
 
-  const { nativeModuleNameInput } = await prompt({
+  const { nativeModuleName } = await prompt({
     type: 'text',
-    name: 'nativeModuleNameInput',
+    name: 'nativeModuleName',
     message: 'What is the desired native module name?',
-    validate: nativeModuleNameInput =>
-      nativeModuleNameInput.length > 0 &&
-      paramCase(nativeModuleNameInput).length > 0
+    validate: nativeModuleName =>
+      nativeModuleName.length > 0 && paramCase(nativeModuleName).length > 0
   })
 
-  const nameParamCase = paramCase(nativeModuleNameInput)
+  const nameParamCase = paramCase(nativeModuleName)
 
-  const namePascalCase = pascalCase(nativeModuleNameInput)
+  const namePascalCase = pascalCase(nativeModuleName)
 
   const { isView } = await prompt({
     type: 'toggle',
@@ -134,8 +133,6 @@ Promise.resolve().then(async () => {
     active: 'yes',
     inactive: 'no'
   })
-
-  const nativeModuleName = nativeModuleNameInput
 
   const initialModulePackageName = nameParamCase.startsWith(REACT_NATIVE_PREFIX)
     ? nameParamCase
