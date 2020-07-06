@@ -324,7 +324,7 @@ Array [
         "react-native-tvos@latest",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module",
+        "cwd": "/home/ada.lovelace/path_resolved_from/react-native-tvos-test-module",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -332,7 +332,7 @@ Array [
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/App.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from/react-native-tvos-test-module/example/App.js",
       "outputContents": "/**
  * Sample React Native App
  *
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/metro.config.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from/react-native-tvos-test-module/example/metro.config.js",
       "outputContents": "// metro.config.js
 // with workaround solutions
 
@@ -427,7 +427,7 @@ module.exports = {
         "link:../",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example",
+        "cwd": "/home/ada.lovelace/path_resolved_from/react-native-tvos-test-module/example",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -449,7 +449,7 @@ module.exports = {
         "install",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-tvos-test-module/example/ios",
+        "cwd": "/home/ada.lovelace/path_resolved_from/react-native-tvos-test-module/example/ios",
         "stderr": "inherit",
         "stdout": "inherit",
       },

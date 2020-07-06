@@ -65,7 +65,9 @@ jest.mock('path', () => ({
   // quick solution to use & log system-independent paths in the snapshots,
   // with none of the arguments ignored
   resolve: (...paths) =>
-    `/home/ada.lovelace/path_resolved_from_${paths.join('/')}`,
+    paths.length === 1 && paths[0] === '.'
+      ? '/home/ada.lovelace/path_resolved_from'
+      : paths.join('/'),
   // support functionality of *real* path join operation
   join: (...paths) => [].concat(paths).join('/')
 }))
