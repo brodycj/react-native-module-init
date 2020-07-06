@@ -135,12 +135,7 @@ Promise.resolve().then(async () => {
     inactive: 'no'
   })
 
-  // view name needs to be in PascalCase to work with jsx
-  if (isView) {
-    await promptForConfirmation(`View name is is ${namePascalCase}. Continue?`)
-  }
-
-  const nativeModuleName = isView ? namePascalCase : nativeModuleNameInput
+  const nativeModuleName = nativeModuleNameInput
 
   const initialModulePackageName = nameParamCase.startsWith(REACT_NATIVE_PREFIX)
     ? nameParamCase
