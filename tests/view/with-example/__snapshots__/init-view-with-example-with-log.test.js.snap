@@ -14,7 +14,7 @@ Array [
       "args": Array [
         Object {
           "message": "What is the desired native module name?",
-          "name": "nativeModuleNameInput",
+          "name": "nativeModuleName",
           "onState": [Function],
           "type": "text",
           "validate": [Function],
@@ -33,19 +33,6 @@ Array [
           "name": "isView",
           "onState": [Function],
           "type": "toggle",
-        },
-      ],
-    },
-  },
-  Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "View name is is TestView. Continue?",
-          "name": "confirmation",
-          "onState": [Function],
-          "type": "confirm",
         },
       ],
     },
@@ -354,11 +341,11 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
-      "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
       "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-view",
-      "name": "TestView",
+      "name": "test View",
+      "objectClassName": "SUPERTestView",
       "packageIdentifier": "com.test",
       "platforms": Array [
         "android",

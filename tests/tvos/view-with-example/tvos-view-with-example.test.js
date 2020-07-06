@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
 const mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test view for tvOS' },
+  nativeModuleName: { nativeModuleName: 'test view for tvOS' },
   isView: { isView: true },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-tvos-test-view' },

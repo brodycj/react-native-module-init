@@ -7,7 +7,7 @@ Array [
       "args": Array [
         Object {
           "message": "What is the desired native module name?",
-          "name": "nativeModuleNameInput",
+          "name": "nativeModuleName",
           "onState": [Function],
           "type": "text",
           "validate": [Function],
@@ -299,11 +299,11 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
-      "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
       "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-tvos-test-module",
       "name": "test module for tvOS",
+      "objectClassName": "SUPERTestModule",
       "packageIdentifier": "com.test",
       "platforms": Array [
         "android",
