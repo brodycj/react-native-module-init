@@ -391,7 +391,7 @@ Array [
         "react-native@latest",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view",
+        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -405,7 +405,7 @@ Array [
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
       "outputContents": "/**
  * Sample React Native App
  *
@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
       "outputContents": "// metro.config.js
 // with workaround solutions
 
@@ -506,7 +506,7 @@ module.exports = {
         "link:../",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
+        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -552,7 +552,7 @@ module.exports = {
         "install",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
+        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -573,7 +573,7 @@ module.exports = {
   Object {
     "log": Array [
       "ℹ",
-      "(/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
+      "(/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
     ],
   },
   Object {
