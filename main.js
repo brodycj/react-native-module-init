@@ -68,8 +68,14 @@ module.exports = {
 }
 `
 
+// resolve the process cwd for once
+// equivalent to using process.cwd ref:
+// https://stackoverflow.com/a/9874415
+// (resolve('.') is a little easier to mock at this point)
+const cwdPath = path.resolve('.')
+
 // path helpers:
-const resolveSubpath = (...paths) => path.resolve('.', ...paths)
+const resolveSubpath = (...paths) => path.resolve(...paths)
 const joinPath = path.join
 
 // quick workaround ref:
@@ -348,13 +354,15 @@ Promise.resolve().then(async () => {
 
     const generateExampleAppOptions = ['--version', reactNativeVersion]
 
-    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
+    const modulePath = resolveSubpath(cwdPath, modulePackageName)
+
+    const exampleAppPath = resolveSubpath(modulePath, exampleAppName)
 
     await execa(
       'react-native',
       ['init', exampleAppName].concat(generateExampleAppOptions),
       {
-        cwd: resolveSubpath(modulePackageName),
+        cwd: modulePath,
         stdout: showReactNativeOutput ? 'inherit' : null,
         stderr: showReactNativeOutput ? 'inherit' : null
       }
