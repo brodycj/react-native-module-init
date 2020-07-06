@@ -331,7 +331,7 @@ Promise.resolve().then(async () => {
   const createOptions = {
     name: nativeModuleName,
     moduleName: modulePackageName,
-    className: nativeObjectClassName,
+    objectClassName: nativeObjectClassName,
     packageIdentifier: androidPackageId,
     platforms,
     tvosEnabled,
