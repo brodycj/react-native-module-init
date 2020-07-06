@@ -348,6 +348,8 @@ Promise.resolve().then(async () => {
 
     const generateExampleAppOptions = ['--version', reactNativeVersion]
 
+    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
+
     await execa(
       'react-native',
       ['init', exampleAppName].concat(generateExampleAppOptions),
@@ -361,11 +363,7 @@ Promise.resolve().then(async () => {
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      resolveSubpath(
-        modulePackageName,
-        exampleAppName,
-        EXAMPLE_APP_JS_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_APP_JS_FILENAME),
       exampleAppTemplate.content({
         ...createOptions,
         name: nativeObjectClassName
@@ -378,11 +376,7 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      resolveSubpath(
-        modulePackageName,
-        exampleAppName,
-        EXAMPLE_METRO_CONFIG_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_METRO_CONFIG_FILENAME),
       EXAMPLE_METRO_CONFIG_WORKAROUND
     )
 
@@ -394,7 +388,7 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: resolveSubpath(modulePackageName, exampleAppName),
+      cwd: exampleAppPath,
       stdout: showReactNativeOutput ? 'inherit' : null,
       stderr: showReactNativeOutput ? 'inherit' : null
     })
@@ -425,7 +419,7 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
+          cwd: resolveSubpath(exampleAppPath, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
         })
@@ -436,10 +430,9 @@ Promise.resolve().then(async () => {
       log(OK, 'additional pod install ok')
     }
 
-    // to show the subdirectory path of the example app
-    // (both relative & absolute):
+    // to show relative the subdirectory path of the example app
+    // (in addition to the absolute subdirectory path):
     const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
-    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
     // show the example app info:
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
     log(INFO, `(${exampleAppPath})`)
