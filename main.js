@@ -337,8 +337,9 @@ Promise.resolve().then(async () => {
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
+    // Note that paths must be determined before calling reactNativeInit which
+    // seems to change the process cwd as of react-native-init-func 0.0.1
     const modulePath = resolveSubpath(cwdPath, modulePackageName)
-
     const exampleAppPath = resolveSubpath(modulePath, exampleAppName)
     const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
 
