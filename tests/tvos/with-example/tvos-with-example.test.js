@@ -72,6 +72,10 @@ jest.mock('path', () => ({
   join: (...paths) => [].concat(paths).join('/')
 }))
 
+jest.mock('react-native-init-func', () => (...args) => {
+  mockCallSnapshot.push({ reactNativeInit: args })
+})
+
 it('generate native React Native module for tvOS with example', async () => {
   require('../../../main')
 
