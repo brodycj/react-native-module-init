@@ -28,6 +28,8 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
+const reactNativeInit = require('react-native-init-func')
+
 const updateNotifier = require('update-notifier')
 
 const BULB = bulb
@@ -270,6 +272,7 @@ Promise.resolve().then(async () => {
       ).exampleAppName
     : null
 
+  /* ** SKIP FOR NOW:
   const reactNativeVersion = generateExampleApp
     ? (
         await prompt({
@@ -286,6 +289,7 @@ Promise.resolve().then(async () => {
         })
       ).reactNativeVersion
     : null
+    // */
 
   const showReactNativeOutput = generateExampleApp
     ? (
@@ -344,22 +348,17 @@ Promise.resolve().then(async () => {
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
-    const generateExampleAppOptions = ['--version', reactNativeVersion]
-
     const modulePath = resolveSubpath(cwdPath, modulePackageName)
 
     const exampleAppPath = resolveSubpath(modulePath, exampleAppName)
     const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
 
-    await execa(
-      'react-native',
-      ['init', exampleAppName].concat(generateExampleAppOptions),
-      {
-        cwd: modulePath,
-        stdout: showReactNativeOutput ? 'inherit' : null,
-        stderr: showReactNativeOutput ? 'inherit' : null
-      }
-    )
+    await reactNativeInit([exampleAppName], {
+      directory: exampleAppSubdirectory,
+      // TODO (NEEDS FIX):
+      // template: reactNativeVersion
+      template: 'react-native@latest'
+    })
 
     log(INFO, 'generating App.js in the example app')
 
