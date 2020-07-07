@@ -264,19 +264,6 @@ Array [
     },
   },
   Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Show the output of React Native CLI (recommended)?",
-          "name": "showReactNativeOutput",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
-  },
-  Object {
     "log": Array [
       "ℹ",
       "checking that react-native CLI can show its version",

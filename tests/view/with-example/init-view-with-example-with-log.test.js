@@ -19,8 +19,7 @@ const mockPromptResponses = {
   generateExampleApp: { generateExampleApp: true },
   useAppleNetworking: { useAppleNetworking: false },
   reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
-  exampleAppName: { exampleAppName: 'example' },
-  showReactNativeOutput: { showReactNativeOutput: true }
+  exampleAppName: { exampleAppName: 'example' }
 }
 
 jest.mock('console', () => ({
