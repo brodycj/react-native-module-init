@@ -267,19 +267,6 @@ Array [
     "prompts": Object {
       "args": Array [
         Object {
-          "initial": "react-native@latest",
-          "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
-          "name": "reactNativeVersion",
-          "onState": [Function],
-          "type": "text",
-        },
-      ],
-    },
-  },
-  Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
           "initial": true,
           "message": "Show the output of React Native CLI (recommended)?",
           "name": "showReactNativeOutput",
@@ -369,18 +356,13 @@ Array [
     ],
   },
   Object {
-    "execa": Array [
-      "react-native",
+    "reactNativeInit": Array [
       Array [
-        "init",
         "example",
-        "--version",
-        "react-native@latest",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view",
-        "stderr": "inherit",
-        "stdout": "inherit",
+        "directory": "react-native-test-view/example",
+        "template": "react-native@latest",
       },
     ],
   },
