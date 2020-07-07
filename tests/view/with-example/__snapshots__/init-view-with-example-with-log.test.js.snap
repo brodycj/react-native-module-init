@@ -264,6 +264,19 @@ Array [
     },
   },
   Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "react-native@latest",
+          "message": "What react-native template to use for the example app (should be for at least react-native@0.60)?",
+          "name": "exampleTemplate",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
     "log": Array [
       "ℹ",
       "checking that react-native CLI can show its version",

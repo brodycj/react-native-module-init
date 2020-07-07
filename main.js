@@ -272,13 +272,12 @@ Promise.resolve().then(async () => {
       ).exampleAppName
     : null
 
-  /* ** SKIP FOR NOW:
-  const reactNativeVersion = generateExampleApp
+  const exampleTemplate = generateExampleApp
     ? (
         await prompt({
           type: 'text',
-          name: 'reactNativeVersion',
-          message: `What react-native version to use for the example app (should be at least ${
+          name: 'exampleTemplate',
+          message: `What react-native template to use for the example app (should be for at least ${
             tvosEnabled
               ? 'react-native@npm:react-native-tvos@0.60'
               : 'react-native@0.60'
@@ -287,9 +286,8 @@ Promise.resolve().then(async () => {
             ? 'react-native@npm:react-native-tvos'
             : 'react-native@latest'
         })
-      ).reactNativeVersion
+      ).exampleTemplate
     : null
-    // */
 
   if (generateExampleApp) {
     log(INFO, 'checking that react-native CLI can show its version')
@@ -345,9 +343,7 @@ Promise.resolve().then(async () => {
 
     await reactNativeInit([exampleAppName], {
       directory: exampleAppSubdirectory,
-      // TODO (NEEDS FIX):
-      // template: reactNativeVersion
-      template: 'react-native@latest'
+      template: exampleTemplate
     })
 
     log(INFO, 'generating App.js in the example app')

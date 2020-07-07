@@ -239,6 +239,19 @@ Array [
     },
   },
   Object {
+    "prompts": Object {
+      "args": Array [
+        Object {
+          "initial": "react-native@npm:react-native-tvos",
+          "message": "What react-native template to use for the example app (should be for at least react-native@npm:react-native-tvos@0.60)?",
+          "name": "exampleTemplate",
+          "onState": [Function],
+          "type": "text",
+        },
+      ],
+    },
+  },
+  Object {
     "execa": Array [
       "react-native",
       Array [
@@ -282,7 +295,7 @@ Array [
       ],
       Object {
         "directory": "react-native-tvos-test-view/example",
-        "template": "react-native@latest",
+        "template": "react-native-tvos@latest",
       },
     ],
   },

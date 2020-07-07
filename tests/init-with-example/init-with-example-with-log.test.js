@@ -18,7 +18,7 @@ const mockPromptResponses = {
   license: { license: 'BSD-4-CLAUSE' },
   useAppleNetworking: { useAppleNetworking: false },
   generateExampleApp: { generateExampleApp: true },
-  reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
+  exampleTemplate: { exampleTemplate: 'react-native@latest' },
   exampleAppName: { exampleAppName: 'example' }
 }
 
