@@ -278,12 +278,10 @@ Promise.resolve().then(async () => {
           type: 'text',
           name: 'exampleTemplate',
           message: `What react-native template to use for the example app (should be for at least ${
-            tvosEnabled
-              ? 'react-native@npm:react-native-tvos@0.60'
-              : 'react-native@0.60'
+            tvosEnabled ? 'react-native-tvos@0.60' : 'react-native@0.60'
           })?`,
           initial: tvosEnabled
-            ? 'react-native@npm:react-native-tvos'
+            ? 'react-native-tvos@latest'
             : 'react-native@latest'
         })
       ).exampleTemplate
