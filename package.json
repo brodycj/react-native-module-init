@@ -33,6 +33,12 @@
     ],
     "test": "npm run lint && cross-env CI=true jest"
   },
+  "// dependency notes": [
+    "@react-native-community/cli (transitive dependency from react-native-init-func)",
+    "uses a large number of other transitive dependencies including Babel & inquirer",
+    "and leads to ugly npm messages due to outdated core-js@2 from metro subdependencies.",
+    "It is desired to get both @react-native-community/cli & this tool to use enquirer."
+  ],
   "dependencies": {
     "ansi-escapes": "^4.3.1",
     "console": "^0.7.2",
