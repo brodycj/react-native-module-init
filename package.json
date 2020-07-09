@@ -50,6 +50,6 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "jest": "^26.1.0",
-    "prettier-standard": "^16.3.0"
+    "prettier-standard": "^16.4.1"
   }
 }
