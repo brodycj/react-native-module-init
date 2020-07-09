@@ -266,15 +266,6 @@ Array [
   },
   Object {
     "execa": Array [
-      "react-native",
-      Array [
-        "--version",
-      ],
-      undefined,
-    ],
-  },
-  Object {
-    "execa": Array [
       "yarn",
       Array [
         "--version",

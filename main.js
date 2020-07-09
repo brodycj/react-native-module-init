@@ -288,15 +288,6 @@ Promise.resolve().then(async () => {
     : null
 
   if (generateExampleApp) {
-    log(INFO, 'checking that react-native CLI can show its version')
-    try {
-      await execa('react-native', ['--version'])
-    } catch (e) {
-      log(ERROR, 'react-native CLI not installed correctly')
-      process.exit(1)
-    }
-    log(OK, 'react-native CLI ok')
-
     log(INFO, 'checking that Yarn CLI can show its version')
     try {
       await execa('yarn', ['--version'])

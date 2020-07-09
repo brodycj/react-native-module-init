@@ -292,27 +292,6 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "checking that react-native CLI can show its version",
-    ],
-  },
-  Object {
-    "execa": Array [
-      "react-native",
-      Array [
-        "--version",
-      ],
-      undefined,
-    ],
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "react-native CLI ok",
-    ],
-  },
-  Object {
-    "log": Array [
-      "ℹ",
       "checking that Yarn CLI can show its version",
     ],
   },
