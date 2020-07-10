@@ -252,7 +252,7 @@ Promise.resolve().then(async () => {
 
   log(INFO, 'It is possible to generate an example test app,')
   log(INFO, 'with workarounds in metro.config.js for metro linking issues')
-  log(INFO, 'Requirements: react-native-cli and Yarn; pod is needed for iOS')
+  log(INFO, 'Requirements: Yarn; pod is needed for iOS')
 
   const { generateExampleApp } = await prompt({
     type: 'confirm',
