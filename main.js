@@ -28,6 +28,8 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
+const reactNativeInit = require('react-native-init-func')
+
 const updateNotifier = require('update-notifier')
 
 const BULB = bulb
@@ -270,44 +272,22 @@ Promise.resolve().then(async () => {
       ).exampleAppName
     : null
 
-  const reactNativeVersion = generateExampleApp
+  const exampleTemplate = generateExampleApp
     ? (
         await prompt({
           type: 'text',
-          name: 'reactNativeVersion',
-          message: `What react-native version to use for the example app (should be at least ${
-            tvosEnabled
-              ? 'react-native@npm:react-native-tvos@0.60'
-              : 'react-native@0.60'
+          name: 'exampleTemplate',
+          message: `What react-native template to use for the example app (should be for at least ${
+            tvosEnabled ? 'react-native-tvos@0.60' : 'react-native@0.60'
           })?`,
           initial: tvosEnabled
-            ? 'react-native@npm:react-native-tvos'
+            ? 'react-native-tvos@latest'
             : 'react-native@latest'
         })
-      ).reactNativeVersion
+      ).exampleTemplate
     : null
 
-  const showReactNativeOutput = generateExampleApp
-    ? (
-        await prompt({
-          type: 'confirm',
-          name: 'showReactNativeOutput',
-          message: 'Show the output of React Native CLI (recommended)?',
-          initial: true
-        })
-      ).showReactNativeOutput
-    : false
-
   if (generateExampleApp) {
-    log(INFO, 'checking that react-native CLI can show its version')
-    try {
-      await execa('react-native', ['--version'])
-    } catch (e) {
-      log(ERROR, 'react-native CLI not installed correctly')
-      process.exit(1)
-    }
-    log(OK, 'react-native CLI ok')
-
     log(INFO, 'checking that Yarn CLI can show its version')
     try {
       await execa('yarn', ['--version'])
@@ -344,21 +324,16 @@ Promise.resolve().then(async () => {
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
-    const generateExampleAppOptions = ['--version', reactNativeVersion]
-
+    // Note that paths must be determined before calling reactNativeInit which
+    // seems to change the process cwd as of react-native-init-func 0.0.1
     const modulePath = resolveSubpath(cwdPath, modulePackageName)
-
     const exampleAppPath = resolveSubpath(modulePath, exampleAppName)
+    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
 
-    await execa(
-      'react-native',
-      ['init', exampleAppName].concat(generateExampleAppOptions),
-      {
-        cwd: modulePath,
-        stdout: showReactNativeOutput ? 'inherit' : null,
-        stderr: showReactNativeOutput ? 'inherit' : null
-      }
-    )
+    await reactNativeInit([exampleAppName], {
+      directory: exampleAppSubdirectory,
+      template: exampleTemplate
+    })
 
     log(INFO, 'generating App.js in the example app')
 
@@ -389,8 +364,8 @@ Promise.resolve().then(async () => {
 
     await execa('yarn', ['add', 'link:../'], {
       cwd: exampleAppPath,
-      stdout: showReactNativeOutput ? 'inherit' : null,
-      stderr: showReactNativeOutput ? 'inherit' : null
+      stdout: 'inherit',
+      stderr: 'inherit'
     })
 
     log(
@@ -430,9 +405,6 @@ Promise.resolve().then(async () => {
       log(OK, 'additional pod install ok')
     }
 
-    // to show relative the subdirectory path of the example app
-    // (in addition to the absolute subdirectory path):
-    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
     // show the example app info:
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
     log(INFO, `(${exampleAppPath})`)

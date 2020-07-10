@@ -18,9 +18,8 @@ const mockPromptResponses = {
   useAppleNetworking: { useAppleNetworking: false },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
-  reactNativeVersion: { reactNativeVersion: 'react-native-tvos@latest' },
-  exampleAppName: { exampleAppName: 'example' },
-  showReactNativeOutput: { showReactNativeOutput: true }
+  exampleTemplate: { exampleTemplate: 'react-native-tvos@latest' },
+  exampleAppName: { exampleAppName: 'example' }
 }
 
 jest.mock('console', () => ({
@@ -71,6 +70,10 @@ jest.mock('path', () => ({
   // support functionality of *real* path join operation
   join: (...paths) => [].concat(paths).join('/')
 }))
+
+jest.mock('react-native-init-func', () => (...args) => {
+  mockCallSnapshot.push({ reactNativeInit: args })
+})
 
 it('generate native React Native module for tvOS with example', async () => {
   require('../../../main')
