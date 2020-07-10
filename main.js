@@ -250,7 +250,7 @@ Promise.resolve().then(async () => {
         })
       : { useAppleNetworking: false }
 
-  log(INFO, 'It is possible to generate an example test app,')
+  log(INFO, 'It is possible to generate an example app for testing,')
   log(INFO, 'with workarounds in metro.config.js for metro linking issues')
   log(INFO, 'Requirements: Yarn; pod is needed for iOS')
 
