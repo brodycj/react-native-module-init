@@ -243,7 +243,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "It is possible to generate an example test app,",
+      "It is possible to generate an example app for testing,",
     ],
   },
   Object {
@@ -255,7 +255,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+      "Requirements: Yarn; pod is needed for iOS",
     ],
   },
   Object {
