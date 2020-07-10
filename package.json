@@ -37,7 +37,7 @@
     "@react-native-community/cli (transitive dependency from react-native-init-func)",
     "uses a large number of other transitive dependencies including Babel & inquirer",
     "and leads to ugly npm messages due to outdated core-js@2 & @hapi/joi@15 versions.",
-    "Another disadvantage is brittle dependency on inner init command function in ",
+    "Another disadvantage is brittle dependency on inner init command function in",
     "@react-native-community/cli (exact version is used by react-native-init-func).",
     "It is desired to get both @react-native-community/cli & this tool to use enquirer,",
     "get the transitive dependencies updated in @react-native-community/cli, and",
