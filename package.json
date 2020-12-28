@@ -39,8 +39,8 @@
     "and leads to ugly npm messages due to outdated core-js@2 & @hapi/joi@15 versions.",
     "Another disadvantage is brittle dependency on inner init command function in",
     "@react-native-community/cli (exact version is used by react-native-init-func).",
-    "It is desired to get both @react-native-community/cli & this tool to use enquirer,",
-    "get the transitive dependencies updated in @react-native-community/cli, and",
+    "(@react-native-community/cli version 5 will very likely use prompts)",
+    "It is desired to get @react-native-community/cli to use lighter transitive dependencies, and",
     "get the @react-native-community/cli project to publish a smaller init package."
   ],
   "dependencies": {
