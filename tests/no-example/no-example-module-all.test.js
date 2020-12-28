@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
-mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test Module' },
+const mockPromptResponses = {
+  nativeModuleName: { nativeModuleName: 'test Module' },
   isView: { isView: false },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-test-module' },
@@ -20,6 +20,12 @@ mockPromptResponses = {
   generateExampleApp: { generateExampleApp: false }
 }
 
+jest.mock('please-upgrade-node', () => ({ name, engines }) => {
+  // capture & check limited info as retrieved from package.json,
+  // no need to check other items such as version or dependencies
+  mockCallSnapshot.push({ 'please-upgrade-node': { name, engines } })
+})
+
 jest.mock('console', () => ({
   log: (...args) => {
     mockCallSnapshot.push({ log: args })
@@ -37,7 +43,7 @@ jest.mock('prompts', () => args => {
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
-    if (args[1] == 'user.email')
+    if (args[1] === 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
     else
       return Promise.resolve({
@@ -52,7 +58,7 @@ jest.mock('create-react-native-module', () => o => {
   mockCallSnapshot.push({ create: o })
 })
 
-it('generate native React Native module with no example, with log', async () => {
+it('require `please-upgrade-node`, generate module with no example, with correct logging', async () => {
   require('../../main')
 
   await new Promise(resolve => setTimeout(resolve, 0.001))

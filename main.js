@@ -1,3 +1,9 @@
+// get the package info:
+const pkg = require('./package.json')
+
+// require this before any other modules:
+require('please-upgrade-node')(pkg)
+
 const prompts = require('prompts')
 
 const path = require('path')
@@ -24,9 +30,9 @@ const logSymbols = require('log-symbols')
 const { paramCase } = require('param-case')
 const { pascalCase } = require('pascal-case')
 
-const updateNotifier = require('update-notifier')
+const reactNativeInit = require('react-native-init-func')
 
-const pkg = require('./package.json')
+const updateNotifier = require('update-notifier')
 
 const BULB = bulb
 const INFO = logSymbols.info
@@ -36,7 +42,6 @@ const ERROR = logSymbols.error
 
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
-const SHOW_CURSOR = ansiEscapes.cursorShow
 const NEWLINE = '\n'
 
 const REACT_NATIVE_PREFIX = 'react-native-'
@@ -63,12 +68,18 @@ module.exports = {
 
   // quick workaround solution for issue with symlinked modules ref:
   // https://github.com/brodybits/create-react-native-module/issues/232
-  watchFolders: ['.', '..']
+  watchFolders: [path.resolve('.'), path.resolve('..')]
 }
 `
 
+// resolve the process cwd for once
+// equivalent to using process.cwd ref:
+// https://stackoverflow.com/a/9874415
+// (resolve('.') is a little easier to mock at this point)
+const cwdPath = path.resolve('.')
+
 // path helpers:
-const resolveSubpath = (...paths) => path.resolve('.', ...paths)
+const resolveSubpath = (...paths) => path.resolve(...paths)
 const joinPath = path.join
 
 // quick workaround ref:
@@ -109,18 +120,17 @@ Promise.resolve().then(async () => {
   // Show the tool info:
   log(INFO, pkg.name, pkg.version)
 
-  const { nativeModuleNameInput } = await prompt({
+  const { nativeModuleName } = await prompt({
     type: 'text',
-    name: 'nativeModuleNameInput',
+    name: 'nativeModuleName',
     message: 'What is the desired native module name?',
-    validate: nativeModuleNameInput =>
-      nativeModuleNameInput.length > 0 &&
-      paramCase(nativeModuleNameInput).length > 0
+    validate: nativeModuleName =>
+      nativeModuleName.length > 0 && paramCase(nativeModuleName).length > 0
   })
 
-  const nameParamCase = paramCase(nativeModuleNameInput)
+  const nameParamCase = paramCase(nativeModuleName)
 
-  const namePascalCase = pascalCase(nativeModuleNameInput)
+  const namePascalCase = pascalCase(nativeModuleName)
 
   const { isView } = await prompt({
     type: 'toggle',
@@ -130,13 +140,6 @@ Promise.resolve().then(async () => {
     active: 'yes',
     inactive: 'no'
   })
-
-  // view name needs to be in PascalCase to work with jsx
-  if (isView) {
-    await promptForConfirmation(`View name is is ${namePascalCase}. Continue?`)
-  }
-
-  const nativeModuleName = isView ? namePascalCase : nativeModuleNameInput
 
   const initialModulePackageName = nameParamCase.startsWith(REACT_NATIVE_PREFIX)
     ? nameParamCase
@@ -164,7 +167,7 @@ Promise.resolve().then(async () => {
 
   // quick solution to get the prefix in upper case, in a way that can
   // be part of a native class name (with no symbols, etc.)
-  nativeObjectClassNamePrefix = pascalCase(
+  const nativeObjectClassNamePrefix = pascalCase(
     nativeObjectClassNamePrefixInput
   ).toUpperCase()
 
@@ -252,9 +255,9 @@ Promise.resolve().then(async () => {
         })
       : { useAppleNetworking: false }
 
-  log(INFO, 'It is possible to generate an example test app,')
+  log(INFO, 'It is possible to generate an example app for testing,')
   log(INFO, 'with workarounds in metro.config.js for metro linking issues')
-  log(INFO, 'Requirements: react-native-cli and Yarn; pod is needed for iOS')
+  log(INFO, 'Requirements: Yarn; pod is needed for iOS')
 
   const { generateExampleApp } = await prompt({
     type: 'confirm',
@@ -274,44 +277,22 @@ Promise.resolve().then(async () => {
       ).exampleAppName
     : null
 
-  const reactNativeVersion = generateExampleApp
+  const exampleTemplate = generateExampleApp
     ? (
         await prompt({
           type: 'text',
-          name: 'reactNativeVersion',
-          message: `What react-native version to use for the example app (should be at least ${
-            tvosEnabled
-              ? 'react-native@npm:react-native-tvos@0.60'
-              : 'react-native@0.60'
+          name: 'exampleTemplate',
+          message: `What react-native template to use for the example app (should be for at least ${
+            tvosEnabled ? 'react-native-tvos@0.60' : 'react-native@0.60'
           })?`,
           initial: tvosEnabled
-            ? 'react-native@npm:react-native-tvos'
+            ? 'react-native-tvos@latest'
             : 'react-native@latest'
         })
-      ).reactNativeVersion
+      ).exampleTemplate
     : null
 
-  const showReactNativeOutput = generateExampleApp
-    ? (
-        await prompt({
-          type: 'confirm',
-          name: 'showReactNativeOutput',
-          message: 'Show the output of React Native CLI (recommended)?',
-          initial: true
-        })
-      ).showReactNativeOutput
-    : false
-
   if (generateExampleApp) {
-    log(INFO, 'checking that react-native CLI can show its version')
-    try {
-      await execa('react-native', ['--version'])
-    } catch (e) {
-      log(ERROR, 'react-native CLI not installed correctly')
-      process.exit(1)
-    }
-    log(OK, 'react-native CLI ok')
-
     log(INFO, 'checking that Yarn CLI can show its version')
     try {
       await execa('yarn', ['--version'])
@@ -327,18 +308,19 @@ Promise.resolve().then(async () => {
   const createOptions = {
     name: nativeModuleName,
     moduleName: modulePackageName,
-    className: nativeObjectClassName,
+    objectClassName: nativeObjectClassName,
     packageIdentifier: androidPackageId,
     platforms,
     tvosEnabled,
     authorName,
     authorEmail,
     githubAccount: githubUserAccountName,
+    license,
     view: isView,
     useAppleNetworking
   }
 
-  createReactNativeLibraryModule(createOptions)
+  await createReactNativeLibraryModule(createOptions)
 
   log(OK, 'native library module generated ok')
 
@@ -347,26 +329,21 @@ Promise.resolve().then(async () => {
 
     const exampleAppTemplate = exampleTemplates.slice(-1)[0]
 
-    const generateExampleAppOptions = ['--version', reactNativeVersion]
+    // Note that paths must be determined before calling reactNativeInit which
+    // seems to change the process cwd as of react-native-init-func 0.0.1
+    const modulePath = resolveSubpath(cwdPath, modulePackageName)
+    const exampleAppPath = resolveSubpath(modulePath, exampleAppName)
+    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
 
-    await execa(
-      'react-native',
-      ['init', exampleAppName].concat(generateExampleAppOptions),
-      {
-        cwd: resolveSubpath(modulePackageName),
-        stdout: showReactNativeOutput ? 'inherit' : null,
-        stderr: showReactNativeOutput ? 'inherit' : null
-      }
-    )
+    await reactNativeInit([exampleAppName], {
+      directory: exampleAppSubdirectory,
+      template: exampleTemplate
+    })
 
     log(INFO, 'generating App.js in the example app')
 
     await fs.outputFile(
-      resolveSubpath(
-        modulePackageName,
-        exampleAppName,
-        EXAMPLE_APP_JS_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_APP_JS_FILENAME),
       exampleAppTemplate.content({
         ...createOptions,
         name: nativeObjectClassName
@@ -379,11 +356,7 @@ Promise.resolve().then(async () => {
       `rewrite ${EXAMPLE_METRO_CONFIG_FILENAME} with workaround solutions`
     )
     await fs.outputFile(
-      resolveSubpath(
-        modulePackageName,
-        exampleAppName,
-        EXAMPLE_METRO_CONFIG_FILENAME
-      ),
+      resolveSubpath(exampleAppPath, EXAMPLE_METRO_CONFIG_FILENAME),
       EXAMPLE_METRO_CONFIG_WORKAROUND
     )
 
@@ -395,9 +368,9 @@ Promise.resolve().then(async () => {
     )
 
     await execa('yarn', ['add', 'link:../'], {
-      cwd: resolveSubpath(modulePackageName, exampleAppName),
-      stdout: showReactNativeOutput ? 'inherit' : null,
-      stderr: showReactNativeOutput ? 'inherit' : null
+      cwd: exampleAppPath,
+      stdout: 'inherit',
+      stderr: 'inherit'
     })
 
     log(
@@ -426,7 +399,7 @@ Promise.resolve().then(async () => {
 
       try {
         await execa('pod', ['install'], {
-          cwd: resolveSubpath(modulePackageName, exampleAppName, 'ios'),
+          cwd: resolveSubpath(exampleAppPath, 'ios'),
           stdout: 'inherit',
           stderr: 'inherit'
         })
@@ -437,10 +410,6 @@ Promise.resolve().then(async () => {
       log(OK, 'additional pod install ok')
     }
 
-    // to show the subdirectory path of the example app
-    // (both relative & absolute):
-    const exampleAppSubdirectory = joinPath(modulePackageName, exampleAppName)
-    const exampleAppPath = resolveSubpath(modulePackageName, exampleAppName)
     // show the example app info:
     log(BULB, `check out the example app in ${exampleAppSubdirectory}`)
     log(INFO, `(${exampleAppPath})`)

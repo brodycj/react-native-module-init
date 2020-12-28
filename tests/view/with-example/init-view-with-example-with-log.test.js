@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
-mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test View' },
+const mockPromptResponses = {
+  nativeModuleName: { nativeModuleName: 'test View' },
   isView: { isView: true },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-test-view' },
@@ -18,9 +18,8 @@ mockPromptResponses = {
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
   useAppleNetworking: { useAppleNetworking: false },
-  reactNativeVersion: { reactNativeVersion: 'react-native@latest' },
-  exampleAppName: { exampleAppName: 'example' },
-  showReactNativeOutput: { showReactNativeOutput: true }
+  exampleTemplate: { exampleTemplate: 'react-native@latest' },
+  exampleAppName: { exampleAppName: 'example' }
 }
 
 jest.mock('console', () => ({
@@ -40,7 +39,7 @@ jest.mock('prompts', () => args => {
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
-    if (args[1] == 'user.email')
+    if (args[1] === 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
     else
       return Promise.resolve({
@@ -69,6 +68,10 @@ jest.mock('path', () => ({
   // support functionality of *real* path join operation
   join: (...paths) => [].concat(paths).join('/')
 }))
+
+jest.mock('react-native-init-func', () => (...args) => {
+  mockCallSnapshot.push({ reactNativeInit: args })
+})
 
 it('generate native React Native view with example, with log', async () => {
   require('../../../main')

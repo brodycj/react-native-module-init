@@ -1,6 +1,6 @@
 {
   "name": "react-native-module-init",
-  "version": "0.3.2-dev",
+  "version": "0.4.1-dev",
   "description": "Interactive CLI utility to create native React Native modules and views",
   "main": "main.js",
   "bin": {
@@ -14,6 +14,9 @@
     "type": "git",
     "url:": "https://github.com/brodybits/react-native-module-init.git"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "files": [
     "LICENSE.md",
     "README.md",
@@ -22,32 +25,44 @@
   ],
   "scripts": {
     "jest": "cross-env CI=true jest",
-    "lint": "prettier-standard --check",
-    "lint-fix": "prettier-standard",
+    "lint": "prettier-standard --check --lint",
+    "lint-fix": "prettier-standard --lint",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
     ],
     "test": "npm run lint && cross-env CI=true jest"
   },
+  "// dependency notes": [
+    "@react-native-community/cli (transitive dependency from react-native-init-func)",
+    "uses a large number of other transitive dependencies including Babel & inquirer",
+    "and leads to ugly npm messages due to outdated core-js@2 & @hapi/joi@15 versions.",
+    "Another disadvantage is brittle dependency on inner init command function in",
+    "@react-native-community/cli (exact version is used by react-native-init-func).",
+    "It is desired to get both @react-native-community/cli & this tool to use enquirer,",
+    "get the transitive dependencies updated in @react-native-community/cli, and",
+    "get the @react-native-community/cli project to publish a smaller init package."
+  ],
   "dependencies": {
     "ansi-escapes": "^4.3.1",
     "console": "^0.7.2",
-    "create-react-native-module": "^0.16.0",
+    "create-react-native-module": "^0.19.0",
     "emoji-bulb": "^1.3.0",
-    "execa": "^4.0.0",
+    "execa": "^4.0.3",
     "exit": "^0.1.2",
-    "fs-extra": "^8.1.0",
-    "log-symbols": "^3.0.0",
+    "fs-extra": "^9.0.1",
+    "log-symbols": "^4.0.0",
     "param-case": "^3.0.3",
     "pascal-case": "^3.1.1",
+    "please-upgrade-node": "^3.2.0",
     "prompts": "^2.3.2",
+    "react-native-init-func": "^0.0.1",
     "update-notifier": "^4.1.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
     "hexyjs": "^2.1.3",
-    "jest": "^25.5.4",
-    "prettier-standard": "^16.3.0"
+    "jest": "^26.1.0",
+    "prettier-standard": "^16.4.1"
   }
 }

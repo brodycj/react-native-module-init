@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate native React Native module with no example, with log 1`] = `
+exports[`require \`please-upgrade-node\`, generate module with no example, with correct logging 1`] = `
 Array [
+  Object {
+    "please-upgrade-node": Object {
+      "engines": Object {
+        "node": ">=10",
+      },
+      "name": "react-native-module-init",
+    },
+  },
   Object {
     "log": Array [
       "ℹ",
       "react-native-module-init",
-      "0.3.2-dev",
+      "0.4.1-dev",
     ],
   },
   Object {
@@ -14,7 +22,7 @@ Array [
       "args": Array [
         Object {
           "message": "What is the desired native module name?",
-          "name": "nativeModuleNameInput",
+          "name": "nativeModuleName",
           "onState": [Function],
           "type": "text",
           "validate": [Function],
@@ -235,7 +243,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "It is possible to generate an example test app,",
+      "It is possible to generate an example app for testing,",
     ],
   },
   Object {
@@ -247,7 +255,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+      "Requirements: Yarn; pod is needed for iOS",
     ],
   },
   Object {
@@ -273,10 +281,11 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
-      "className": "SUPERTestModule",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-module",
       "name": "test Module",
+      "objectClassName": "SUPERTestModule",
       "packageIdentifier": "com.test",
       "platforms": Array [
         "android",

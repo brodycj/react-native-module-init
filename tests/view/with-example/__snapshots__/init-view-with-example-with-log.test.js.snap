@@ -6,7 +6,7 @@ Array [
     "log": Array [
       "ℹ",
       "react-native-module-init",
-      "0.3.2-dev",
+      "0.4.1-dev",
     ],
   },
   Object {
@@ -14,7 +14,7 @@ Array [
       "args": Array [
         Object {
           "message": "What is the desired native module name?",
-          "name": "nativeModuleNameInput",
+          "name": "nativeModuleName",
           "onState": [Function],
           "type": "text",
           "validate": [Function],
@@ -33,19 +33,6 @@ Array [
           "name": "isView",
           "onState": [Function],
           "type": "toggle",
-        },
-      ],
-    },
-  },
-  Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "View name is is TestView. Continue?",
-          "name": "confirmation",
-          "onState": [Function],
-          "type": "confirm",
         },
       ],
     },
@@ -235,7 +222,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "It is possible to generate an example test app,",
+      "It is possible to generate an example app for testing,",
     ],
   },
   Object {
@@ -247,7 +234,7 @@ Array [
   Object {
     "log": Array [
       "ℹ",
-      "Requirements: react-native-cli and Yarn; pod is needed for iOS",
+      "Requirements: Yarn; pod is needed for iOS",
     ],
   },
   Object {
@@ -281,47 +268,13 @@ Array [
       "args": Array [
         Object {
           "initial": "react-native@latest",
-          "message": "What react-native version to use for the example app (should be at least react-native@0.60)?",
-          "name": "reactNativeVersion",
+          "message": "What react-native template to use for the example app (should be for at least react-native@0.60)?",
+          "name": "exampleTemplate",
           "onState": [Function],
           "type": "text",
         },
       ],
     },
-  },
-  Object {
-    "prompts": Object {
-      "args": Array [
-        Object {
-          "initial": true,
-          "message": "Show the output of React Native CLI (recommended)?",
-          "name": "showReactNativeOutput",
-          "onState": [Function],
-          "type": "confirm",
-        },
-      ],
-    },
-  },
-  Object {
-    "log": Array [
-      "ℹ",
-      "checking that react-native CLI can show its version",
-    ],
-  },
-  Object {
-    "execa": Array [
-      "react-native",
-      Array [
-        "--version",
-      ],
-      undefined,
-    ],
-  },
-  Object {
-    "log": Array [
-      "✔",
-      "react-native CLI ok",
-    ],
   },
   Object {
     "log": Array [
@@ -354,10 +307,11 @@ Array [
     "create": Object {
       "authorEmail": "ada@lovelace.name",
       "authorName": "Ada",
-      "className": "SUPERTestView",
       "githubAccount": "ada-lovelace",
+      "license": "BSD-4-CLAUSE",
       "moduleName": "react-native-test-view",
-      "name": "TestView",
+      "name": "test View",
+      "objectClassName": "SUPERTestView",
       "packageIdentifier": "com.test",
       "platforms": Array [
         "android",
@@ -381,18 +335,13 @@ Array [
     ],
   },
   Object {
-    "execa": Array [
-      "react-native",
+    "reactNativeInit": Array [
       Array [
-        "init",
         "example",
-        "--version",
-        "react-native@latest",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view",
-        "stderr": "inherit",
-        "stdout": "inherit",
+        "directory": "react-native-test-view/example",
+        "template": "react-native@latest",
       },
     ],
   },
@@ -404,7 +353,7 @@ Array [
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/App.js",
       "outputContents": "/**
  * Sample React Native App
  *
@@ -461,7 +410,7 @@ const styles = StyleSheet.create({
   },
   Object {
     "outputFile": Object {
-      "filePath": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
+      "filePath": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/metro.config.js",
       "outputContents": "// metro.config.js
 // with workaround solutions
 
@@ -480,7 +429,7 @@ module.exports = {
 
   // quick workaround solution for issue with symlinked modules ref:
   // https://github.com/brodybits/create-react-native-module/issues/232
-  watchFolders: ['.', '..']
+  watchFolders: [path.resolve('.'), path.resolve('..')]
 }
 ",
     },
@@ -505,7 +454,7 @@ module.exports = {
         "link:../",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
+        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -551,7 +500,7 @@ module.exports = {
         "install",
       ],
       Object {
-        "cwd": "/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
+        "cwd": "/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example/ios",
         "stderr": "inherit",
         "stdout": "inherit",
       },
@@ -572,7 +521,7 @@ module.exports = {
   Object {
     "log": Array [
       "ℹ",
-      "(/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
+      "(/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_/home/ada.lovelace/path_resolved_from_./react-native-test-view/example)",
     ],
   },
   Object {

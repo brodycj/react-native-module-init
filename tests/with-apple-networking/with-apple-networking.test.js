@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
-mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test Module' },
+const mockPromptResponses = {
+  nativeModuleName: { nativeModuleName: 'test Module' },
   isView: { isView: false },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-test-module' },
@@ -37,7 +37,7 @@ jest.mock('prompts', () => args => {
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
-    if (args[1] == 'user.email')
+    if (args[1] === 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
     else
       return Promise.resolve({

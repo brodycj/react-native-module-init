@@ -1,7 +1,7 @@
 const mockCallSnapshot = []
 
-mockPromptResponses = {
-  nativeModuleNameInput: { nativeModuleNameInput: 'test view for tvOS' },
+const mockPromptResponses = {
+  nativeModuleName: { nativeModuleName: 'test view for tvOS' },
   isView: { isView: true },
   confirmation: { confirmation: true },
   modulePackageName: { modulePackageName: 'react-native-tvos-test-view' },
@@ -18,9 +18,8 @@ mockPromptResponses = {
   useAppleNetworking: { useAppleNetworking: false },
   license: { license: 'BSD-4-CLAUSE' },
   generateExampleApp: { generateExampleApp: true },
-  reactNativeVersion: { reactNativeVersion: 'react-native-tvos@latest' },
-  exampleAppName: { exampleAppName: 'example' },
-  showReactNativeOutput: { showReactNativeOutput: true }
+  exampleTemplate: { exampleTemplate: 'react-native-tvos@latest' },
+  exampleAppName: { exampleAppName: 'example' }
 }
 
 jest.mock('console', () => ({
@@ -40,7 +39,7 @@ jest.mock('prompts', () => args => {
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
-    if (args[1] == 'user.email')
+    if (args[1] === 'user.email')
       return Promise.resolve({ stdout: 'alice@example.com' })
     else
       return Promise.resolve({
@@ -65,10 +64,16 @@ jest.mock('path', () => ({
   // quick solution to use & log system-independent paths in the snapshots,
   // with none of the arguments ignored
   resolve: (...paths) =>
-    `/home/ada.lovelace/path_resolved_from_${paths.join('/')}`,
+    paths.length === 1 && paths[0] === '.'
+      ? '/home/ada.lovelace/path_resolved_from'
+      : paths.join('/'),
   // support functionality of *real* path join operation
   join: (...paths) => [].concat(paths).join('/')
 }))
+
+jest.mock('react-native-init-func', () => (...args) => {
+  mockCallSnapshot.push({ reactNativeInit: args })
+})
 
 it('generate native React Native view for tvOS, with example', async () => {
   require('../../../main')
