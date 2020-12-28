@@ -84,7 +84,7 @@ const joinPath = path.join
 
 // quick workaround ref:
 // https://github.com/terkelg/prompts/issues/252
-const onState = ({ aborted }) => {
+function onPromptState ({ aborted }) {
   if (aborted) {
     // should put SHOW_CURSOR to stdout & end with a newline ref:
     // - https://stackoverflow.com/questions/4976466/difference-between-process-stdout-write-and-console-log-in-node-js/4984464#4984464
@@ -97,9 +97,11 @@ const onState = ({ aborted }) => {
 
 // with quick workaround for
 // https://github.com/terkelg/prompts/issues/252
-const prompt = props => prompts([{ onState, ...props }])
+function prompt (props) {
+  return prompts([{ onState: onPromptState, ...props }])
+}
 
-const promptForConfirmation = async message => {
+async function promptForConfirmation (message) {
   const { confirmation } = await prompt({
     type: 'confirm',
     name: 'confirmation',
