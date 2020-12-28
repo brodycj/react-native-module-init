@@ -42,7 +42,7 @@ const ERROR = logSymbols.error
 
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
-const NEWLINE = '\n'
+const SHOW_CURSOR = ansiEscapes.cursorShow
 
 const REACT_NATIVE_PREFIX = 'react-native-'
 

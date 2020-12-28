@@ -18,7 +18,7 @@ jest.mock('prompts', () => ([{ onState }]) => {
   // abort immediately after this function is finished
   Promise.resolve().then(() => onState({ aborted: true }))
   // return a promise that never resolves
-  return new Promise(_ => {})
+  return new Promise(() => {})
 })
 
 jest.mock('exit', () => code => {
