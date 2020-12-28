@@ -3586,10 +3586,10 @@ has-yarn@^2.1.0:
   resolved "https://registry.yarnpkg.com/has-yarn/-/has-yarn-2.1.0.tgz#137e11354a7b5bf11aa5cb649cf0c6f3ff2b2e77"
   integrity sha512-UqBRqi4ju7T+TqGNdqAO0PaSVGsDGJUBQvk9eUWNGRY1CFGDzYhLWoM7JQEemnlvVcv/YEmc2wNW8BC24EnUsw==
 
-hexyjs@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/hexyjs/-/hexyjs-2.1.3.tgz#e3c15b7ddd47539dcd27d6ac170b9ca25d483197"
-  integrity sha512-47p5Jv4BfyWkACYRpAiD2+thIbvEK9ZYK4YLOTKQX+r937ZM3cDPpU2EcI7ZCs7vFqR/svwnOzds9rGiB3k5gA==
+hexyjs@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/hexyjs/-/hexyjs-2.1.4.tgz#7400a27fb42ecbdd12d73911462b51e9702aca87"
+  integrity sha512-xv4pjwHoOauMxpPMSyDK+b5sIQ9aBRDtoDJjxf5WBYIDc2NYRtp3Q5LBdXuZ245XzISmzuon0P7XznmttSH7LA==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"
