@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`outputs cleanup line to the console & and exits if aborted 1`] = `
+Array [
+  Object {
+    "log": Array [
+      Array [
+        "ℹ",
+        "2139",
+      ],
+      Array [
+        "react-native-module-init",
+        "72656163742d6e61746976652d6d6f64756c652d696e6974",
+      ],
+      Array [
+        "0.4.1-dev",
+        "302e342e312d646576",
+      ],
+    ],
+  },
+  Object {
+    "prompts": Object {},
+  },
+  Object {
+    "log": Array [
+      Array [
+        "[?25h",
+        "1b5b3f323568",
+      ],
+    ],
+  },
+  Object {
+    "exit": 1,
+  },
+]
+`;

@@ -8,6 +8,8 @@ const prompts = require('prompts')
 
 const path = require('path')
 
+const exit = require('exit')
+
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
 const ansiEscapes = require('ansi-escapes')
@@ -40,7 +42,7 @@ const ERROR = logSymbols.error
 
 // used in quick workaround for
 // https://github.com/terkelg/prompts/issues/252
-const NEWLINE = '\n'
+const SHOW_CURSOR = ansiEscapes.cursorShow
 
 const REACT_NATIVE_PREFIX = 'react-native-'
 
@@ -84,9 +86,12 @@ const joinPath = path.join
 // https://github.com/terkelg/prompts/issues/252
 const onState = ({ aborted }) => {
   if (aborted) {
-    process.stdout.write(ansiEscapes.cursorShow)
-    process.stdout.write(NEWLINE)
-    process.exit(1)
+    // should put SHOW_CURSOR to stdout & end with a newline ref:
+    // - https://stackoverflow.com/questions/4976466/difference-between-process-stdout-write-and-console-log-in-node-js/4984464#4984464
+    // - https://github.com/nodejs/node/blob/v14.x/lib/internal/console/constructor.js
+    // these npm package calls can be easily mocked and tested with Jest
+    log(SHOW_CURSOR)
+    exit(1)
   }
 }
 
@@ -102,7 +107,7 @@ const promptForConfirmation = async message => {
     initial: true
   })
 
-  if (!confirmation) process.exit(1)
+  if (!confirmation) exit(1)
 }
 
 // notify the user (...)
