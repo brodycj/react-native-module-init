@@ -79,6 +79,6 @@
     "hexyjs": "^2.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "prettier-plugin-x": "https://github.com/brodybits/prettier-plugin-prettierx-babel#d223b9945183074fd8550611b80685f1a9ee904c"
+    "prettier-plugin-x": "^0.0.4"
   }
 }
