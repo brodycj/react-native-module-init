@@ -25,15 +25,22 @@
   ],
   "scripts": {
     "jest": "cross-env CI=true jest",
-    "lint": "npm run prettier",
+    "// lint": "npm run prettier",
     "// lint notes": [
-      "The prettierx CLI is now used (directly) to check & fix formatting",
+      "XXX TBD:",
+      "eslint is now used ... ... ...",
       "(`--end-of-line=auto` option was needed for CI to pass on Windows)",
-      "Upcoming step is to add eslint with configuration",
+      "XXX TODO formatting issue with XXX plugin",
+      "XXX TODO fix YAML",
+      "XXX TODO lint md/JSON/YAML",
+      "Upcoming step is to add configuration",
       "to enable more 'Standard JS' rules"
     ],
-    "lint-fix": "npm run prettier -- --write",
-    "prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
+    "lint": "eslint ./*.js tests/**/*.js",
+    "lint-fix": "npm run lint -- --fix",
+    "// prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
+    "// lint-fix": "npm run prettier -- --write",
+    "// prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"

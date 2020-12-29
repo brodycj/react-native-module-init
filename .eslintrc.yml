@@ -1,0 +1,13 @@
+parserOptions:
+  ecmaVersion: 9
+  
+plugins:
+  - prettier
+
+rules:
+  prettier/prettier:
+    - error
+    - parser: prettierx-babel
+      semi: false
+      singleQuote: true
+      spaceBeforeFunctionParen: true
