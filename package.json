@@ -29,14 +29,14 @@
     "// lint notes": [
       "XXX TBD:",
       "eslint is now used ... ... ...",
-      "(`--end-of-line=auto` option was needed for CI to pass on Windows)",
+      "prettier `--end-of-line=auto` option is needed for CI on Windows",
       "XXX TODO formatting issue with XXX plugin",
       "XXX TODO fix doc & markup",
       "Upcoming step is to add configuration",
       "to enable more 'Standard JS' rules"
     ],
     "lint": "npm-run-all lint:eslint lint:markup",
-    "lint:markup": "prettier --check ./**/*.md ./**/*.json ./**/*.yml",
+    "lint:markup": "prettier --check --end-of-line=auto ./**/*.md ./**/*.json ./**/*.yml",
     "lint:eslint": "eslint ./*.js tests/**/*.js",
     "lint-fix": "npm run lint:eslint -- --fix && echo 'XXX TODO fix doc & markup' && exit 1",
     "// lint-fix": "npm run prettier -- --write",
