@@ -8,6 +8,7 @@ rules:
   prettier/prettier:
     - error
     - parser: prettierx-babel
+      endOfLine: auto
       semi: false
       singleQuote: true
       spaceBeforeFunctionParen: true
