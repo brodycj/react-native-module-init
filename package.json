@@ -35,9 +35,8 @@
       "Upcoming step is to add configuration",
       "to enable more 'Standard JS' rules"
     ],
-    "lint": "npm-run-all lint:eslint lint:doc lint:markup",
-    "lint:doc": "prettier --check ./**/*.md",
-    "lint:markup": "prettier --check ./**/*.json ./**/*.yml",
+    "lint": "npm-run-all lint:eslint lint:markup",
+    "lint:markup": "prettier --check ./**/*.md ./**/*.json ./**/*.yml",
     "lint:eslint": "eslint ./*.js tests/**/*.js",
     "lint-fix": "npm run lint:eslint -- --fix && echo 'XXX TODO fix doc & markup' && exit 1",
     "// lint-fix": "npm run prettier -- --write",
