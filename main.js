@@ -269,25 +269,29 @@ Promise.resolve().then(async () => {
   })
 
   const exampleAppName = generateExampleApp
-    ? (await prompt({
-        type: 'text',
-        name: 'exampleAppName',
-        message: 'Example app name?',
-        initial: 'example'
-      })).exampleAppName
+    ? (
+        await prompt({
+          type: 'text',
+          name: 'exampleAppName',
+          message: 'Example app name?',
+          initial: 'example'
+        })
+      ).exampleAppName
     : null
 
   const exampleTemplate = generateExampleApp
-    ? (await prompt({
-        type: 'text',
-        name: 'exampleTemplate',
-        message: `What react-native template to use for the example app (should be for at least ${
-          tvosEnabled ? 'react-native-tvos@0.60' : 'react-native@0.60'
-        })?`,
-        initial: tvosEnabled
-          ? 'react-native-tvos@latest'
-          : 'react-native@latest'
-      })).exampleTemplate
+    ? (
+        await prompt({
+          type: 'text',
+          name: 'exampleTemplate',
+          message: `What react-native template to use for the example app (should be for at least ${
+            tvosEnabled ? 'react-native-tvos@0.60' : 'react-native@0.60'
+          })?`,
+          initial: tvosEnabled
+            ? 'react-native-tvos@latest'
+            : 'react-native@latest'
+        })
+      ).exampleTemplate
     : null
 
   if (generateExampleApp) {
