@@ -27,8 +27,10 @@
     "jest": "cross-env CI=true jest",
     "lint": "npm run prettier",
     "// lint notes": [
-      "prettierx is now used from the command line to check & fix formatting",
-      "(next step is to use prettierx together with eslint & config file)"
+      "The prettierx CLI is now used (directly) to check & fix formatting",
+      "(`--end-of-line=auto` option was needed for CI to pass on Windows)",
+      "Upcoming step is to add eslint with configuration",
+      "to enable more 'Standard JS' rules"
     ],
     "lint-fix": "npm run prettier -- --write",
     "prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
