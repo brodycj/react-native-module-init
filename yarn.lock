@@ -5657,12 +5657,6 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-"prettier-plugin-prettierx-babel@https://github.com/brodybits/prettier-plugin-prettierx-babel":
-  version "0.0.2-dev"
-  resolved "https://github.com/brodybits/prettier-plugin-prettierx-babel#bb3c136164f8b94022052a5be07533e663dbe35e"
-  dependencies:
-    prettierx "^0.14.3"
-
 prettier@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
