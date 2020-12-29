@@ -7,7 +7,7 @@ plugins:
 rules:
   prettier/prettier:
     - error
-    - parser: prettierx-babel
+    - parser: x-babel
       arrowParens: avoid
       endOfLine: auto
       semi: false
