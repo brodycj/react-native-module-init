@@ -9,7 +9,7 @@ rules:
     - error
     - parser: x-babel
       arrowParens: avoid
-      endOfLine: auto
+      endOfLine: auto # needed for CI on Windows
       semi: false
       singleQuote: true
       spaceBeforeFunctionParen: true
