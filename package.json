@@ -31,15 +31,16 @@
       "eslint is now used ... ... ...",
       "(`--end-of-line=auto` option was needed for CI to pass on Windows)",
       "XXX TODO formatting issue with XXX plugin",
-      "XXX TODO fix YAML",
-      "XXX TODO lint md/JSON/YAML",
+      "XXX TODO fix doc & markup",
       "Upcoming step is to add configuration",
       "to enable more 'Standard JS' rules"
     ],
-    "lint": "eslint ./*.js tests/**/*.js",
-    "lint-fix": "npm run lint -- --fix",
+    "lint": "npm run lint:eslint && npm run lint:doc && npm run lint:markup",
+    "lint:doc": "prettier --check ./**/*.md",
+    "lint:markup": "prettier --check ./**/*.json ./**/*.yml",
+    "lint:eslint": "eslint ./*.js tests/**/*.js",
+    "lint-fix": "npm run lint:eslint -- --fix && echo 'XXX TODO fix doc & markup' && exit 1",
     "// lint-fix": "npm run prettier -- --write",
-    "// prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
