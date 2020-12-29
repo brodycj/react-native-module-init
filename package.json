@@ -27,7 +27,7 @@
     "jest": "cross-env CI=true jest",
     "lint": "npm run prettier",
     "lint-fix": "npm run prettier -- --write",
-    "prettier": "prettierx --check --arrow-parens=avoid --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*",
+    "prettier": "prettierx --check --arrow-parens=avoid --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
