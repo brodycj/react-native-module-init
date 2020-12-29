@@ -38,7 +38,6 @@
     ],
     "lint": "eslint ./*.js tests/**/*.js",
     "lint-fix": "npm run lint -- --fix",
-    "// prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// lint-fix": "npm run prettier -- --write",
     "// prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// testing notes": [
