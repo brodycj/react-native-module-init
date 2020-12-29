@@ -25,7 +25,6 @@
   ],
   "scripts": {
     "jest": "cross-env CI=true jest",
-    "// lint": "npm run prettier",
     "// lint notes": [
       "XXX TBD:",
       "eslint is now used ... ... ...",
