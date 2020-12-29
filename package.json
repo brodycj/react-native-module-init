@@ -31,7 +31,7 @@
       "(next step is to use prettierx together with eslint & config file)"
     ],
     "lint-fix": "npm run prettier -- --write",
-    "prettier": "prettierx --check --arrow-parens=avoid --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
+    "prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
