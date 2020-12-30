@@ -27,6 +27,10 @@
     "// lint notes": [
       "- eslint is now used together with Prettier & prettier-plugin-x for",
       "  linting of the JavaScript",
+      "- Escaped double-quotes are needed around the `tests/**/*.js` glob for eslint",
+      "  for the package script to work properly across Windows, macOS, and Linux.",
+      "  Using eslint in npm script with no quotes around the glob seems to miss some files;",
+      "  using single-quotes around the glob does not seem to work on Windows.",
       "- Prettier is used alone for the markup (*.md, *.json, *.yml) files",
       "- Prettier `--end-of-line=auto` option is needed for CI on Windows.",
       "- eslint-config-standard is used together with some eslint plugins",
@@ -36,7 +40,7 @@
     "lint": "run-scripts lint:eslint lint:markup",
     "lint:markup": "prettier --check --end-of-line=auto ./**/*.md ./**/*.json ./**/*.yml",
     "lint:markup:fix": "npm run lint:markup -- --write",
-    "lint:eslint": "eslint ./*.js tests/**/*.js",
+    "lint:eslint": "eslint ./*.js \"tests/**/*.js\"",
     "lint:eslint:fix": "npm run lint:eslint -- --fix",
     "lint:fix": "run-scripts lint:eslint:fix lint:markup:fix",
     "// testing notes": [
