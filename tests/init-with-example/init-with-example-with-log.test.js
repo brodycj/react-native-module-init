@@ -38,16 +38,11 @@ jest.mock('prompts', () => args => {
 
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
-  if (cmd === 'git') {
-    if (args[1] === 'user.email')
-      return Promise.resolve({ stdout: 'alice@example.com' })
-    else
-      return Promise.resolve({
-        stdout: 'Alice'
-      })
-  } else {
-    return Promise.resolve()
-  }
+  return cmd === 'git'
+    ? args[1] === 'user.email'
+        ? Promise.resolve({ stdout: 'alice@example.com' })
+        : Promise.resolve({ stdout: 'Alice' })
+    : Promise.resolve()
 })
 
 jest.mock('create-react-native-module', () => o => {
