@@ -24,15 +24,21 @@
     "main.js"
   ],
   "scripts": {
-    "lint": "npm run prettier",
     "// lint notes": [
-      "The prettierx CLI is now used (directly) to check & fix formatting",
-      "(`--end-of-line=auto` option was needed for CI to pass on Windows)",
-      "Upcoming step is to add eslint with configuration",
-      "to enable more 'Standard JS' rules"
+      "- eslint is now used together with Prettier & prettier-plugin-x for",
+      "  linting of the JavaScript",
+      "- Prettier is used alone for the markup (*.md, *.json, *.yml) files",
+      "- Prettier `--end-of-line=auto` option is needed for CI on Windows.",
+      "- eslint-config-standard is used together with some eslint plugins",
+      "  to check conformance to 'Standard JS' rules, with a very limited",
+      "  number of exceptions at this point."
     ],
-    "lint-fix": "npm run prettier -- --write",
-    "prettier": "prettierx --check --arrow-parens=avoid --end-of-line=auto --no-semi --single-quote --space-before-function-paren --trailing-comma=none ./**/*.js ./**/*.json ./**/*.md",
+    "lint": "run-scripts lint:eslint lint:markup",
+    "lint:markup": "prettier --check --end-of-line=auto ./**/*.md ./**/*.json ./**/*.yml",
+    "lint:markup:fix": "npm run lint:markup -- --write",
+    "lint:eslint": "eslint ./*.js tests/**/*.js",
+    "lint:eslint:fix": "npm run lint:eslint -- --fix",
+    "lint:fix": "run-scripts lint:eslint:fix lint:markup:fix",
     "// testing notes": [
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
@@ -68,9 +74,17 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "eslint": "^7.16.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
     "hexyjs": "^2.1.4",
     "jest": "^26.6.3",
-    "prettierx": "^0.14.3",
+    "prettier": "^2.2.1",
+    "prettier-plugin-x": "^0.0.5",
     "run-scripts": "^0.4.0"
   }
 }
