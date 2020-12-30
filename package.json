@@ -38,7 +38,7 @@
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
     ],
-    "test": "npm run lint && cross-env CI=true jest"
+    "test": "run-scripts lint jest"
   },
   "// dependency notes": [
     "@react-native-community/cli (transitive dependency from react-native-init-func)",
