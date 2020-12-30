@@ -34,8 +34,7 @@
       "- Prettier is used alone for the markup (*.md, *.json, *.yml) files",
       "- Prettier `--end-of-line=auto` option is needed for CI on Windows.",
       "- eslint-config-standard is used together with some eslint plugins",
-      "  to check conformance to 'Standard JS' rules, with a very limited",
-      "  number of exceptions at this point."
+      "  to check conformance to 'Standard JS' rules, now with no exceptions."
     ],
     "lint": "run-scripts lint:eslint lint:markup",
     "lint:markup": "prettier --check --end-of-line=auto ./**/*.md ./**/*.json ./**/*.yml",
