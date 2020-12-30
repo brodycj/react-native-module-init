@@ -19,6 +19,5 @@ rules:
       singleQuote: true
       spaceBeforeFunctionParen: true
       trailingComma: none
-  # TODO resolve these ignored "Standard JS" rules:
-  quotes: 0
+  # TODO resolve ignored "Standard JS" rule:
   curly: 0

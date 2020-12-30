@@ -137,7 +137,7 @@ Promise.resolve().then(async () => {
   const { isView } = await prompt({
     type: 'toggle',
     name: 'isView',
-    message: `Should it be a view?`,
+    message: 'Should it be a view?',
     initial: false,
     active: 'yes',
     inactive: 'no'
