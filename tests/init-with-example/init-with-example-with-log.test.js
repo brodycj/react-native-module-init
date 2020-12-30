@@ -39,7 +39,7 @@ jest.mock('prompts', () => args => {
 jest.mock('execa', () => (cmd, args, opts) => {
   mockCallSnapshot.push({ execa: [cmd, args, opts] })
   if (cmd === 'git') {
-    return (args[1] === 'user.email')
+    return args[1] === 'user.email'
       ? Promise.resolve({ stdout: 'alice@example.com' })
       : Promise.resolve({ stdout: 'Alice' })
   } else {
