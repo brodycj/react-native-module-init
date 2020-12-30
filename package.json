@@ -36,7 +36,7 @@
     "lint": "run-scripts lint:eslint lint:markup",
     "lint:markup": "prettier --check --end-of-line=auto ./**/*.md ./**/*.json ./**/*.yml",
     "lint:markup:fix": "npm run lint:markup -- --write",
-    "lint:eslint": "eslint ./*.js tests/**/*.js",
+    "lint:eslint": "eslint ./*.js \"tests/**/*.js\"",
     "lint:eslint:fix": "npm run lint:eslint -- --fix",
     "lint:fix": "run-scripts lint:eslint:fix lint:markup:fix",
     "// testing notes": [
