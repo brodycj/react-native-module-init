@@ -5977,10 +5977,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-x@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-x/-/prettier-plugin-x-0.0.4.tgz#ce636f2366ee2c3859194efccb9ada8059dde777"
-  integrity sha512-aiWeDEuvAhUjPfNh2ZMSJT/j2pqy0agK3PLRRs+TLVo4JEI7uhgKj0iONUOOH4zXmULvccGbG2ak5VO4HDSuhA==
+prettier-plugin-x@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-x/-/prettier-plugin-x-0.0.5.tgz#3febc6950d2e74fbacf287cb16d4bf41be3b224a"
+  integrity sha512-gu58Nz5AftU7hTp85lAcVnZqLxx00IZnbkACtM38qPW6nVDcvRcY5UtAthCpN6qvcEpO2kgmGMF/XuQ6FNoVAA==
   dependencies:
     prettierx "^0.14.3"
 
