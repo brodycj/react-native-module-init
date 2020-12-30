@@ -24,7 +24,6 @@
     "main.js"
   ],
   "scripts": {
-    "jest": "cross-env CI=true jest",
     "// lint notes": [
       "XXX TBD:",
       "eslint is now used ... ... ...",
@@ -43,7 +42,8 @@
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
     ],
-    "test": "npm run lint && cross-env CI=true jest"
+    "test": "run-scripts lint test:jest",
+    "test:jest": "cross-env CI=true jest"
   },
   "// dependency notes": [
     "@react-native-community/cli (transitive dependency from react-native-init-func)",
@@ -83,6 +83,7 @@
     "hexyjs": "^2.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "prettier-plugin-x": "^0.0.4"
+    "prettier-plugin-x": "^0.0.4",
+    "run-scripts": "^0.4.0"
   }
 }
