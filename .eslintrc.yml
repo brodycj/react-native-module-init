@@ -21,5 +21,3 @@ rules:
       singleQuote: true
       spaceBeforeFunctionParen: true
       trailingComma: none
-  # TODO resolve ignored "Standard JS" rule:
-  curly: 0
