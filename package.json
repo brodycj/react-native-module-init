@@ -24,7 +24,6 @@
     "main.js"
   ],
   "scripts": {
-    "jest": "cross-env CI=true jest",
     "lint": "npm run prettier",
     "// lint notes": [
       "The prettierx CLI is now used (directly) to check & fix formatting",
@@ -38,7 +37,8 @@
       "cross-env CI=true seems to be needed to get the same results with",
       "some emoji symbols on both macOS workstation and GitHub Workflow"
     ],
-    "test": "run-scripts lint jest"
+    "test": "run-scripts lint test:jest",
+    "test:jest": "cross-env CI=true jest"
   },
   "// dependency notes": [
     "@react-native-community/cli (transitive dependency from react-native-init-func)",
