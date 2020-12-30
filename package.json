@@ -27,7 +27,7 @@
     "// lint notes": [
       "- eslint is now used together with Prettier & prettier-plugin-x for",
       "  linting of the JavaScript",
-      "- Escaped double-quotes are needed around `tests/**/*.js` glob for eslint",
+      "- Escaped double-quotes are needed around the `tests/**/*.js` glob for eslint",
       "  for the package script to work properly across Windows, macOS, and Linux.",
       "  Using eslint in npm script with no quotes around the glob seems to miss some files;",
       "  using single-quotes around the glob does not seem to work on Windows.",
