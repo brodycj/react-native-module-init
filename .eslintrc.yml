@@ -12,10 +12,10 @@ env: { jest/globals: true }
 rules:
   prettier/prettier:
     - error
-    - parser: x-babel
-      arrowParens: avoid
-      endOfLine: auto # needed for CI on Windows
-      semi: false
-      singleQuote: true
-      spaceBeforeFunctionParen: true
-      trailingComma: none
+      # - parser: x-babel
+      #   arrowParens: avoid
+      #   endOfLine: auto # needed for CI on Windows
+      #   semi: false
+      #   singleQuote: true
+      #   spaceBeforeFunctionParen: true
+      #   trailingComma: none
