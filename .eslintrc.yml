@@ -1,7 +1,9 @@
 parserOptions:
   ecmaVersion: 9
 
-extends: standard
+extends:
+  - standard
+  - plugin:prettier/recommended
 
 plugins:
   - prettier
