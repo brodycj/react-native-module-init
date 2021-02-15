@@ -224,12 +224,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@7.12.0":
-  version "7.12.0"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.0.tgz#2ad388f3960045b22f9b7d4bf85e80b15a1c9e3a"
-  integrity sha512-dYmySMYnlus2jwl7JnnajAj11obRStZoW9cG04wh4ZuhozDn11tDUrhHcUZ9iuNHqALAhh60XqNaYXpvuuE/Gg==
-
-"@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.12.10", "@babel/parser@^7.12.11", "@babel/parser@^7.12.7":
+"@babel/parser@7.12.11", "@babel/parser@^7.0.0", "@babel/parser@^7.1.0", "@babel/parser@^7.12.10", "@babel/parser@^7.12.11", "@babel/parser@^7.12.7":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.11.tgz#9ce3595bcd74bc5c466905e86c535b8b25011e79"
   integrity sha512-N3UxG+uuF4CMYoNj8AhnbAcJF0PiuJ9KHuy1lQmkYsxTer/MAH9UBNHsBoAX/4s6NvlDD047No8mYVGGzLL4hg==
@@ -2011,10 +2006,10 @@ ci-info@2.0.0, ci-info@^2.0.0:
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
-cjk-regex@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/cjk-regex/-/cjk-regex-2.0.0.tgz#060aa111e61092768c438ccc9c643a53e8fe1ee5"
-  integrity sha512-E4gFi2f3jC0zFVHpaAcupW+gv9OejZ2aV3DP/LlSO0dDcZJAXw7W0ivn+vN17edN/PhU4HCgs1bfx7lPK7FpdA==
+cjk-regex@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/cjk-regex/-/cjk-regex-2.0.1.tgz#98cca187aa67931db14f0d9dde556150c8116d95"
+  integrity sha512-4YTL4Zxzy33EhD2YMBQg6qavT+3OrYYu45RHcLANXhbVTXmVcwNQIv0vL1TUWjOS7bH0n0dVcGAdJAGzWSAa3A==
   dependencies:
     regexp-util "^1.2.1"
     unicode-regex "^2.0.0"
@@ -3061,7 +3056,19 @@ fast-diff@^1.1.2:
   resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
   integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
-fast-glob@3.2.4, fast-glob@^3.1.1:
+fast-glob@3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.5.tgz#7939af2a656de79a4f1901903ee8adcaa7cb9661"
+  integrity sha512-2DtFcgT68wiTTiwZ2hNdJfcHNke9XOfnwmBRWXhmeKM8rF0TGwmC/Qto3S7RoZKp5cilZbxzO5iTNTQsJ+EeDg==
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.0"
+    merge2 "^1.3.0"
+    micromatch "^4.0.2"
+    picomatch "^2.2.1"
+
+fast-glob@^3.1.1:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz#d20aefbf99579383e7f3cc66529158c9b98554d3"
   integrity sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==
@@ -3404,7 +3411,19 @@ globals@^12.1.0:
   dependencies:
     type-fest "^0.8.1"
 
-globby@11.0.1, globby@^11.0.1:
+globby@11.0.2:
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.2.tgz#1af538b766a3b540ebfb58a32b2e2d5897321d83"
+  integrity sha512-2ZThXDvvV8fYFRVIxnrMQBipZQDr7MxKAmQK1vujaj9/7eF0efG7BPUKJ7jP7G5SLF37xKDXvO4S/KKLj/Z0og==
+  dependencies:
+    array-union "^2.1.0"
+    dir-glob "^3.0.1"
+    fast-glob "^3.1.1"
+    ignore "^5.1.4"
+    merge2 "^1.3.0"
+    slash "^3.0.0"
+
+globby@^11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.1.tgz#9a2bf107a068f3ffeabc49ad702c79ede8cfd357"
   integrity sha512-iH9RmgwCmUJHi2z5o2l3eTtGBtXek1OYlHrbcxOYugyHLmAsZrPj43OtHThd62Buh/Vv6VyCBD2bdyWcGNQqoQ==
@@ -3438,10 +3457,10 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.3
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-graphql@15.3.0:
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.3.0.tgz#3ad2b0caab0d110e3be4a5a9b2aa281e362b5278"
-  integrity sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==
+graphql@15.5.0:
+  version "15.5.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
+  integrity sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
 
 growly@^1.3.0:
   version "1.3.0"
@@ -3548,10 +3567,10 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
   integrity sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
 
-html-element-attributes@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/html-element-attributes/-/html-element-attributes-2.2.1.tgz#ff397c7a3d6427064b117b6f36b45be08e79db93"
-  integrity sha512-gGTgCeQu+g1OFExZKWQ1LwbFXxLJ6cGdCGj64ByEaxatr/EPVc23D6Gxngb37ao+SNInP/sGu8FXxRsSxMm7aQ==
+html-element-attributes@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/html-element-attributes/-/html-element-attributes-2.3.0.tgz#a192ac90a457be9f1e2cc9ab69000ee89be74aa6"
+  integrity sha512-RJv2v3BBaYSc0ODHwT0sqWI+2lFs6DATBvCRnW20BDmULxoAWvfT6r28uL8LcW1a9/eqUl+1DccUOJzw00qVXQ==
 
 html-encoding-sniffer@^2.0.1:
   version "2.0.1"
@@ -3574,6 +3593,11 @@ html-tag-names@1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/html-tag-names/-/html-tag-names-1.1.5.tgz#f537420c16769511283f8ae1681785fbc89ee0a9"
   integrity sha512-aI5tKwNTBzOZApHIynaAwecLBv8TlZTEy/P4Sj2SzzAhBrGuI8yGZ0UIXVPQzOHGS+to2mjb04iy6VWt/8+d8A==
+
+html-void-elements@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/html-void-elements/-/html-void-elements-1.0.5.tgz#ce9159494e86d95e45795b166c2021c2cfca4483"
+  integrity sha512-uE/TxKuyNIcx44cIWnjr/rfIATDH7ZaOMmstu0CwhFG1Dunhlp4OC6/NMbhiwoq5BpW0ubi303qnEk/PZj614w==
 
 http-cache-semantics@^4.0.0:
   version "4.1.0"
@@ -5977,26 +6001,26 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-x@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-x/-/prettier-plugin-x-0.0.5.tgz#3febc6950d2e74fbacf287cb16d4bf41be3b224a"
-  integrity sha512-gu58Nz5AftU7hTp85lAcVnZqLxx00IZnbkACtM38qPW6nVDcvRcY5UtAthCpN6qvcEpO2kgmGMF/XuQ6FNoVAA==
+prettier-plugin-x@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-x/-/prettier-plugin-x-0.0.6.tgz#1f753f8a3aa0a696b83eeda070e72f4c9ac3cc98"
+  integrity sha512-H6ur5dSz88dfsevJjTDjjYUu29e/xuCHj73zcdh3dMzBHDpYYE7wgjRNV2tXO9p1n+cXETnmpoJbnVVmB5BocQ==
   dependencies:
-    prettierx "^0.14.3"
+    prettierx "^0.17.0"
 
 prettier@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
-prettierx@^0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/prettierx/-/prettierx-0.14.3.tgz#bee3985299f64f8ab31a86f04cbe2144b6b86724"
-  integrity sha512-0VT3GgDAU6rvemeklrRzqVkILrGC1TSo/4STnsBqkreLx5Ck43W05lO60pMKWbG7SWM3DcUZZIR4FZ5pvvDwyQ==
+prettierx@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/prettierx/-/prettierx-0.17.0.tgz#c8c51d5741e1535a8b17e996c8792daf8211b167"
+  integrity sha512-HhShMVFXIOhVeqPcQbsMvyManR3tejjQramqksa3zkBvB4kOh+41fcP+JEHNdshG/BeJlCbrg5fNwbntpEjA9w==
   dependencies:
     "@angular/compiler" "9.0.5"
     "@babel/code-frame" "7.12.11"
-    "@babel/parser" "7.12.0"
+    "@babel/parser" "7.12.11"
     "@glimmer/syntax" "0.56.1"
     "@iarna/toml" "2.2.5"
     "@typescript-eslint/typescript-estree" "2.34.0"
@@ -6005,7 +6029,7 @@ prettierx@^0.14.3:
     camelcase "6.2.0"
     chalk "4.1.0"
     ci-info "2.0.0"
-    cjk-regex "2.0.0"
+    cjk-regex "2.0.1"
     cosmiconfig "7.0.0"
     dashify "2.0.0"
     dedent "0.7.0"
@@ -6014,15 +6038,16 @@ prettierx@^0.14.3:
     editorconfig-to-prettier "0.1.1"
     escape-string-regexp "4.0.0"
     esutils "2.0.3"
-    fast-glob "3.2.4"
+    fast-glob "3.2.5"
     find-parent-dir "0.3.0"
     find-project-root "1.1.1"
     get-stream "6.0.0"
-    globby "11.0.1"
-    graphql "15.3.0"
-    html-element-attributes "2.2.1"
+    globby "11.0.2"
+    graphql "15.5.0"
+    html-element-attributes "2.3.0"
     html-styles "1.0.0"
     html-tag-names "1.1.5"
+    html-void-elements "1.0.5"
     ignore "4.0.6"
     jest-docblock "26.0.0"
     json-stable-stringify "1.0.1"
