@@ -23,6 +23,7 @@
     "cli.js",
     "main.js"
   ],
+  "prettier": "prettier-config-x-standard",
   "scripts": {
     "// lint notes": [
       "- eslint is now used together with Prettier & prettier-plugin-x for",
