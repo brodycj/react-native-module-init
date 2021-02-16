@@ -6038,6 +6038,16 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
+prettier-config-x-standard@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/prettier-config-x-standard/-/prettier-config-x-standard-0.0.2.tgz#c2279466ed3db898f0fa92f842e714ace2af541d"
+  integrity sha512-5KQs80LSilz5zBIdNH5Pg0k3QQmFOmF2XSgLNQZrExVTeAkp3gDjEIVfOEWrF//GPppsvMcBhpiHjEjq98EkdA==
+
+prettier-config-x@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/prettier-config-x/-/prettier-config-x-0.0.1.tgz#914caec8d2961db2f27cb717f281825b1259ef9b"
+  integrity sha512-ffDC+N081zko0raYCRcc/HS2tcQyjydAwsqcm7lPigRdVwYQ4bGpETPb1te4LhR+WTasw4jae5ULFttGMXlEOg==
+
 prettier-linter-helpers@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
