@@ -87,7 +87,7 @@
     "hexyjs": "^2.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
-    "prettier-plugin-x": "^0.0.5",
+    "prettier-plugin-x": "^0.0.6",
     "run-scripts": "^0.4.0"
   }
 }
