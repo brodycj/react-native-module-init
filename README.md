@@ -15,7 +15,7 @@ less opinionated than [`react-native-community/bob`](https://github.com/react-na
 
 ```
 brodybits@brodybits-mini-macbook dev % react-native-module-init
-ℹ react-native-module-init 0.4.0
+ℹ react-native-module-init 0.4.2
 ✔ What is the desired native module name? … awesome module
 ✔ Should it be a view? … no / yes
 ✔ What is the full module package name? … react-native-awesome-module
@@ -65,12 +65,12 @@ CREATE: Generating the React Native library module
 ℹ rewrite metro.config.js with workaround solutions
 ✔ example app generated ok
 ℹ adding the native library module into the example app as a dependency link
-yarn add v1.22.4
+yarn add v1.22.10
 [1/4] 🔍  Resolving packages...
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
-warning "react-native > @react-native-community/cli@4.10.1" has incorrect peer dependency "react-native@^0.62.0-rc.0".
-warning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin > tsutils@3.17.1" has unmet peer dependency "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta".
+warning "react-native > react-native-codegen > jscodeshift@0.11.0" has unmet peer dependency "@babel/preset-env@^7.1.6".
+warning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin > tsutils@3.21.0" has unmet peer dependency "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta".
 [4/4] 🔨  Building fresh packages...
 success Saved lockfile.
 success Saved 1 new dependency.
@@ -78,7 +78,7 @@ info Direct dependencies
 └─ react-native-awesome-module@0.0.0
 info All dependencies
 └─ react-native-awesome-module@0.0.0
-✨  Done in 8.26s.
+✨  Done in 5.93s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -89,7 +89,9 @@ Downloading dependencies
 Installing react-native-awesome-module (1.0.0)
 Generating Pods project
 Integrating client project
-Pod installation complete! There are 48 dependencies from the Podfile and 39 total pods installed.
+Pod installation complete! There are 50 dependencies from the Podfile and 41 total pods installed.
+
+[!] Your project does not explicitly specify the CocoaPods master specs repo. Since CDN is now used as the default, you may safely remove it from your repos directory via `pod repo remove master`. To suppress this warning please add `warn_for_unused_master_specs_repo => false` to your Podfile.
 ✔ additional pod install ok
 💡 check out the example app in react-native-awesome-module/example
 ℹ (/Users/brodybits/dev/react-native-awesome-module/example)
@@ -97,8 +99,8 @@ Pod installation complete! There are 48 dependencies from the Podfile and 39 tot
 ℹ (cd react-native-awesome-module/example && yarn start)
 💡 enter the following commands to run the example app:
 ℹ cd react-native-awesome-module/example
-ℹ react-native run-android
-ℹ react-native run-ios
+ℹ yarn android # for React Native 0.60: npx react-native run-android
+ℹ yarn ios # for React Native 0.60: npx react-native run-ios
 ⚠ first steps in case of a clean checkout
 ℹ run Yarn in react-native-awesome-module/example
 ℹ (cd react-native-awesome-module/example && yarn)
@@ -106,10 +108,9 @@ Pod installation complete! There are 48 dependencies from the Podfile and 39 tot
 ℹ (cd react-native-awesome-module/example/ios && pod install)
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % ls react-native-awesome-module
-README.md				ios
-android					package.json
-example					react-native-awesome-module.podspec
-index.js
+README.md				index.js				react-native-awesome-module.podspec
+android					ios
+example					package.json
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % cat react-native-awesome-module/index.js
 import { NativeModules } from 'react-native';
@@ -145,15 +146,15 @@ react-native-awesome-module/ios
 2 directories, 4 files
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % ls react-native-awesome-module/example
-App.js		android		babel.config.js	ios		node_modules	yarn.lock
-__tests__	app.json	index.js	metro.config.js	package.json
+App.js		_editorconfig	app.json	index.js	metro.config.js	package.json
+__tests__	android		babel.config.js	ios		node_modules	yarn.lock
 ```
 
 ## view module demo
 
 ```
 brodybits@brodybits-mini-macbook dev % react-native-module-init
-ℹ react-native-module-init 0.4.0
+ℹ react-native-module-init 0.4.2
 ✔ What is the desired native module name? … awesome view
 ✔ Should it be a view? … no / yes
 ✔ What is the full module package name? … react-native-awesome-view
@@ -202,12 +203,12 @@ CREATE: Generating the React Native library module
 ℹ rewrite metro.config.js with workaround solutions
 ✔ example app generated ok
 ℹ adding the native library module into the example app as a dependency link
-yarn add v1.22.4
+yarn add v1.22.10
 [1/4] 🔍  Resolving packages...
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
-warning "react-native > @react-native-community/cli@4.10.1" has incorrect peer dependency "react-native@^0.62.0-rc.0".
-warning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin > tsutils@3.17.1" has unmet peer dependency "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta".
+warning "react-native > react-native-codegen > jscodeshift@0.11.0" has unmet peer dependency "@babel/preset-env@^7.1.6".
+warning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin > tsutils@3.21.0" has unmet peer dependency "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta".
 [4/4] 🔨  Building fresh packages...
 success Saved lockfile.
 success Saved 1 new dependency.
@@ -215,7 +216,7 @@ info Direct dependencies
 └─ react-native-awesome-view@0.0.0
 info All dependencies
 └─ react-native-awesome-view@0.0.0
-✨  Done in 14.59s.
+✨  Done in 4.19s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -226,7 +227,9 @@ Downloading dependencies
 Installing react-native-awesome-view (1.0.0)
 Generating Pods project
 Integrating client project
-Pod installation complete! There are 48 dependencies from the Podfile and 39 total pods installed.
+Pod installation complete! There are 50 dependencies from the Podfile and 41 total pods installed.
+
+[!] Your project does not explicitly specify the CocoaPods master specs repo. Since CDN is now used as the default, you may safely remove it from your repos directory via `pod repo remove master`. To suppress this warning please add `warn_for_unused_master_specs_repo => false` to your Podfile.
 ✔ additional pod install ok
 💡 check out the example app in react-native-awesome-view/example
 ℹ (/Users/brodybits/dev/react-native-awesome-view/example)
@@ -234,8 +237,8 @@ Pod installation complete! There are 48 dependencies from the Podfile and 39 tot
 ℹ (cd react-native-awesome-view/example && yarn start)
 💡 enter the following commands to run the example app:
 ℹ cd react-native-awesome-view/example
-ℹ react-native run-android
-ℹ react-native run-ios
+ℹ yarn android # for React Native 0.60: npx react-native run-android
+ℹ yarn ios # for React Native 0.60: npx react-native run-ios
 ⚠ first steps in case of a clean checkout
 ℹ run Yarn in react-native-awesome-view/example
 ℹ (cd react-native-awesome-view/example && yarn)
@@ -243,10 +246,9 @@ Pod installation complete! There are 48 dependencies from the Podfile and 39 tot
 ℹ (cd react-native-awesome-view/example/ios && pod install)
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % ls react-native-awesome-view
-README.md				ios
-android					package.json
-example					react-native-awesome-view.podspec
-index.js
+README.md				index.js				react-native-awesome-view.podspec
+android					ios
+example					package.json
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % cat react-native-awesome-view/index.js
 import { requireNativeComponent } from 'react-native';
@@ -282,6 +284,6 @@ react-native-awesome-view/ios
 2 directories, 4 files
 brodybits@brodybits-mini-macbook dev %
 brodybits@brodybits-mini-macbook dev % ls react-native-awesome-view/example
-App.js		android		babel.config.js	ios		node_modules	yarn.lock
-__tests__	app.json	index.js	metro.config.js	package.json
+App.js		_editorconfig	app.json	index.js	metro.config.js	package.json
+__tests__	android		babel.config.js	ios		node_modules	yarn.lock
 ```
