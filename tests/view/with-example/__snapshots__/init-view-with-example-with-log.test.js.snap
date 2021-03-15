@@ -551,13 +551,13 @@ module.exports = {
   Object {
     "log": Array [
       "ℹ",
-      "react-native run-android",
+      "yarn android # for React Native 0.60: npx react-native run-android",
     ],
   },
   Object {
     "log": Array [
       "ℹ",
-      "react-native run-ios",
+      "yarn ios # for React Native 0.60: npx react-native run-ios",
     ],
   },
   Object {

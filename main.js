@@ -419,8 +419,8 @@ Promise.resolve().then(async () => {
     log(INFO, `(cd ${exampleAppSubdirectory} && yarn start)`)
     log(BULB, 'enter the following commands to run the example app:')
     log(INFO, `cd ${exampleAppSubdirectory}`)
-    platforms.forEach(platform => {
-      log(INFO, `react-native run-${platform}`)
+    platforms.forEach(p => {
+      log(INFO, `yarn ${p} # for React Native 0.60: npx react-native run-${p}`)
     })
     // show first steps in case of a clean checkout:
     const iosSubdirectory = joinPath(exampleAppSubdirectory, 'ios')
