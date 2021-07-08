@@ -6045,14 +6045,14 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-x@^0.0.6:
+prettier-plugin-x@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/prettier-plugin-x/-/prettier-plugin-x-0.0.6.tgz#1f753f8a3aa0a696b83eeda070e72f4c9ac3cc98"
   integrity sha512-H6ur5dSz88dfsevJjTDjjYUu29e/xuCHj73zcdh3dMzBHDpYYE7wgjRNV2tXO9p1n+cXETnmpoJbnVVmB5BocQ==
   dependencies:
     prettierx "^0.17.0"
 
-prettier@^2.2.1:
+prettier@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
