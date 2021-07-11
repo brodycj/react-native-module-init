@@ -15,7 +15,7 @@
     "url:": "https://github.com/brodybits/react-native-module-init.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "files": [
     "LICENSE.md",
