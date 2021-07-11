@@ -13,7 +13,7 @@ less opinionated than [`react-native-community/bob`](https://github.com/react-na
 
 ## library module demo
 
-```
+```console
 brodybits@brodybits-mini-macbook dev % react-native-module-init
 ℹ react-native-module-init 0.4.2
 ✔ What is the desired native module name? … awesome module
@@ -152,7 +152,7 @@ __tests__	android		babel.config.js	ios		node_modules	yarn.lock
 
 ## view module demo
 
-```
+```console
 brodybits@brodybits-mini-macbook dev % react-native-module-init
 ℹ react-native-module-init 0.4.2
 ✔ What is the desired native module name? … awesome view
