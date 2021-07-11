@@ -14,8 +14,8 @@ less opinionated than [`react-native-community/bob`](https://github.com/react-na
 ## library module demo
 
 ```console
-brodybits@brodybits-mini-macbook dev % react-native-module-init
-ℹ react-native-module-init 0.4.2
+brodybits@brodybits-mini-mac-book work % react-native-module-init
+ℹ react-native-module-init 0.4.4
 ✔ What is the desired native module name? … awesome module
 ✔ Should it be a view? … no / yes
 ✔ What is the full module package name? … react-native-awesome-module
@@ -78,7 +78,7 @@ info Direct dependencies
 └─ react-native-awesome-module@0.0.0
 info All dependencies
 └─ react-native-awesome-module@0.0.0
-✨  Done in 5.93s.
+✨  Done in 9.23s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -90,11 +90,9 @@ Installing react-native-awesome-module (1.0.0)
 Generating Pods project
 Integrating client project
 Pod installation complete! There are 50 dependencies from the Podfile and 41 total pods installed.
-
-[!] Your project does not explicitly specify the CocoaPods master specs repo. Since CDN is now used as the default, you may safely remove it from your repos directory via `pod repo remove master`. To suppress this warning please add `warn_for_unused_master_specs_repo => false` to your Podfile.
 ✔ additional pod install ok
 💡 check out the example app in react-native-awesome-module/example
-ℹ (/Users/brodybits/dev/react-native-awesome-module/example)
+ℹ (/Users/brodybits/work/react-native-awesome-module/example)
 💡 recommended: run Metro Bundler in a new shell
 ℹ (cd react-native-awesome-module/example && yarn start)
 💡 enter the following commands to run the example app:
@@ -106,20 +104,21 @@ Pod installation complete! There are 50 dependencies from the Podfile and 41 tot
 ℹ (cd react-native-awesome-module/example && yarn)
 ℹ do `pod install` for iOS in react-native-awesome-module/example/ios
 ℹ (cd react-native-awesome-module/example/ios && pod install)
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % ls react-native-awesome-module
-README.md				index.js				react-native-awesome-module.podspec
-android					ios
-example					package.json
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % cat react-native-awesome-module/index.js
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % ls react-native-awesome-module
+README.md				ios
+android					package.json
+example					react-native-awesome-module.podspec
+index.js
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % cat react-native-awesome-module/index.js
 import { NativeModules } from 'react-native';
 
 const { SUPERAwesomeModule } = NativeModules;
 
 export default SUPERAwesomeModule;
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % tree react-native-awesome-module/android
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % tree react-native-awesome-module/android
 react-native-awesome-module/android
 ├── README.md
 ├── build.gradle
@@ -133,8 +132,8 @@ react-native-awesome-module/android
                     └── SUPERAwesomeModulePackage.java
 
 5 directories, 5 files
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % tree react-native-awesome-module/ios
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % tree react-native-awesome-module/ios
 react-native-awesome-module/ios
 ├── SUPERAwesomeModule.h
 ├── SUPERAwesomeModule.m
@@ -144,17 +143,24 @@ react-native-awesome-module/ios
     └── contents.xcworkspacedata
 
 2 directories, 4 files
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % ls react-native-awesome-module/example
-App.js		_editorconfig	app.json	index.js	metro.config.js	package.json
-__tests__	android		babel.config.js	ios		node_modules	yarn.lock
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % ls react-native-awesome-module/example
+App.js		android		babel.config.js	ios		node_modules	yarn.lock
+__tests__	app.json	index.js	metro.config.js	package.json
 ```
 
 ## view module demo
 
 ```console
-brodybits@brodybits-mini-macbook dev % react-native-module-init
-ℹ react-native-module-init 0.4.2
+Last login: Sun Jul 11 17:42:30 on ttys063
+PATH += ~/my-nvs/default/bin
+brodybits@brodybits-mini-mac-book work % nvs use 12
+PATH -= ~/my-nvs/default/bin
+PATH += ~/my-nvs/node/12.22.3/x64/bin
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % react-native-module-init
+ℹ react-native-module-init 0.4.4
 ✔ What is the desired native module name? … awesome view
 ✔ Should it be a view? … no / yes
 ✔ What is the full module package name? … react-native-awesome-view
@@ -216,7 +222,7 @@ info Direct dependencies
 └─ react-native-awesome-view@0.0.0
 info All dependencies
 └─ react-native-awesome-view@0.0.0
-✨  Done in 4.19s.
+✨  Done in 8.57s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -228,11 +234,9 @@ Installing react-native-awesome-view (1.0.0)
 Generating Pods project
 Integrating client project
 Pod installation complete! There are 50 dependencies from the Podfile and 41 total pods installed.
-
-[!] Your project does not explicitly specify the CocoaPods master specs repo. Since CDN is now used as the default, you may safely remove it from your repos directory via `pod repo remove master`. To suppress this warning please add `warn_for_unused_master_specs_repo => false` to your Podfile.
 ✔ additional pod install ok
 💡 check out the example app in react-native-awesome-view/example
-ℹ (/Users/brodybits/dev/react-native-awesome-view/example)
+ℹ (/Users/brodybits/work/react-native-awesome-view/example)
 💡 recommended: run Metro Bundler in a new shell
 ℹ (cd react-native-awesome-view/example && yarn start)
 💡 enter the following commands to run the example app:
@@ -244,20 +248,21 @@ Pod installation complete! There are 50 dependencies from the Podfile and 41 tot
 ℹ (cd react-native-awesome-view/example && yarn)
 ℹ do `pod install` for iOS in react-native-awesome-view/example/ios
 ℹ (cd react-native-awesome-view/example/ios && pod install)
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % ls react-native-awesome-view
-README.md				index.js				react-native-awesome-view.podspec
-android					ios
-example					package.json
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % cat react-native-awesome-view/index.js
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % ls react-native-awesome-view
+README.md				ios
+android					package.json
+example					react-native-awesome-view.podspec
+index.js
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % cat react-native-awesome-view/index.js
 import { requireNativeComponent } from 'react-native';
 
 const SUPERAwesomeView = requireNativeComponent('SUPERAwesomeView', null);
 
 export default SUPERAwesomeView;
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % tree react-native-awesome-view/android
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % tree react-native-awesome-view/android
 react-native-awesome-view/android
 ├── README.md
 ├── build.gradle
@@ -271,8 +276,8 @@ react-native-awesome-view/android
                     └── SUPERAwesomeViewPackage.java
 
 5 directories, 5 files
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % tree react-native-awesome-view/ios
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % tree react-native-awesome-view/ios
 react-native-awesome-view/ios
 ├── SUPERAwesomeView.h
 ├── SUPERAwesomeView.m
@@ -282,8 +287,10 @@ react-native-awesome-view/ios
     └── contents.xcworkspacedata
 
 2 directories, 4 files
-brodybits@brodybits-mini-macbook dev %
-brodybits@brodybits-mini-macbook dev % ls react-native-awesome-view/example
-App.js		_editorconfig	app.json	index.js	metro.config.js	package.json
-__tests__	android		babel.config.js	ios		node_modules	yarn.lock
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work % ls react-native-awesome-view/example
+App.js		android		babel.config.js	ios		node_modules	yarn.lock
+__tests__	app.json	index.js	metro.config.js	package.json
+brodybits@brodybits-mini-mac-book work %
+brodybits@brodybits-mini-mac-book work %
 ```
