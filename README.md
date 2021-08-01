@@ -152,13 +152,6 @@ __tests__	app.json	index.js	metro.config.js	package.json
 ## view module demo
 
 ```console
-Last login: Sun Jul 11 17:42:30 on ttys063
-PATH += ~/my-nvs/default/bin
-brodybits@brodybits-mini-mac-book work % nvs use 12
-PATH -= ~/my-nvs/default/bin
-PATH += ~/my-nvs/node/12.22.3/x64/bin
-brodybits@brodybits-mini-mac-book work %
-brodybits@brodybits-mini-mac-book work %
 brodybits@brodybits-mini-mac-book work % react-native-module-init
 ℹ react-native-module-init 0.4.4
 ✔ What is the desired native module name? … awesome view
