@@ -35,7 +35,7 @@ Array [
       "args": Array [
         Object {
           "initial": "react-native-test-module-for-tv-os",
-          "message": "What is the full module package name?",
+          "message": "What is the full native module package name?",
           "name": "modulePackageName",
           "onState": [Function],
           "type": "text",
