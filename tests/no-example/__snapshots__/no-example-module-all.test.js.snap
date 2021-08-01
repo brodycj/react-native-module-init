@@ -46,11 +46,17 @@ Array [
     },
   },
   Object {
+    "log": Array [
+      "ℹ",
+      "OK, continuing with isView: false",
+    ],
+  },
+  Object {
     "prompts": Object {
       "args": Array [
         Object {
           "initial": "react-native-test-module",
-          "message": "What is the full module package name?",
+          "message": "What is the full native module package name?",
           "name": "modulePackageName",
           "onState": [Function],
           "type": "text",

@@ -143,6 +143,8 @@ Promise.resolve().then(async () => {
     inactive: 'no'
   })
 
+  log(INFO, `OK, continuing with isView: ${isView}`)
+
   const initialModulePackageName = nameParamCase.startsWith(REACT_NATIVE_PREFIX)
     ? nameParamCase
     : REACT_NATIVE_PREFIX.concat(nameParamCase)
@@ -150,7 +152,9 @@ Promise.resolve().then(async () => {
   const { modulePackageName } = await prompt({
     type: 'text',
     name: 'modulePackageName',
-    message: 'What is the full module package name?',
+    message: `What is the full native ${
+      isView ? 'view' : 'module'
+    } package name?`,
     initial: initialModulePackageName,
     validate: modulePackageName => modulePackageName.length > 0
   })
