@@ -152,7 +152,7 @@ Promise.resolve().then(async () => {
   const { modulePackageName } = await prompt({
     type: 'text',
     name: 'modulePackageName',
-    message: 'What is the full module package name?',
+    message: `What is the full native ${isView ? 'view' : 'module'} package name?`,
     initial: initialModulePackageName,
     validate: modulePackageName => modulePackageName.length > 0
   })
