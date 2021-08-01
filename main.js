@@ -143,6 +143,8 @@ Promise.resolve().then(async () => {
     inactive: 'no'
   })
 
+  log(INFO, `OK, continuing with isView: ${isView}`)
+
   const initialModulePackageName = nameParamCase.startsWith(REACT_NATIVE_PREFIX)
     ? nameParamCase
     : REACT_NATIVE_PREFIX.concat(nameParamCase)
