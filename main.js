@@ -309,16 +309,16 @@ Promise.resolve().then(async () => {
 
   const createOptions = {
     name: nativeModuleName,
-    moduleName: modulePackageName,
+    packageName: modulePackageName,
+    isView,
     objectClassName: nativeObjectClassName,
-    packageIdentifier: androidPackageId,
+    nativePackageId: androidPackageId,
     platforms,
     tvosEnabled,
     authorName,
     authorEmail,
     githubAccount: githubUserAccountName,
     license,
-    view: isView,
     useAppleNetworking
   }
 
