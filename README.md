@@ -15,10 +15,11 @@ less opinionated than [`react-native-community/bob`](https://github.com/react-na
 
 ```console
 brodybits@brodybits-mini-mac-book work % react-native-module-init
-ℹ react-native-module-init 0.4.4
+ℹ react-native-module-init 0.5.0
 ✔ What is the desired native module name? … awesome module
 ✔ Should it be a view? … no / yes
-✔ What is the full module package name? … react-native-awesome-module
+ℹ OK, continuing with isView: false
+✔ What is the full native module package name? … react-native-awesome-module
 ✔ Initial package version is 1.0.0 - continue? … yes
 ✔ What is the desired native object class name prefix (can be blank)? … super
 ✔ Desired object class name to use between JavaScript & native code? … SUPERAwesomeModule
@@ -41,21 +42,18 @@ brodybits@brodybits-mini-mac-book work % react-native-module-init
 ℹ generating the native library module as a package
 CREATE new React Native module with the following options:
 
-                     name: awesome module
-    root moduleName
-      (full package name): react-native-awesome-module
-                  is view: false
- object class name prefix:
-        object class name: SUPERAwesomeModule
-     library modulePrefix: react-native
-Android packageIdentifier: com.demo
-                platforms: android,ios
-        Apple tvosEnabled: false
-               authorName: Christopher J. Brody
-              authorEmail: chris.brody+brodybits@gmail.com
-     author githubAccount: brodybits
-                  license: MIT
-       useAppleNetworking: false
+                        name: awesome module
+           full package name: react-native-awesome-module
+                     is view: false
+           object class name: SUPERAwesomeModule
+     Android nativePackageId: com.demo
+                   platforms: android,ios
+           Apple tvosEnabled: false
+                  authorName: Christopher J. Brody
+                 authorEmail: chris.brody+brodybits@gmail.com
+        author githubAccount: brodybits
+                     license: MIT
+          useAppleNetworking: false
 
 CREATE: Generating the React Native library module
 ✔ native library module generated ok
@@ -65,7 +63,7 @@ CREATE: Generating the React Native library module
 ℹ rewrite metro.config.js with workaround solutions
 ✔ example app generated ok
 ℹ adding the native library module into the example app as a dependency link
-yarn add v1.22.10
+yarn add v1.22.11
 [1/4] 🔍  Resolving packages...
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
@@ -78,7 +76,7 @@ info Direct dependencies
 └─ react-native-awesome-module@0.0.0
 info All dependencies
 └─ react-native-awesome-module@0.0.0
-✨  Done in 9.23s.
+✨  Done in 9.52s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -112,6 +110,8 @@ example					react-native-awesome-module.podspec
 index.js
 brodybits@brodybits-mini-mac-book work %
 brodybits@brodybits-mini-mac-book work % cat react-native-awesome-module/index.js
+// main index.js
+
 import { NativeModules } from 'react-native';
 
 const { SUPERAwesomeModule } = NativeModules;
@@ -153,10 +153,11 @@ __tests__	app.json	index.js	metro.config.js	package.json
 
 ```console
 brodybits@brodybits-mini-mac-book work % react-native-module-init
-ℹ react-native-module-init 0.4.4
+ℹ react-native-module-init 0.5.0
 ✔ What is the desired native module name? … awesome view
 ✔ Should it be a view? … no / yes
-✔ What is the full module package name? … react-native-awesome-view
+ℹ OK, continuing with isView: true
+✔ What is the full native view package name? … react-native-awesome-view
 ✔ Initial package version is 1.0.0 - continue? … yes
 ✔ What is the desired native object class name prefix (can be blank)? … super
 ✔ Desired object class name to use between JavaScript & native code? … SUPERAwesomeView
@@ -178,21 +179,18 @@ brodybits@brodybits-mini-mac-book work % react-native-module-init
 ℹ generating the native library module as a package
 CREATE new React Native module with the following options:
 
-                     name: awesome view
-    root moduleName
-      (full package name): react-native-awesome-view
-                  is view: true
- object class name prefix:
-        object class name: SUPERAwesomeView
-     library modulePrefix: react-native
-Android packageIdentifier: com.demo
-                platforms: android,ios
-        Apple tvosEnabled: false
-               authorName: Christopher J. Brody
-              authorEmail: chris.brody+brodybits@gmail.com
-     author githubAccount: brodybits
-                  license: MIT
-       useAppleNetworking: false
+                        name: awesome view
+           full package name: react-native-awesome-view
+                     is view: true
+           object class name: SUPERAwesomeView
+     Android nativePackageId: com.demo
+                   platforms: android,ios
+           Apple tvosEnabled: false
+                  authorName: Christopher J. Brody
+                 authorEmail: chris.brody+brodybits@gmail.com
+        author githubAccount: brodybits
+                     license: MIT
+          useAppleNetworking: false
 
 CREATE: Generating the React Native library module
 ✔ native library module generated ok
@@ -202,7 +200,7 @@ CREATE: Generating the React Native library module
 ℹ rewrite metro.config.js with workaround solutions
 ✔ example app generated ok
 ℹ adding the native library module into the example app as a dependency link
-yarn add v1.22.10
+yarn add v1.22.11
 [1/4] 🔍  Resolving packages...
 [2/4] 🚚  Fetching packages...
 [3/4] 🔗  Linking dependencies...
@@ -215,7 +213,7 @@ info Direct dependencies
 └─ react-native-awesome-view@0.0.0
 info All dependencies
 └─ react-native-awesome-view@0.0.0
-✨  Done in 8.57s.
+✨  Done in 13.75s.
 ✔ added the native library module into the example app as a dependency link - ok
 ℹ checking that the pod tool can show its version
 ✔ pod tool ok
@@ -249,6 +247,8 @@ example					react-native-awesome-view.podspec
 index.js
 brodybits@brodybits-mini-mac-book work %
 brodybits@brodybits-mini-mac-book work % cat react-native-awesome-view/index.js
+// main index.js
+
 import { requireNativeComponent } from 'react-native';
 
 const SUPERAwesomeView = requireNativeComponent('SUPERAwesomeView', null);
