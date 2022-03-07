@@ -67,7 +67,7 @@
     "execa": "^5.1.1",
     "exit": "^0.1.2",
     "fs-extra": "^10.0.0",
-    "log-symbols": "^4.1.0",
+    "log-symbols": "^5.1.0",
     "param-case": "^3.0.4",
     "pascal-case": "^3.1.2",
     "please-upgrade-node": "^3.2.0",
