@@ -86,7 +86,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "hexyjs": "^2.1.4",
     "jest": "^27.0.6",
-    "prettier": "2.2.1",
+    "prettier": "2.8.8",
     "prettier-plugin-x": "0.0.10",
     "run-scripts": "^0.4.0"
   }
